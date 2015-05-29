@@ -41,6 +41,11 @@ help:
 clean:
 	-rm -rf $(BUILDDIR)/*
 
+site: html epub
+	-md build/html/_files
+	-cp build/epub/MAMEDocumentation.epub build/html/_files/MAME.epub
+	-cp build/latex/MAME.pdf build/html/_files/MAME.pdf
+
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
