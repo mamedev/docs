@@ -9,11 +9,11 @@ MAME Documentation
     This documentation is a work in progress.  You can track the status of these topics through our public documentation `issue tracker <https://github.com/mamedev/docs/issues>`_. Learn how you can `contribute <https://github.com/mamedev/docs/blob/master/CONTRIBUTING.md>`_ on GitHub.
 	
 .. toctree::
-    :maxdepth: 1
     :titlesonly:
     
     whatis
-   
+    mess/index
+	
 Contribute
 ----------
 
