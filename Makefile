@@ -41,7 +41,7 @@ help:
 clean:
 	-rm -rf $(BUILDDIR)/*
 
-site: html epub
+site: html epub latexpdf
 	-mkdir build/html/_files
 	-cp build/epub/MAMEDocumentation.epub build/html/_files/MAME.epub
 	-cp build/latex/MAME.pdf build/html/_files/MAME.pdf
