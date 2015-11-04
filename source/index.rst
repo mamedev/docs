@@ -13,6 +13,7 @@ MAME Documentation
     
     whatis
     mess/index
+    advanced/index
 	
 Contribute
 ----------
