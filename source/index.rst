@@ -14,6 +14,8 @@ MAME Documentation
     whatis
     mess/index
     advanced/index
+    
+    migrate/index
 	
 Contribute
 ----------
