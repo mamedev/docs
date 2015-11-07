@@ -120,15 +120,11 @@ Key              Action
        
 **LCtrl+F6**     Decrease Prescaling.
        
-**F7**           Load a save state. You will be requested to press a key to determine which save
-                 state you wish to load. Note that the save state feature is not supported for 
-                 a large number of drivers. If support is not enabled for a given driver, you 
-                 will receive a warning when attempting to save or load.
+**F7**           Load a save state. You will be requested to press a key to determine which save state you wish to load. *Note that the save state feature is not supported for a large number of drivers. If support is not enabled for a given driver, you will receive a warning when attempting to save or load.*
        
 **LCtrl+F7**     Increase Prescaling.
        
-**Shift+F7**     Create a save state. Requires an additional keypress to identify the state, 
-                 similar to the load option above.
+**Shift+F7**     Create a save state. Requires an additional keypress to identify the state, similar to the load option above.
        
 **F8**           Decrease frame skip on the fly.
        
@@ -146,13 +142,11 @@ Key              Action
        
 **Alt+F12**      Take HLSL Rendered Snapshot.
        
-**Insert**       [*WINDOW ONLY, NON SDL*]
-**Page DN**      [*SDL ONLY*]
-                 Fast forward. While held, runs the game with throttling disabled
-                 and with the maximum frameskip.
-       
+**Insert**       [*WINDOW ONLY, NON SDL*] Fast forward. While held, runs game with throttling disabled and with the maximum frameskip.
+**Page DN**      [*SDL ONLY*] Fast forward. While held, runs the game with throttling disabled and with the maximum frameskip.
+
 **Alt+ENTER**    Toggles between full-screen and windowed mode.
-       
+
 **Scroll Lock**  Default mapping for the **uimodekey**.  This key allows user to
                  disable and enable the emulated keyboard in machines that require
                  it.  All emulations which require emulated keyboards will start in
@@ -678,20 +672,21 @@ Core input options
 	is 9x9, there are a total of 81 characters necessary to define a
 	complete map. Below is an example map for an 8-way joystick:
 
-		777888999        Note that the numeric digits correspond to the keys
-		777888999    on a numeric keypad. So '7' maps to up+left, '4' maps
-		777888999    to left, '5' maps to neutral, etc. In addition to the
-		444555666    numeric values, you can specify the character 's',
-		444555666    which means "sticky". In this case, the value of the
-		444555666    map is the same as it was the last time a non-sticky
-		111222333    value was read.
-		111222333
-		111222333
++------------+---------------------------------------------------------+
+| 777888999  |                                                         |
+| 777888999  |Note that the numeric digits correspond to the keys      |
+| 777888999  |on a numeric keypad. So '7' maps to up+left, '4' maps    |
+| 444555666  |to left, '5' maps to neutral, etc. In addition to the    |
+| 444555666  |numeric values, you can specify the character 's',       |
+| 444555666  |which means "sticky". In this case, the value of the     |
+| 111222333  |map is the same as it was the last time a non-sticky     |
+| 111222333  |value was read.                                          |
+| 111222333  |                                                         |
++------------+---------------------------------------------------------+
 
 	To specify the map for this parameter, you can specify a string of rows separated by a '.' (which indicates the end of a row), like so:
 
-	    777888999.777888999.777888999.444555666.444555666.444555666.
-	    111222333.111222333.111222333
+	    777888999.777888999.777888999.444555666.444555666.444555666.111222333.111222333.111222333
 
 	However, this can be reduced using several shorthands supported by the <map> parameter. If information about a row is missing, then it is assumed that any missing data in columns 5-9 are left/right symmetric with data in columns 0-4; and any missing data in colums 0-4 is assumed to be copies of the previous data. The same logic applies to missing rows, except that up/down symmetry is assumed.
 
@@ -711,7 +706,7 @@ Core input options
 
 	If you play with an analog joystick, the ends can drift a little, and may not match in the +/- directions. joystick_saturation tells how far along an axis movement change will be accepted before it reaches the maximum range. This option expects a float in the range of 0.0 to 1.0, where 0 is the center of the joystick and 1 is the outer limit. The default is 0.85.
 
-\**-natural**
+**\-natural**
 
         Allows user to specify whether or not to use a natural keyboard or not. This allows you to start your game or system in a 'native' mode, depending on your region,  allowing compatability for non-"QWERTY" style keyboards. The default is OFF (-nonatrual)
 
@@ -728,21 +723,21 @@ Core input options
 Core input automatic enable options
 -----------------------------------
 
-\-paddle_device       enable (none|keyboard|mouse|lightgun|joystick) if a paddle control is present
+**\-paddle_device**       enable (none|keyboard|mouse|lightgun|joystick) if a paddle control is present
 
-\-adstick_device      enable (none|keyboard|mouse|lightgun|joystick) if an analog joystick control is present
+**\-adstick_device**      enable (none|keyboard|mouse|lightgun|joystick) if an analog joystick control is present
 
-\-pedal_device        enable (none|keyboard|mouse|lightgun|joystick) if a pedal control is present
+**\-pedal_device**        enable (none|keyboard|mouse|lightgun|joystick) if a pedal control is present
 
-\-dial_device         enable (none|keyboard|mouse|lightgun|joystick) if a dial control is present
+**\-dial_device**         enable (none|keyboard|mouse|lightgun|joystick) if a dial control is present
 
-\-trackball_device    enable (none|keyboard|mouse|lightgun|joystick) if a trackball control is present
+**\-trackball_device**    enable (none|keyboard|mouse|lightgun|joystick) if a trackball control is present
 
-\-lightgun_device     enable (none|keyboard|mouse|lightgun|joystick) if a lightgun control is present
+**\-lightgun_device**     enable (none|keyboard|mouse|lightgun|joystick) if a lightgun control is present
 
-\-positional_device   enable (none|keyboard|mouse|lightgun|joystick) if a positional control is present
+**\-positional_device**   enable (none|keyboard|mouse|lightgun|joystick) if a positional control is present
 
-\-mouse_device        enable (none|keyboard|mouse|lightgun|joystick) if a mouse control is present
+**\-mouse_device**        enable (none|keyboard|mouse|lightgun|joystick) if a mouse control is present
 
 	Each of these options controls autoenabling the mouse, joystick, or lightgun depending on the presence of a particular class of analog control for a particular game. For example, if you specify the option -paddle mouse, then any game that has a paddle control will automatically enable mouse controls just as if you had explicitly specified -mouse. Note that these controls override the values of -[no]mouse, -[no]joystick, etc.
 
@@ -751,27 +746,27 @@ Core input automatic enable options
 Debugging options
 -----------------
 
--[no]verbose / -[no]v
+**-[no]verbose** / **-[no]v**
 
 	Displays internal diagnostic information. This information is very useful for debugging problems with your configuration. IMPORTANT: when reporting bugs, please run with mame -verbose and include the resulting information. The default is OFF (-noverbose).
 
--[no]oslog
+**-[no]oslog**
 
 	Output error.log data to the system debugger. The default is OFF (-nooslog).
 
--[no]log
+**-[no]log**
 
 	Creates a file called error.log which contains all of the internal log messages generated by the MAME core and game drivers. The default is OFF (-nolog).
 
--[no]debug
+**-[no]debug**
 
 	Activates the integrated debugger. By default, the debugger is entered by pressing the tilde (~) key during emulation. It is also entered immediately at startup. The default is OFF (-nodebug).
 
--debugscript <filename>
+**-debugscript** *<filename>*
 
 	Specifies a file that contains a list of debugger commands to execute immediately upon startup. The default is NULL (no commands).
 
--[no]update_in_pause
+**-[no]update_in_pause**
 
 	Enables updating of the main screen bitmap while the game is paused. This means that the VIDEO_UPDATE callback will be called repeatedly during pause, which can be useful for debugging. The default is OFF (-noupdate_in_pause).
 
@@ -779,19 +774,19 @@ Debugging options
 Core communication options
 --------------------------
 
--comm_localhost <string>
+**-comm_localhost** *<string>*
 
 	Local address to bind to.  This can be a traditional xxx.xxx.xxx.xxx address or a string containing a resolvable hostname.  The default is value is "0.0.0.0"
 
--comm_localport <string>
+**-comm_localport** *<string>*
 
 	Local port to bind to.  This can be any traditional communications port as an unsigned 16-bit integer (0-65535).  The default value is "15122".
 
--comm_remotehost <string>
+**-comm_remotehost** *<string>*
 
 	Remote address to connect to.  This can be a traditional xxx.xxx.xxx.xxx address or a string containing a resolvable hostname.  The default is value is "0.0.0.0"
 
--comm_remoteport <string>
+**-comm_remoteport** *<string>*
 
 	Remote port to connect to.  This can be any traditional communications port as an unsigned 16-bit integer (0-65535).  The default value is "15122".
 
@@ -800,61 +795,57 @@ Core communication options
 Core misc options
 -----------------
 
--[no]drc
+**-[no]drc**
 	Enable DRC cpu core if available.  The default is ON (-drc).
 
-\-drc_use_c
+**\-drc_use_c**
 
 	Force DRC use the C code backend.  The default is OFF (-nodrc_use_c).
 
-\-drc_log_uml
+**\-drc_log_uml**
 
 	Write DRC UML disassembly log.  The default is OFF (-nodrc_log_uml).
 
-\-drc_log_native
+**\-drc_log_native**
 
 	write DRC native disassembly log.  The default is OFF (-nodrc_log_native).
 
--bios <biosname>
+**-bios** *<biosname>*
 
-	Specifies the specific BIOS to use with the current game, for game
-	systems that make use of a BIOS. The -listxml output will list all of
-	the possible BIOS names for a game. The default is 'default'.
+	Specifies the specific BIOS to use with the current game, for game systems that make use of a BIOS. The -listxml output will list all of the possible BIOS names for a game. The default is 'default'.
 
--[no]cheat / -[no]c
+**-[no]cheat** / **-[no]c**
 
-	Enables the reading of the cheat database, if present, and the Cheat
-	menu in the user interface. The	default is OFF (-nocheat).
+	Enables the reading of the cheat database, if present, and the Cheat menu in the user interface. The default is OFF (-nocheat).
 
--[no]skip_gameinfo
+**-[no]skip_gameinfo**
 
-	Forces MAME to skip displaying the game info screen. The default is
-	OFF (-noskip_gameinfo).
+	Forces MAME to skip displaying the game info screen. The default is OFF (-noskip_gameinfo).
 
--uifont <fontname>
+**-uifont <fontname>**
 
 	Specifies the name of a font file to use for the UI font.  If this font cannot be found or cannot be loaded, the system will fall back to its built-in UI font.  On some platforms 'fontname' can be a system font         name (TTF) instead of a (BDF) font file. The default is 'default' (use the OSD-determined default font).
 
--ramsize [n]
+**-ramsize** *[n]*
 
         Allows you to change the default RAM size (if supported by driver).
 
-\-confirm_quit
+**\-confirm_quit**
 
         Display a Confirm Quit dialong to screen on exit, requiring one extra step to exit MAME.  The default is OFF (-noconfirm_quit).
 
-\-ui_mouse
+**\-ui_mouse**
 
         Displays a mouse cursor when using the built-in UI for MAME.  The default is (-noui_mouse).
 
--autoboot_command "<command>"
+**-autoboot_command** *"<command>"*
 
         Command string to execute after machine boot (in quotes " ").  To issue a quote to the emulation, use """ in the string.  Using \n will issue a create a new line, issuing what was typed prior as a command. Example:  -autoboot_command "load """$""",8,1\n"
 
--autoboot_delay [n]
+**-autoboot_delay** *[n]*
 
         Timer delay (in seconds) to trigger command execution on autoboot.
 
--autoboot_script / -script [filename.lua]
+**-autoboot_script** / **-script** *[filename.lua]*
 
         File containing scripting to execute after machine boot.
