@@ -38,127 +38,104 @@ Default Keys
 All the keys below are fully configurable in the user interface. This list
 shows the standard keyboard configuration.
 
-================ =====================================================================================
-Key              Action
-------------------------------------------------------------------------------------------------------
 
-**Tab**          Toggles the configuration menu.
-
-**~**            Toggles the On Screen Display. When the on-screen display is
-                 visible, you can use the following keys to control it:
-
-                   * **Up** - select previous parameter to modify
-                   * **Down** - select next parameter to modify
-                   * **Left** - decrease the value of the selected parameter
-                   * **Right** - increase the value of the selected parameter
-                   * **Enter** - reset parameter value to its default
-
-                   * **Control+Left** - decrease the value by 10x
-                   * **Shift+Left** - decrease the value by 0.1x
-                   * **Alt+Left** - decrease the value by the smallest amount
-
-                   * **Control+Right** - increase the value by 10x
-                   * **Shift+Right** - increase the value by 0.1x
-                   * **Alt+Right** - increase the value by the smallest amount
-
-                 If you are running with -debug, this key sends a 'break' in emulation.
-
-**P**            Pauses the game.
-
-**Shift+P**      While paused, advances to next frame.
-
-**F2**           Service Mode for games that support it.
-
-**F3**           Resets the game.
-
-**Shift+F3**     Performs a "hard reset", which tears everything down and re-creates 
-                 it from scratch. This is a more thorough and complete reset than an F3.
-
-**LCtrl+F3**     [SDL ONLY] - Toggle uneven stretch.
-
-**F4**           Shows the game palette, decoded GFX, and any tilemaps. Use the Enter key to 
-                 switch between the three modes (palette, graphics, and tilemaps). Press F4 
-                 again to turn off the display. The key controls in each mode vary slightly:
-
-                    * Palette/colortable mode:
-                       * **[ ]** - switch between palette and colortable modes
-                       * **Up/Down** - scroll up/down one line at a time
-                       * **Page Up/Page Down** - scroll up/down one page at a time
-                       * **Home/End** - move to top/bottom of list
-                       * **-/+** - increase/decrease the number of colors per row
-                       * **Enter** - switch to graphics viewer
-
-                    * Graphics mode:
-                       * **[ ]** - switch between different graphics sets
-                       * **Up/Down** - scroll up/down one line at a time
-                       * **Page Up/Page Down** - scroll up/down one page at a time
-                       * **Home/End** - move to top/bottom of list
-                       * **Left/Right** - change color displayed
-                       * **R** - rotate tiles 90 degrees clockwise
-                       * **-/+** - increase/decrease the number of tiles per row
-                       * **Enter** - switch to tilemap viewer
-
-                    * Tilemap mode:
-                       * **[ ]** - switch between different tilemaps
-                       * **Up/Down/Left/Right** - scroll 8 pixels at a time
-                       * **Shift+Up/Down/Left/Right** - scroll 1 pixel at a time
-                       * **Control+Up/Down/Left/Right** - scroll 64 pixels at a time
-                       * **R** - rotate tilemap view 90 degrees clockwise
-                       * **-/+** - increase/decrease the zoom factor
-                       * **Enter** - switch to palette/colortable mode
-
-                 Note: Not all games have decoded graphics and/or tilemaps.
-
-
-**LCtrl+F4**     [*SDL ONLY*] - Toggles keeping aspect ratio.
-       
-**LCtrl+F5**     [*SDL ONLY*] - Toggle Filter.
-       
-**Alt+Ctrl+F5**  [*NON SDL MS WINDOWS ONLY*] - Toggle HLSL Post-Processing.
-       
-**F6**           Toggle cheat mode (if started with "-cheat").
-       
-**LCtrl+F6**     Decrease Prescaling.
-       
-**F7**           Load a save state. You will be requested to press a key to determine which save state you wish to load. *Note that the save state feature is not supported for a large number of drivers. If support is not enabled for a given driver, you will receive a warning when attempting to save or load.*
-       
-**LCtrl+F7**     Increase Prescaling.
-       
-**Shift+F7**     Create a save state. Requires an additional keypress to identify the state, similar to the load option above.
-       
-**F8**           Decrease frame skip on the fly.
-       
-**F9**           Increase frame skip on the fly.
-       
-**F10**          Toggle speed throttling.
-       
-**F11**          Toggles speed display.
-       
-**Shift+F11**    Toggles internal profiler display (if compiled in).
-       
-**Alt+F11**      Record HLSL Rendered Video.
-       
-**F12**          Saves a screen snapshot.
-       
-**Alt+F12**      Take HLSL Rendered Snapshot.
-       
-**Insert**       [*WINDOW ONLY, NON SDL*] Fast forward. While held, runs game with throttling disabled and with the maximum frameskip.
-**Page DN**      [*SDL ONLY*] Fast forward. While held, runs the game with throttling disabled and with the maximum frameskip.
-
-**Alt+ENTER**    Toggles between full-screen and windowed mode.
-
-**Scroll Lock**  Default mapping for the **uimodekey**.  This key allows user to
-                 disable and enable the emulated keyboard in machines that require
-                 it.  All emulations which require emulated keyboards will start in
-                 that mode and you can only access the internal UI (hitting TAB) by
-                 first hitting this key.  You can change the initial status of the
-                 emulated keyboard is presented upon start by using -ui_active trigger
-                 as detailed below.
-       
-**Escape**       Exits emulator.
-       
-================ =====================================================================================
-
+================  ============================================================================
+ Key              | Action
+----------------  ----------------------------------------------------------------------------
+**Tab**           | Toggles the configuration menu.
+**~**             | Toggles the On Screen Display. When the on-screen display is
+                  | visible, you can use the following keys to control it:
+                  | 
+                  | * **Up** - select previous parameter to modify
+                  | * **Down** - select next parameter to modify
+                  | * **Left** - decrease the value of the selected parameter
+                  | * **Right** - increase the value of the selected parameter
+                  | * **Enter** - reset parameter value to its default
+                  | * **Control+Left** - decrease the value by 10x
+                  | * **Shift+Left** - decrease the value by 0.1x
+                  | * **Alt+Left** - decrease the value by the smallest amount
+                  | * **Control+Right** - increase the value by 10x
+                  | * **Shift+Right** - increase the value by 0.1x
+                  | * **Alt+Right** - increase the value by the smallest amount
+                  | 
+                  | If you are running with -debug, this key sends a 'break' in emulation.
+**P**             | Pauses the game.
+**Shift+P**       | While paused, advances to next frame.
+**F2**            | Service Mode for games that support it.
+**F3**            | Resets the game.
+**Shift+F3**      | Performs a "hard reset", which tears everything down and re-creates it 
+                  | from scratch. This is a more thorough and complete reset than the reset
+                  | you get from hitting F3.
+**LCtrl+F3**      | [SDL ONLY] - Toggle uneven stretch.
+**F4**            | Shows the game palette, decoded GFX, and any tilemaps. Use the Enter key to
+                  | switch between the three modes (palette, graphics, and tilemaps). Press F4
+                  | again to turn off the display. The key controls in each mode vary slightly:
+                  | 
+                  | Palette/colortable mode:
+                  |  * **[ ]** - switch between palette and colortable modes 
+                  |  * **Up/Down** - scroll up/down one line at a time
+                  |  * **Page Up/Page Down** - scroll up/down one page at a time
+                  |  * **Home/End** - move to top/bottom of list
+                  |  * **-/+** - increase/decrease the number of colors per row
+                  |  * **Enter** - switch to graphics viewer
+                  | 
+                  | Graphics mode:
+                  |  * **[ ]** - switch between different graphics sets
+                  |  * **Up/Down** - scroll up/down one line at a time
+                  |  * **Page Up/Page Down** - scroll up/down one page at a time
+                  |  * **Home/End** - move to top/bottom of list
+                  |  * **Left/Right** - change color displayed
+                  |  * **R** - rotate tiles 90 degrees clockwise
+                  |  * **-/+** - increase/decrease the number of tiles per row
+                  |  * **Enter** - switch to tilemap viewer
+                  | 
+                  | Tilemap mode:
+                  |  * **[ ]** - switch between different tilemaps
+                  |  * **Up/Down/Left/Right** - scroll 8 pixels at a time
+                  |  * **Shift+Up/Down/Left/Right** - scroll 1 pixel at a time
+                  |  * **Control+Up/Down/Left/Right** - scroll 64 pixels at a time
+                  |  * **R** - rotate tilemap view 90 degrees clockwise
+                  |  * **-/+** - increase/decrease the zoom factor
+                  |  * **Enter** - switch to palette/colortable mode
+                  | 
+                  | Note: Not all games have decoded graphics and/or tilemaps.
+**LCtrl+F4**      | [*SDL ONLY*] - Toggles keeping aspect ratio.
+**LCtrl+F5**      | [*SDL ONLY*] - Toggle Filter.
+**Alt+Ctrl+F5**   | [*NON SDL MS WINDOWS ONLY*] - Toggle HLSL Post-Processing.
+**F6**            | Toggle cheat mode (if started with "-cheat").
+**LCtrl+F6**      | Decrease Prescaling.
+**F7**            | Load a save state. You will be requested to press a key to determine which
+                  | save state you wish to load. 
+                  |
+                  | *Note that the save state feature is not supported for a large number of*
+                  | *drivers. If support is not enabled for a given driver, you will receive* 
+                  | *a warning when attempting to save or load.*
+**LCtrl+F7**      | Increase Prescaling.
+**Shift+F7**      | Create a save state. Requires an additional keypress to identify the state,
+                  | similar to the load option above.
+**F8**            | Decrease frame skip on the fly.
+**F9**            | Increase frame skip on the fly.
+**F10**           | Toggle speed throttling.
+**F11**           | Toggles speed display.
+**Shift+F11**     | Toggles internal profiler display (if compiled in).
+**Alt+F11**       | Record HLSL Rendered Video.
+**F12**           | Saves a screen snapshot.
+**Alt+F12**       | Take HLSL Rendered Snapshot.
+**Insert**        | [*WINDOW ONLY, NON-SDL*] Fast forward. While held, runs game with 
+                  | throttling disabled and with the maximum frameskip.
+**Page DN**       | [*SDL ONLY*] Fast forward. While held, runs the game with throttling 
+                  | disabled and with the maximum frameskip.
+**Alt+ENTER**     | Toggles between full-screen and windowed mode.
+**Scroll Lock**   | Default mapping for the **uimodekey**.  
+                  |
+                  | This key allows users to disable and enable the emulated keyboard
+                  | in machines that require it.  All emulations which require emulated
+                  | keyboards will start in that mode and you can only access the internal
+                  | UI (hitting TAB) by first hitting this key. You can change the initial
+                  | status of the emulated keyboard as presented upon start by using
+                  | **-ui_active** as detailed below.
+**Escape**        | Exits emulator.
+================  ============================================================================
 
 Core commands
 -------------
@@ -208,8 +185,7 @@ Note: By default, all the '**-list**' commands below write info to the screen. I
 
   > filename
 
-...where 'filename' is the textfile's path and name
-(e.g., c:\mame\list.txt).
+...where 'filename' is the textfile's path and name (e.g., c:\\mame\\list.txt).
 
 **-listxml** / **-lx** [*<gamename|wildcard>*]
 
@@ -251,7 +227,7 @@ Note: By default, all the '**-list**' commands below write info to the screen. I
 
 	Checks for invalid or missing samples. By default all drivers that have valid ZIP files or directories in the samplepath are verified;	however, you can limit this list by specifying a driver name or wildcard after the **-verifyroms** command.
 
-**-romident** [*path\to\romstocheck.zip*]
+**-romident** [*path\\to\\romstocheck.zip*]
 
 	Attempts to identify ROM files, if they are known to MAME, in the specified .zip file or directory. This command can be used to try and identify ROM sets taken from unknown boards. On exit, the errorlevel is returned as one of the following:
 
@@ -335,7 +311,7 @@ Configuration options
 		- <parent>.ini   (for clones only, may be called recursively)
 		- <gamename>.ini
 
-        (See advanced configuration for further details)
+        (See :ref:`advanced-multi-CFG` for further details)
 
 	The settings in the later INIs override those in the earlier INIs.
 	So, for example, if you wanted to disable overlay effects in the vector games, you can create a vector.ini with the "effect none" line in it, and it will override whatever effect value you have in your mame.ini. The default is ON (-readconfig).
@@ -379,7 +355,7 @@ Core search path options
 
 **-crosshairpath** *<path>*
 
-	Specifies a list of paths within which to find crosshair files. Multiple paths can be specified by separating them with semicolons. The default is 'crsshair' (that is, a directory "crsshair" in the same directory as the MAME executable).  If the Crosshair is set to default in the menu, MAME will look for gamename\cross#.png and then cross#.png in the specified crsshairpath, where # is the player number.  Failing that, MAME will use built-in default crosshairs.
+	Specifies a list of paths within which to find crosshair files. Multiple paths can be specified by separating them with semicolons. The default is 'crsshair' (that is, a directory "crsshair" in the same directory as the MAME executable).  If the Crosshair is set to default in the menu, MAME will look for gamename\\cross#.png and then cross#.png in the specified crsshairpath, where # is the player number.  Failing that, MAME will use built-in default crosshairs.
 
 
 
@@ -449,7 +425,7 @@ Core state/playback options
 
 **-snapname** *<name>*
 
-	Describes how MAME should name files for snapshots. <name> is a string that provides a template that is used to generate a filename. Three simple substitutions are provided: the / character represents the path separator on any target platform (even Windows); the string %g represents the driver name of the current game; and the string %i represents an incrementing index. If %i is omitted, then each snapshot taken will overwrite the previous one; otherwise, MAME will find the next empty value for %i and use that for a filename. The default is %g/%i, which creates a separate folder for each game, and names the snapshots under it starting with 0000 and increasing from there.  In addition to the above, for drivers using different  media, like carts or floppy disks, you can also use the %d_[media] indicator.  Replace [media] with the media switch you want to use. A few examples: if you use 'mame robby -snapname foo/%g%i' snapshots will be saved as 'snaps\foo\robby0000.png' , 'snaps\foo\robby0001.png' and so on ; if you use 'mess nes -cart robby -snapname %g/%d_cart' snapshots will be saved as 'snaps\nes\robby.png' ; if you use 'mess c64 -flop1 robby -snapname %g/%d_flop1/%i' snapshots will be saved as 'snaps\c64\robby\0000.png'.
+	Describes how MAME should name files for snapshots. <name> is a string that provides a template that is used to generate a filename. Three simple substitutions are provided: the / character represents the path separator on any target platform (even Windows); the string %g represents the driver name of the current game; and the string %i represents an incrementing index. If %i is omitted, then each snapshot taken will overwrite the previous one; otherwise, MAME will find the next empty value for %i and use that for a filename. The default is %g/%i, which creates a separate folder for each game, and names the snapshots under it starting with 0000 and increasing from there.  In addition to the above, for drivers using different  media, like carts or floppy disks, you can also use the %d_[media] indicator.  Replace [media] with the media switch you want to use. A few examples: if you use 'mame robby -snapname foo/%g%i' snapshots will be saved as 'snaps\\foo\\robby0000.png' , 'snaps\\foo\\robby0001.png' and so on ; if you use 'mess nes -cart robby -snapname %g/%d_cart' snapshots will be saved as 'snaps\\nes\\robby.png' ; if you use 'mess c64 -flop1 robby -snapname %g/%d_flop1/%i' snapshots will be saved as 'snaps\\c64\\robby\\0000.png'.
 
 **-snapsize** *<width>x<height>*
 
@@ -465,7 +441,7 @@ Core state/playback options
 
 **-statename** *<name>*
 
-	Describes how MAME should store save state files, relative to the state_directory path. <name> is a string that provides a template that is used to generate a relative path. Two simple substitutions are provided: the / character represents the path separator on any target platform (even Windows); the string %g represents the driver name of the current game. The default is %g, which creates a separate folder for each game.  In addition to the above, for drivers using different media, like carts or floppy disks, you can also use the %d_[media] indicator.  Replace [media] with the media switch you want to use. A few examples: if you use 'mame robby -statename foo/%g' save states will be stored inside 'sta\foo\robby\' ; if you use 'mess nes -cart robby -statename %g/%d_cart' save states will be stored inside 'sta\nes\robby\' ; if you use 'mess c64 -flop1 robby -statename %g/%d_flop1' save states will be stored inside 'sta\c64\robby\'.
+	Describes how MAME should store save state files, relative to the state_directory path. <name> is a string that provides a template that is used to generate a relative path. Two simple substitutions are provided: the / character represents the path separator on any target platform (even Windows); the string %g represents the driver name of the current game. The default is %g, which creates a separate folder for each game.  In addition to the above, for drivers using different media, like carts or floppy disks, you can also use the %d_[media] indicator.  Replace [media] with the media switch you want to use. A few examples: if you use 'mame robby -statename foo/%g' save states will be stored inside 'sta\\foo\\robby\\' ; if you use 'mess nes -cart robby -statename %g/%d_cart' save states will be stored inside 'sta\\nes\\robby\\' ; if you use 'mess c64 -flop1 robby -statename %g/%d_flop1' save states will be stored inside 'sta\\c64\\robby\\'.
 
 **-[no]burnin**
 
@@ -840,7 +816,7 @@ Core misc options
 
 **-autoboot_command** *"<command>"*
 
-        Command string to execute after machine boot (in quotes " ").  To issue a quote to the emulation, use """ in the string.  Using \n will issue a create a new line, issuing what was typed prior as a command. Example:  -autoboot_command "load """$""",8,1\n"
+        Command string to execute after machine boot (in quotes " ").  To issue a quote to the emulation, use """ in the string.  Using \\n will issue a create a new line, issuing what was typed prior as a command. Example:  -autoboot_command "load """$""",8,1\\n"
 
 **-autoboot_delay** *[n]*
 
