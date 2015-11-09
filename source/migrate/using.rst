@@ -1,6 +1,8 @@
 Configuring and Using MAME
 ==========================
 
+*Current as of November 4th, 2015, version 0.167*
+
 This section describes general usage information about MAME. It is intended to cover aspects of using and configuring MAME that are common across operating systems. For additional OS-specific options, please see the separate documentation for your platform of choice.
 
 
@@ -40,7 +42,7 @@ shows the standard keyboard configuration.
 
 
 ================  ============================================================================
- Key              | Action
+ Key              |Action
 ----------------  ----------------------------------------------------------------------------
 **Tab**           | Toggles the configuration menu.
 **~**             | Toggles the On Screen Display. When the on-screen display is
