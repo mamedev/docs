@@ -205,98 +205,12 @@ Filters are a means to process data being written into or read out of an image i
 Imgtool Format Info
 ===================
 
-  =======================  ========================================================
-  amiga_floppy             Amiga floppy disk image (OFS/FFS format)
-  apple2_do_prodos_525     Apple ][ DOS order disk image (ProDOS format)
-  apple2_nib_prodos_525    Apple ][ Nibble order disk image (ProDOS format)
-  apple2_po_prodos_525     Apple ][ ProDOS order disk image (ProDOS format)
-  apple35_2img_prodos_35   Apple ][gs 2IMG disk image (ProDOS format)
-  apple35_dc_mac_hfs       Apple DiskCopy disk image (Mac HFS Floppy)
-  apple35_dc_mac_mfs       Apple DiskCopy disk image (Mac MFS Floppy)
-  apple35_dc_prodos_35     Apple DiskCopy disk image (ProDOS format)
-  apple35_raw_mac_hfs      Apple raw 3.5" disk image (Mac HFS Floppy)
-  apple35_raw_mac_mfs      Apple raw 3.5" disk image (Mac MFS Floppy)
-  apple35_raw_prodos_35    Apple raw 3.5" disk image (ProDOS format)
-  coco_dmk_os9             CoCo DMK disk image (OS-9 format)
-  coco_dmk_rsdos           CoCo DMK disk image (RS-DOS format)
-  coco_jvc_os9             CoCo JVC disk image (OS-9 format)
-  coco_jvc_rsdos           CoCo JVC disk image (RS-DOS format)
-  coco_os9_os9             CoCo OS-9 disk image (OS-9 format)
-  coco_vdk_os9             CoCo VDK disk image (OS-9 format)
-  coco_vdk_rsdos           CoCo VDK disk image (RS-DOS format)
-  concept                  Concept floppy disk image
-  cqm_bml3                 CopyQM floppy disk image (Basic Master Level 3 format)
-  cqm_fat                  CopyQM floppy disk image (FAT format)
-  cqm_mac_hfs              CopyQM floppy disk image (Mac HFS Floppy)
-  cqm_mac_mfs              CopyQM floppy disk image (Mac MFS Floppy)
-  cqm_os9                  CopyQM floppy disk image (OS-9 format)
-  cqm_prodos_35            CopyQM floppy disk image (ProDOS format)
-  cqm_prodos_525           CopyQM floppy disk image (ProDOS format)
-  cqm_rsdos                CopyQM floppy disk image (RS-DOS format)
-  cqm_vzdos                CopyQM floppy disk image (VZ-DOS format)
-  cybiko                   Cybiko Classic File System
-  cybikoxt                 Cybiko Xtreme File System
-  d88_bml3                 D88 Floppy Disk image (Basic Master Level 3 format)
-  d88_fat                  D88 Floppy Disk image (FAT format)
-  d88_mac_hfs              D88 Floppy Disk image (Mac HFS Floppy)
-  d88_mac_mfs              D88 Floppy Disk image (Mac MFS Floppy)
-  d88_os9                  D88 Floppy Disk image (OS-9 format)
-  d88_prodos_35            D88 Floppy Disk image (ProDOS format)
-  d88_prodos_525           D88 Floppy Disk image (ProDOS format)
-  d88_rsdos                D88 Floppy Disk image (RS-DOS format)
-  d88_vzdos                D88 Floppy Disk image (VZ-DOS format)
-  dsk_bml3                 DSK floppy disk image (Basic Master Level 3 format)
-  dsk_fat                  DSK floppy disk image (FAT format)
-  dsk_mac_hfs              DSK floppy disk image (Mac HFS Floppy)
-  dsk_mac_mfs              DSK floppy disk image (Mac MFS Floppy)
-  dsk_os9                  DSK floppy disk image (OS-9 format)
-  dsk_prodos_35            DSK floppy disk image (ProDOS format)
-  dsk_prodos_525           DSK floppy disk image (ProDOS format)
-  dsk_rsdos                DSK floppy disk image (RS-DOS format)
-  dsk_vzdos                DSK floppy disk image (VZ-DOS format)
-  fdi_bml3                 Formatted Disk Image (Basic Master Level 3 format)
-  fdi_fat                  Formatted Disk Image (FAT format)
-  fdi_mac_hfs              Formatted Disk Image (Mac HFS Floppy)
-  fdi_mac_mfs              Formatted Disk Image (Mac MFS Floppy)
-  fdi_os9                  Formatted Disk Image (OS-9 format)
-  fdi_prodos_35            Formatted Disk Image (ProDOS format)
-  fdi_prodos_525           Formatted Disk Image (ProDOS format)
-  fdi_rsdos                Formatted Disk Image (RS-DOS format)
-  fdi_vzdos                Formatted Disk Image (VZ-DOS format)
-  hp48                     HP48 SX/GX memory card
-  imd_bml3                 IMD floppy disk image (Basic Master Level 3 format)
-  imd_fat                  IMD floppy disk image (FAT format)
-  imd_mac_hfs              IMD floppy disk image (Mac HFS Floppy)
-  imd_mac_mfs              IMD floppy disk image (Mac MFS Floppy)
-  imd_os9                  IMD floppy disk image (OS-9 format)
-  imd_prodos_35            IMD floppy disk image (ProDOS format)
-  imd_prodos_525           IMD floppy disk image (ProDOS format)
-  imd_rsdos                IMD floppy disk image (RS-DOS format)
-  imd_vzdos                IMD floppy disk image (VZ-DOS format)
-  mess_hd                  MESS hard disk image
-  pc99fm                   TI99 Diskette (PC99 FM format)
-  pc99mfm                  TI99 Diskette (PC99 MFM format)
-  pc_chd                   PC CHD disk image
-  pc_dsk_fat               PC floppy disk image (FAT format)
-  psionpack                Psion Organiser II Datapack
-  td0_bml3                 Teledisk floppy disk image (Basic Master Level 3 format)
-  td0_fat                  Teledisk floppy disk image (FAT format)
-  td0_mac_hfs              Teledisk floppy disk image (Mac HFS Floppy)
-  td0_mac_mfs              Teledisk floppy disk image (Mac MFS Floppy)
-  td0_os9                  Teledisk floppy disk image (OS-9 format)
-  td0_prodos_35            Teledisk floppy disk image (ProDOS format)
-  td0_prodos_525           Teledisk floppy disk image (ProDOS format)
-  td0_rsdos                Teledisk floppy disk image (RS-DOS format)
-  td0_vzdos                Teledisk floppy disk image (VZ-DOS format)
-  thom_fd                  Thomson .fd disk image, BASIC format
-  thom_qd                  Thomson .qd disk image, BASIC format
-  thom_sap                 Thomson .sap disk image, BASIC format
-  ti990hd                  TI990 Hard Disk
-  ti99_old                 TI99 Diskette (old MESS format)
-  ti99hd                   TI99 Harddisk
-  v9t9                     TI99 Diskette (V9T9 format)
-  vtech1_vzdos             Laser/VZ disk image (VZ-DOS format)
-  =======================  ========================================================
+
+
+
+
+Amiga floppy disk image (OFS/FFS format) -  (*amiga_floppy*)
+------------------------------------------------------------
 
 
 Driver specific options for module 'amiga_floppy':
@@ -304,7 +218,6 @@ Driver specific options for module 'amiga_floppy':
 No image specific file options
 
 Image specific creation options (usable on the 'create' command):
-
 
 ================ ============================== =============================================================
 Option           Allowed values                 Description
@@ -315,6 +228,8 @@ Option           Allowed values                 Description
 ================ ============================== =============================================================
 
 
+Apple ][ DOS order disk image (ProDOS format) -  (*apple2_do_prodos_525*)
+-------------------------------------------------------------------------
 
 
 Driver specific options for module 'apple2_do_prodos_525':
@@ -334,6 +249,10 @@ Option           Allowed values                 Description
 ================ ============================== =============================================================
 
 
+Apple ][ Nibble order disk image (ProDOS format) -  (*apple2_nib_prodos_525*)
+-----------------------------------------------------------------------------
+
+
 Driver specific options for module 'apple2_nib_prodos_525':
 
 No image specific file options
@@ -349,6 +268,10 @@ Option           Allowed values                 Description
 --sectorlength   256                            Sector Bytes
 --firstsectorid  0                              First Sector
 ================ ============================== =============================================================
+
+
+Apple ][ ProDOS order disk image (ProDOS format) -  (*apple2_po_prodos_525*)
+----------------------------------------------------------------------------
 
 
 Driver specific options for module 'apple2_po_prodos_525':
@@ -368,6 +291,10 @@ Option           Allowed values                 Description
 ================ ============================== =============================================================
 
 
+Apple ][gs 2IMG disk image (ProDOS format) -  (*apple35_2img_prodos_35*)
+------------------------------------------------------------------------
+
+
 Driver specific options for module 'apple35_2img_prodos_35':
 
 No image specific file options
@@ -382,6 +309,10 @@ Option           Allowed values                 Description
 --sectorlength   512                            Sector Bytes
 --firstsectorid  0                              First Sector
 ================ ============================== =============================================================
+
+
+Apple DiskCopy disk image (Mac HFS Floppy) -  (*apple35_dc_mac_hfs*)
+--------------------------------------------------------------------
 
 
 Driver specific options for module 'apple35_dc_mac_hfs':
@@ -400,6 +331,10 @@ Option           Allowed values                 Description
 ================ ============================== =============================================================
 
 
+Apple DiskCopy disk image (Mac MFS Floppy) -  (*apple35_dc_mac_mfs*)
+--------------------------------------------------------------------
+
+
 Driver specific options for module 'apple35_dc_mac_mfs':
 
 No image specific file options
@@ -414,6 +349,10 @@ Option           Allowed values                 Description
 --sectorlength   512                            Sector Bytes
 --firstsectorid  0                              First Sector
 ================ ============================== =============================================================
+
+
+Apple DiskCopy disk image (ProDOS format)  - (*apple35_dc_prodos_35*)
+---------------------------------------------------------------------
 
 
 Driver specific options for module 'apple35_dc_prodos_35':
@@ -432,6 +371,10 @@ Option           Allowed values                 Description
 ================ ============================== =============================================================
 
 
+Apple raw 3.5" disk image (Mac HFS Floppy) -  (*apple35_raw_mac_hfs*)
+---------------------------------------------------------------------
+
+
 Driver specific options for module 'apple35_raw_mac_hfs':
 
 No image specific file options
@@ -446,6 +389,10 @@ Option           Allowed values                 Description
 --sectorlength   512                            Sector Bytes
 --firstsectorid  0                              First Sector
 ================ ============================== =============================================================
+
+
+Apple raw 3.5" disk image (Mac MFS Floppy) -  (*apple35_raw_mac_mfs*)
+---------------------------------------------------------------------
 
 
 Driver specific options for module 'apple35_raw_mac_mfs':
@@ -464,6 +411,10 @@ Option           Allowed values                 Description
 ================ ============================== =============================================================
 
 
+Apple raw 3.5" disk image (ProDOS format) - (*apple35_raw_prodos_35*)
+---------------------------------------------------------------------
+
+
 Driver specific options for module 'apple35_raw_prodos_35':
 
 No image specific file options
@@ -478,6 +429,10 @@ Option           Allowed values                 Description
 --sectorlength   512                            Sector Bytes
 --firstsectorid  0                              First Sector
 ================ ============================== =============================================================
+
+
+CoCo DMK disk image (OS-9 format) -  (*coco_dmk_os9*)
+-----------------------------------------------------
 
 
 Driver specific options for module 'coco_dmk_os9':
@@ -496,6 +451,10 @@ Option           Allowed values                  Description
 --interleave     0-17                            Interleave
 --firstsectorid  0-1                             First Sector
 ================ =============================== =============================================================
+
+
+CoCo DMK disk image (RS-DOS format) -  (*coco_dmk_rsdos*)
+---------------------------------------------------------
 
 
 Driver specific options for module 'coco_dmk_rsdos':
@@ -523,6 +482,10 @@ Option           Allowed values                  Description
 ================ =============================== =============================================================
 
 
+CoCo JVC disk image (OS-9 format) -  (*coco_jvc_os9*)
+-----------------------------------------------------
+
+
 Driver specific options for module 'coco_jvc_os9':
 
 No image specific file options
@@ -538,6 +501,10 @@ Option           Allowed values                 Description
 --sectorlength   128/256/512/1024               Sector Bytes
 --firstsectorid  0-1                            First Sector
 ================ ============================== =============================================================
+
+
+CoCo JVC disk image (RS-DOS format) -  (*coco_jvc_rsdos*)
+---------------------------------------------------------
 
 
 Driver specific options for module 'coco_jvc_rsdos':
@@ -564,6 +531,10 @@ Option           Allowed values                 Description
 ================ ============================== =============================================================
 
 
+CoCo OS-9 disk image (OS-9 format) -  (*coco_os9_os9*)
+------------------------------------------------------
+
+
 Driver specific options for module 'coco_os9_os9':
 
 No image specific file options
@@ -580,6 +551,9 @@ Option           Allowed values                 Description
 --firstsectorid  1                              First Sector
 ================ ============================== =============================================================
 
+
+CoCo VDK disk image (OS-9 format) -  (*coco_vdk_os9*)
+-----------------------------------------------------
 
 
 Driver specific options for module 'coco_vdk_os9':
@@ -598,6 +572,9 @@ Option           Allowed values                 Description
 --firstsectorid  1                              First Sector
 ================ ============================== =============================================================
 
+
+CoCo VDK disk image (RS-DOS format) -  (*coco_vdk_rsdos*)
+---------------------------------------------------------
 
 
 Driver specific options for module 'coco_vdk_rsdos':
@@ -625,12 +602,19 @@ Option           Allowed values                 Description
 ================ ============================== =============================================================
 
 
+Concept floppy disk image -  (*concept*)
+----------------------------------------
+
 
 Driver specific options for module 'concept':
 
 No image specific file options
 
 No image specific creation options
+
+
+CopyQM floppy disk image (Basic Master Level 3 format) -  (*cqm_bml3*)
+----------------------------------------------------------------------
 
 
 Driver specific options for module 'cqm_bml3':
@@ -644,8 +628,11 @@ Option           Allowed values                 Description
 --ascii          ascii/binary                   Ascii flag
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+CopyQM floppy disk image (FAT format) -  (*cqm_fat*)
+----------------------------------------------------
 
 
 Driver specific options for module 'cqm_fat':
@@ -655,11 +642,19 @@ No image specific file options
 No image specific creation options
 
 
+CopyQM floppy disk image (Mac HFS Floppy) -  (*cqm_mac_hfs*)
+------------------------------------------------------------
+
+
 Driver specific options for module 'cqm_mac_hfs':
 
 No image specific file options
 
 No image specific creation options
+
+
+CopyQM floppy disk image (Mac MFS Floppy) -  (*cqm_mac_mfs*)
+------------------------------------------------------------
 
 
 Driver specific options for module 'cqm_mac_mfs':
@@ -669,11 +664,19 @@ No image specific file options
 No image specific creation options
 
 
+CopyQM floppy disk image (OS-9 format) -  (*cqm_os9*)
+-----------------------------------------------------
+
+
 Driver specific options for module 'cqm_os9':
 
 No image specific file options
 
 No image specific creation options
+
+
+CopyQM floppy disk image (ProDOS format) -  (*cqm_prodos_35*)
+-------------------------------------------------------------
 
 
 Driver specific options for module 'cqm_prodos_35':
@@ -683,11 +686,19 @@ No image specific file options
 No image specific creation options
 
 
+CopyQM floppy disk image (ProDOS format) -  (*cqm_prodos_525*)
+--------------------------------------------------------------
+
+
 Driver specific options for module 'cqm_prodos_525':
 
 No image specific file options
 
 No image specific creation options
+
+
+CopyQM floppy disk image (RS-DOS format) -  (*cqm_rsdos*)
+---------------------------------------------------------
 
 
 Driver specific options for module 'cqm_rsdos':
@@ -701,8 +712,11 @@ Option           Allowed values                 Description
 --ascii          ascii/binary                   Ascii flag
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+CopyQM floppy disk image (VZ-DOS format) -  (*cqm_vzdos*)
+---------------------------------------------------------
 
 
 Driver specific options for module 'cqm_vzdos':
@@ -716,8 +730,11 @@ Option           Allowed values                 Description
 --fname          intern/extern                  Filename
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+Cybiko Classic File System -  (*cybiko*)
+----------------------------------------
 
 
 Driver specific options for module 'cybiko':
@@ -733,6 +750,9 @@ Option           Allowed values                 Description
 ================ ============================== =============================================================
 
 
+Cybiko Xtreme File System -  (*cybikoxt*)
+-----------------------------------------
+
 
 Driver specific options for module 'cybikoxt':
 
@@ -740,6 +760,9 @@ No image specific file options
 
 No image specific creation options
 
+
+D88 Floppy Disk image (Basic Master Level 3 format) -  (*d88_bml3*)
+-------------------------------------------------------------------
 
 Driver specific options for module 'd88_bml3':
 
@@ -752,8 +775,11 @@ Option           Allowed values                 Description
 --ascii          ascii/binary                   Ascii flag
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+D88 Floppy Disk image (FAT format) -  (*d88_fat*)
+-------------------------------------------------
 
 
 Driver specific options for module 'd88_fat':
@@ -763,11 +789,19 @@ No image specific file options
 No image specific creation options
 
 
+D88 Floppy Disk image (Mac HFS Floppy) -  (*d88_mac_hfs*)
+---------------------------------------------------------
+
+
 Driver specific options for module 'd88_mac_hfs':
 
 No image specific file options
 
 No image specific creation options
+
+
+D88 Floppy Disk image (Mac MFS Floppy) -  (*d88_mac_mfs*)
+---------------------------------------------------------
 
 
 Driver specific options for module 'd88_mac_mfs':
@@ -777,11 +811,19 @@ No image specific file options
 No image specific creation options
 
 
+D88 Floppy Disk image (OS-9 format) -  (*d88_os9*)
+--------------------------------------------------
+
+
 Driver specific options for module 'd88_os9':
 
 No image specific file options
 
 No image specific creation options
+
+
+D88 Floppy Disk image (OS-9 format) -  (*d88_os9*)
+--------------------------------------------------
 
 
 Driver specific options for module 'd88_prodos_35':
@@ -791,11 +833,19 @@ No image specific file options
 No image specific creation options
 
 
+D88 Floppy Disk image (ProDOS format) -  (*d88_prodos_525*)
+-----------------------------------------------------------
+
+
 Driver specific options for module 'd88_prodos_525':
 
 No image specific file options
 
 No image specific creation options
+
+
+D88 Floppy Disk image (RS-DOS format) -  (*d88_rsdos*)
+------------------------------------------------------
 
 
 Driver specific options for module 'd88_rsdos':
@@ -809,8 +859,11 @@ Option           Allowed values                 Description
 --ascii          ascii/binary                   Ascii flag
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+D88 Floppy Disk image (VZ-DOS format) -  (*d88_vzdos*)
+------------------------------------------------------
 
 
 Driver specific options for module 'd88_vzdos':
@@ -827,6 +880,10 @@ Option           Allowed values                 Description
 No image specific creation options
 
 
+DSK floppy disk image (Basic Master Level 3 format) -  (*dsk_bml3*)
+-------------------------------------------------------------------
+
+
 Driver specific options for module 'dsk_bml3':
 
 Image specific file options (usable on the 'put' command):
@@ -838,8 +895,11 @@ Option           Allowed values                 Description
 --ascii          ascii/binary                   Ascii flag
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+DSK floppy disk image (FAT format) -  (*dsk_fat*)
+-------------------------------------------------
 
 
 Driver specific options for module 'dsk_fat':
@@ -849,11 +909,19 @@ No image specific file options
 No image specific creation options
 
 
+DSK floppy disk image (Mac HFS Floppy) -  (*dsk_mac_hfs*)
+---------------------------------------------------------
+
+
 Driver specific options for module 'dsk_mac_hfs':
 
 No image specific file options
 
 No image specific creation options
+
+
+DSK floppy disk image (Mac MFS Floppy) -  (*dsk_mac_mfs*)
+---------------------------------------------------------
 
 
 Driver specific options for module 'dsk_mac_mfs':
@@ -863,11 +931,19 @@ No image specific file options
 No image specific creation options
 
 
+DSK floppy disk image (OS-9 format) -  (*dsk_os9*)
+--------------------------------------------------
+
+
 Driver specific options for module 'dsk_os9':
 
 No image specific file options
 
 No image specific creation options
+
+
+DSK floppy disk image (ProDOS format) -  (*dsk_prodos_35*)
+----------------------------------------------------------
 
 
 Driver specific options for module 'dsk_prodos_35':
@@ -877,11 +953,19 @@ No image specific file options
 No image specific creation options
 
 
+DSK floppy disk image (ProDOS format) -  (*dsk_prodos_525*)
+-----------------------------------------------------------
+
+
 Driver specific options for module 'dsk_prodos_525':
 
 No image specific file options
 
 No image specific creation options
+
+
+DSK floppy disk image (RS-DOS format) -  (*dsk_rsdos*)
+------------------------------------------------------
 
 
 Driver specific options for module 'dsk_rsdos':
@@ -895,8 +979,11 @@ Option           Allowed values                 Description
 --ascii          ascii/binary                   Ascii flag
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+DSK floppy disk image (VZ-DOS format) -  (*dsk_vzdos*)
+------------------------------------------------------
 
 
 Driver specific options for module 'dsk_vzdos':
@@ -910,8 +997,11 @@ Option           Allowed values                 Description
 --fname          intern/extern                  Filename
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+Formatted Disk Image (Basic Master Level 3 format) -  (*fdi_bml3*)
+------------------------------------------------------------------
 
 
 Driver specific options for module 'fdi_bml3':
@@ -925,8 +1015,11 @@ Option           Allowed values                 Description
 --ascii          ascii/binary                   Ascii flag
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+Formatted Disk Image (FAT format) -  (*fdi_fat*)
+------------------------------------------------
 
 
 Driver specific options for module 'fdi_fat':
@@ -936,11 +1029,19 @@ No image specific file options
 No image specific creation options
 
 
+Formatted Disk Image (Mac HFS Floppy) -  (*fdi_mac_hfs*)
+--------------------------------------------------------
+
+
 Driver specific options for module 'fdi_mac_hfs':
 
 No image specific file options
 
 No image specific creation options
+
+
+Formatted Disk Image (Mac MFS Floppy) -  (*fdi_mac_mfs*)
+--------------------------------------------------------
 
 
 Driver specific options for module 'fdi_mac_mfs':
@@ -950,11 +1051,19 @@ No image specific file options
 No image specific creation options
 
 
+Formatted Disk Image (OS-9 format) -  (*fdi_os9*)
+-------------------------------------------------
+
+
 Driver specific options for module 'fdi_os9':
 
 No image specific file options
 
 No image specific creation options
+
+
+Formatted Disk Image (ProDOS format) -  (*fdi_prodos_35*)
+---------------------------------------------------------
 
 
 Driver specific options for module 'fdi_prodos_35':
@@ -964,11 +1073,19 @@ No image specific file options
 No image specific creation options
 
 
+Formatted Disk Image (ProDOS format) -  (*fdi_prodos_525*)
+----------------------------------------------------------
+
+
 Driver specific options for module 'fdi_prodos_525':
 
 No image specific file options
 
 No image specific creation options
+
+
+Formatted Disk Image (RS-DOS format) -  (*fdi_rsdos*)
+-----------------------------------------------------
 
 
 Driver specific options for module 'fdi_rsdos':
@@ -982,8 +1099,11 @@ Option           Allowed values                 Description
 --ascii          ascii/binary                   Ascii flag
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+Formatted Disk Image (VZ-DOS format) -  (*fdi_vzdos*)
+-----------------------------------------------------
 
 
 Driver specific options for module 'fdi_vzdos':
@@ -997,8 +1117,11 @@ Option           Allowed values                 Description
 --fname          intern/extern                  Filename
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+HP48 SX/GX memory card -  (*hp48*)
+----------------------------------
 
 
 Driver specific options for module 'hp48':
@@ -1014,6 +1137,9 @@ Option           Allowed values                   Description
 ================ ================================ =============================================================
 
 
+IMD floppy disk image (Basic Master Level 3 format) -  (*imd_bml3*)
+-------------------------------------------------------------------
+
 
 Driver specific options for module 'imd_bml3':
 
@@ -1026,8 +1152,11 @@ Option           Allowed values                 Description
 --ascii          ascii/binary                   Ascii flag
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+IMD floppy disk image (FAT format) -  (*imd_fat*)
+-------------------------------------------------
 
 
 Driver specific options for module 'imd_fat':
@@ -1037,11 +1166,19 @@ No image specific file options
 No image specific creation options
 
 
+IMD floppy disk image (Mac HFS Floppy) -  (*imd_mac_hfs*)
+---------------------------------------------------------
+
+
 Driver specific options for module 'imd_mac_hfs':
 
 No image specific file options
 
 No image specific creation options
+
+
+IMD floppy disk image (Mac MFS Floppy) -  (*imd_mac_mfs*)
+---------------------------------------------------------
 
 
 Driver specific options for module 'imd_mac_mfs':
@@ -1051,11 +1188,19 @@ No image specific file options
 No image specific creation options
 
 
+IMD floppy disk image (OS-9 format) -  (*imd_os9*)
+--------------------------------------------------
+
+
 Driver specific options for module 'imd_os9':
 
 No image specific file options
 
 No image specific creation options
+
+
+IMD floppy disk image (ProDOS format) -  (*imd_prodos_35*)
+----------------------------------------------------------
 
 
 Driver specific options for module 'imd_prodos_35':
@@ -1065,11 +1210,19 @@ No image specific file options
 No image specific creation options
 
 
+IMD floppy disk image (ProDOS format) -  (*imd_prodos_525*)
+-----------------------------------------------------------
+
+
 Driver specific options for module 'imd_prodos_525':
 
 No image specific file options
 
 No image specific creation options
+
+
+IMD floppy disk image (RS-DOS format) -  (*imd_rsdos*)
+------------------------------------------------------
 
 
 Driver specific options for module 'imd_rsdos':
@@ -1083,8 +1236,11 @@ Option           Allowed values                 Description
 --ascii          ascii/binary                   Ascii flag
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+IMD floppy disk image (VZ-DOS format) -  (*imd_vzdos*)
+------------------------------------------------------
 
 
 Driver specific options for module 'imd_vzdos':
@@ -1098,8 +1254,11 @@ Option           Allowed values                 Description
 --fname          intern/extern                  Filename
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+MESS hard disk image -  (*mess_hd*)
+-----------------------------------
 
 
 Driver specific options for module 'mess_hd':
@@ -1119,6 +1278,10 @@ Option           Allowed values                                    Description
 ================ ================================================= =============================================================
 
 
+TI99 Diskette (PC99 FM format) -  (*pc99fm*)
+--------------------------------------------
+
+
 Driver specific options for module 'pc99fm':
 
 No image specific file options
@@ -1126,11 +1289,19 @@ No image specific file options
 No image specific creation options
 
 
+TI99 Diskette (PC99 MFM format) -  (*pc99mfm*)
+----------------------------------------------
+
+
 Driver specific options for module 'pc99mfm':
 
 No image specific file options
 
 No image specific creation options
+
+
+PC CHD disk image -  (*pc_chd*)
+-------------------------------
 
 
 Driver specific options for module 'pc_chd':
@@ -1148,6 +1319,10 @@ Option           Allowed values                                                 
 ================ ====================================================================== =============================================================
 
 
+PC floppy disk image (FAT format) -  (*pc_dsk_fat*)
+---------------------------------------------------
+
+
 Driver specific options for module 'pc_dsk_fat':
 
 No image specific file options
@@ -1163,6 +1338,10 @@ Option           Allowed values                 Description
 ================ ============================== =============================================================
 
 
+Psion Organiser II Datapack -  (*psionpack*)
+--------------------------------------------
+
+
 Driver specific options for module 'psionpack':
 
 Image specific file options (usable on the 'put' command):
@@ -1173,7 +1352,6 @@ Option           Allowed values                 Description
 --type           OB3/OPL/ODB                    file type
 --id             0/145-255                      File ID
 ================ ============================== =============================================================
-
 
 Image specific creation options (usable on the 'create' command):
 
@@ -1187,6 +1365,10 @@ Option           Allowed values                 Description
 --boot           0/1                            bootable datapack
 --copy           0/1                            copyable datapack
 ================ ============================== =============================================================
+
+
+Teledisk floppy disk image (Basic Master Level 3 format) -  (*td0_bml3*)
+------------------------------------------------------------------------
 
 
 Driver specific options for module 'td0_bml3':
@@ -1204,11 +1386,19 @@ Option           Allowed values                 Description
 No image specific creation options
 
 
+Teledisk floppy disk image (FAT format) -  (*td0_fat*)
+------------------------------------------------------
+
+
 Driver specific options for module 'td0_fat':
 
 No image specific file options
 
 No image specific creation options
+
+
+Teledisk floppy disk image (Mac HFS Floppy) -  (*td0_mac_hfs*)
+--------------------------------------------------------------
 
 
 Driver specific options for module 'td0_mac_hfs':
@@ -1218,11 +1408,19 @@ No image specific file options
 No image specific creation options
 
 
+Teledisk floppy disk image (Mac MFS Floppy) -  (*td0_mac_mfs*)
+--------------------------------------------------------------
+
+
 Driver specific options for module 'td0_mac_mfs':
 
 No image specific file options
 
 No image specific creation options
+
+
+Teledisk floppy disk image (OS-9 format) -  (*td0_os9*)
+-------------------------------------------------------
 
 
 Driver specific options for module 'td0_os9':
@@ -1232,6 +1430,10 @@ No image specific file options
 No image specific creation options
 
 
+Teledisk floppy disk image (ProDOS format) -  (*td0_prodos_35*)
+---------------------------------------------------------------
+
+
 Driver specific options for module 'td0_prodos_35':
 
 No image specific file options
@@ -1239,11 +1441,19 @@ No image specific file options
 No image specific creation options
 
 
+Teledisk floppy disk image (ProDOS format) -  (*td0_prodos_525*)
+----------------------------------------------------------------
+
+
 Driver specific options for module 'td0_prodos_525':
 
 No image specific file options
 
 No image specific creation options
+
+
+Teledisk floppy disk image (RS-DOS format) -  (*td0_rsdos*)
+-----------------------------------------------------------
 
 
 Driver specific options for module 'td0_rsdos':
@@ -1257,8 +1467,11 @@ Option           Allowed values                 Description
 --ascii          ascii/binary                   Ascii flag
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+Teledisk floppy disk image (VZ-DOS format) -  (*td0_vzdos*)
+-----------------------------------------------------------
 
 
 Driver specific options for module 'td0_vzdos':
@@ -1272,8 +1485,11 @@ Option           Allowed values                 Description
 --fname          intern/extern                  Filename
 ================ ============================== =============================================================
 
-
 No image specific creation options
+
+
+Thomson .fd disk image, BASIC format -  (*thom_fd*)
+---------------------------------------------------
 
 
 Driver specific options for module 'thom_fd':
@@ -1300,6 +1516,10 @@ Option           Allowed values                 Description
 ================ ============================== =============================================================
 
 
+Thomson .qd disk image, BASIC format -  (*thom_qd*)
+---------------------------------------------------
+
+
 Driver specific options for module 'thom_qd':
 
 Image specific file options (usable on the 'put' command):
@@ -1324,6 +1544,10 @@ Option           Allowed values                 Description
 ================ ============================== =============================================================
 
 
+Thomson .sap disk image, BASIC format -  (*thom_sap*)
+-----------------------------------------------------
+
+
 Driver specific options for module 'thom_sap':
 
 Image specific file options (usable on the 'put' command):
@@ -1335,7 +1559,6 @@ Option           Allowed values                 Description
 --format         auto/B/A                       Format flag
 --comment        (string)                       Comment
 ================ ============================== =============================================================
-
 
 Image specific creation options (usable on the 'create' command):
 
@@ -1349,20 +1572,28 @@ Option           Allowed values                 Description
 ================ ============================== =============================================================
 
 
+TI990 Hard Disk -  (*ti990hd*)
+------------------------------
+
+
 Driver specific options for module 'ti990hd':
 
 No image specific file options
 
 Image specific creation options (usable on the 'create' command):
 
-================   ============================== =============================================================
+================== ============================== =============================================================
 Option             Allowed values                 Description
-----------------   ------------------------------ -------------------------------------------------------------
+------------------ ------------------------------ -------------------------------------------------------------
 --cylinders        1-2047                         Cylinders
 --heads            1-31                           Heads
 --sectors          1-256                          Sectors
 --bytes per sector (typically 25256-512 256-512   Bytes Per Sector [Todo: This section is glitched in imgtool]
-================   ============================== =============================================================
+================== ============================== =============================================================
+
+
+TI99 Diskette (old MESS format) -  (*ti99_old*)
+-----------------------------------------------
 
 
 Driver specific options for module 'ti99_old':
@@ -1382,11 +1613,19 @@ Option           Allowed values                 Description
 ================ ============================== =============================================================
 
 
+TI99 Harddisk -  (*ti99hd*)
+---------------------------
+
+
 Driver specific options for module 'ti99hd':
 
 No image specific file options
 
 No image specific creation options
+
+
+TI99 Diskette (V9T9 format) -  (*v9t9*)
+---------------------------------------
 
 
 Driver specific options for module 'v9t9':
@@ -1407,6 +1646,10 @@ Option           Allowed values                 Description
 
 
 
+Laser/VZ disk image (VZ-DOS format) -  (*vtech1_vzdos*)
+-------------------------------------------------------
+
+
 Driver specific options for module 'vtech1_vzdos':
 
 Image specific file options (usable on the 'put' command):
@@ -1417,7 +1660,6 @@ Option           Allowed values                 Description
 --ftype          basic/binary/data              File type
 --fname          intern/extern                  Filename
 ================ ============================== =============================================================
-
 
 Image specific creation options (usable on the 'create' command):
 
@@ -1435,4 +1677,3 @@ Option           Allowed values                 Description
 
   
 [todo: fill out the command structures, describe commands better. These descriptions came from the imgtool.txt file and are barebones]
-[todo: merge the two lists better]
