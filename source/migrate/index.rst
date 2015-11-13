@@ -8,4 +8,5 @@ This section is a temporary holding place for old documentation and will eventua
 
 	floppy
 	using
+	windowsconfig
 	imgtool

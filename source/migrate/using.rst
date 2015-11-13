@@ -3,11 +3,11 @@ Configuring and Using MAME
 
 *Current as of November 4th, 2015, version 0.167*
 
-This section describes general usage information about MAME. It is intended to cover aspects of using and configuring MAME that are common across operating systems. For additional OS-specific options, please see the separate documentation for your platform of choice.
+This section describes general usage information about MAME. It is intended to cover aspects of using and configuring MAME that are common across all operating systems. For additional OS-specific options, please see the separate documentation for your platform of choice.
 
 
 Using the program
------------------
+=================
 
 The usual way to run MAME is by telling it to run a particular game:
 
@@ -35,7 +35,7 @@ to the screen. There are just a handful of these commands in MAME. They
 are all listed below, just before the options list.
 
 Default Keys
-------------
+============
 
 All the keys below are fully configurable in the user interface. This list
 shows the standard keyboard configuration.
@@ -138,6 +138,10 @@ shows the standard keyboard configuration.
                   | **-ui_active** as detailed below.
 **Escape**        | Exits emulator.
 ================  ============================================================================
+
+
+Commandline Options
+===================
 
 Core commands
 -------------
