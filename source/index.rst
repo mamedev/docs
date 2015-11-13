@@ -13,6 +13,9 @@ MAME Documentation
     
     whatis
     mess/index
+
+    basicuse/index
+    os-specific/index
     advanced/index
     
     migrate/index

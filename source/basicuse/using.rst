@@ -41,9 +41,9 @@ All the keys below are fully configurable in the user interface. This list
 shows the standard keyboard configuration.
 
 
-================  ============================================================================
- Key              |Action
-----------------  ----------------------------------------------------------------------------
+================  ===============================================================================
+ Key              | Action
+----------------  -------------------------------------------------------------------------------
 **Tab**           | Toggles the configuration menu.
 **~**             | Toggles the On Screen Display. When the on-screen display is
                   | visible, you can use the following keys to control it:
@@ -137,7 +137,7 @@ shows the standard keyboard configuration.
                   | status of the emulated keyboard as presented upon start by using
                   | **-ui_active** as detailed below.
 **Escape**        | Exits emulator.
-================  ============================================================================
+================  ===============================================================================
 
 
 Commandline Options
@@ -493,25 +493,38 @@ Core performance options
 Core rotation options
 ---------------------
 
-**-[no]rotate**
+| **-[no]rotate**
+|
+|	Rotate the game to match its normal state (horizontal/vertical). This ensures that both vertically and horizontally oriented games show up correctly without the need to rotate your monitor. If you want to keep the game displaying 'raw' on the screen the way it would have in the arcade, turn this option OFF. The default is ON (-rotate).
+|
+|
 
-	Rotate the game to match its normal state (horizontal/vertical). This ensures that both vertically and horizontally oriented games show up correctly without the need to rotate your monitor. If you want to keep the game displaying 'raw' on the screen the way it would have in the arcade, turn this option OFF. The default is ON (-rotate).
 
-**-[no]ror**
-**-[no]rol**
+| **-[no]ror**
+| **-[no]rol**
+| 
+|
+|	Rotate the game screen to the right (clockwise) or left (counter-clockwise) relative to either its normal state (if -rotate is specified) or its native state (if -norotate is specified). The default for both of these options is OFF (-noror -norol).
+|
+|
 
-	Rotate the game screen to the right (clockwise) or left (counter-clockwise) relative to either its normal state (if -rotate is specified) or its native state (if -norotate is specified). The default for both of these options is OFF (-noror -norol).
 
-**-[no]autoror**
-**-[no]autorol**
+| **-[no]autoror**
+| **-[no]autorol**
+| 
+|
+|	These options are designed for use with pivoting screens that only pivot in a single direction. If your screen only pivots clockwise, use -autorol to ensure that the game will fill the screen either horizontally or vertically in one of the directions you can handle. If your screen only pivots counter-clockwise, use -autoror.
+|
+|
 
-	These options are designed for use with pivoting screens that only pivot in a single direction. If your screen only pivots clockwise, use -autorol to ensure that the game will fill the screen either horizontally or vertically in one of the directions you can handle. If your screen only pivots counter-clockwise, use -autoror.
 
-**-[no]flipx**
-**-[no]flipy**
-
-	Flip (mirror) the game screen either horizontally (-flipx) or vertically (-flipy). The flips are applied after the -rotate and -ror/-rol options are applied. The default for both of these options is OFF (-noflipx -noflipy).
-
+| **-[no]flipx**
+| **-[no]flipy**
+| 
+|
+|	Flip (mirror) the game screen either horizontally (-flipx) or vertically (-flipy). The flips are applied after the -rotate and -ror/-rol options are applied. The default for both of these options is OFF (-noflipx -noflipy).
+|
+|
 
 
 Core artwork options
@@ -831,3 +844,6 @@ Core misc options
 **-autoboot_script** / **-script** *[filename.lua]*
 
         File containing scripting to execute after machine boot.
+
+		
+[todo: reformat -snapname and others nearby to make it less wall-o-text..]
