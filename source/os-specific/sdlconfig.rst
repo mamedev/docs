@@ -1,7 +1,9 @@
 SDL-Specific Commandline Options
 ================================
 
-This file describes SDL-specific usage information about MAME. It is intended to cover aspects of using and configuring the program that are specific to running MAME from the command line on any build supported by SDL (including Windows where compiled as SDL instead of native).
+
+This section contains configuration options that are specific to any build supported by SDL (including Windows where compiled as SDL instead of native).
+
 
 In addition to the keys described in config.txt, the following additional keys are defined for SDL-specific versions of MAME:
 

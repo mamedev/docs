@@ -11,10 +11,7 @@ For example:
 
 	**mame robby -sound none**
 
-...will run Robby Roto without sound. There are many, many options
-available. All commonly supported options are listed below. Options that
-are specific to one operating system or version of MAME will be listed
-in a separate document.
+...will run Robby Roto without sound. There are many, many options available. All commonly supported options are listed below. Options that are specific to one operating system or version of MAME will be listed in a separate document.
 
 An alternative way to run MAME is to give it a command:
 
@@ -24,15 +21,12 @@ For example:
 
 	**mame -listsource gridlee**
 
-...will print the name of the source file where the gridlee driver lives
-to the screen. There are just a handful of these commands in MAME. They
-are all listed below, just before the options list.
+...will print the name of the source file where the gridlee driver lives to the screen. There are just a handful of these commands in MAME. They are all listed below, just before the options list.
 
 Default Keys
 ============
 
-All the keys below are fully configurable in the user interface. This list
-shows the standard keyboard configuration.
+All the keys below are fully configurable in the user interface. This list shows the standard keyboard configuration.
 
 
 ================  ===============================================================================
@@ -134,8 +128,10 @@ shows the standard keyboard configuration.
 ================  ===============================================================================
 
 
-Commandline Options
-===================
+Universal Commandline Options
+=============================
+
+This section contains configuration options that are applicable to *all* MAME sub-builds (both SDL and Windows native).
 
 Core commands
 -------------
@@ -187,6 +183,7 @@ Note: By default, all the '**-list**' commands below write info to the screen. I
 
 ...where 'filename' is the textfile's path and name (e.g., c:\\mame\\list.txt).
 
+
 **-listxml** / **-lx** [*<gamename|wildcard>*]
 
 	List comprehensive details for all of the supported games. The output is quite long, so it is usually better to redirect this into a file. The output is in XML format. By default all games are listed; however, you can limit this list by specifying a driver name or wildcard after the -listxml command.
@@ -205,7 +202,7 @@ Note: By default, all the '**-list**' commands below write info to the screen. I
 
 **-listbrothers** / **-lb** [<*gamename|wildcard*>]
 
-        Displays a list of '*brothers*', or rather, other sets which are located in the same sourcefile as the gamename searched for.
+	Displays a list of '*brothers*', or rather, other sets which are located in the same sourcefile as the gamename searched for.
 
 **-listcrc** [<*gamename|wildcard*>]
 

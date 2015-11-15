@@ -4,16 +4,17 @@ Windows-Specific Commandline Options
 This section contains configuration options that are specific to the native (non-SDL) Windows version of MAME.
 
 
-Windows debugging options
--------------------------
+
+Debugging options
+-----------------
 
 **-[no]oslog**
 
-	Outputs the error.log data to the Windows debugger. This can be used at	the same time as -log to output the log data to both targets as well. Default is OFF (**-nooslog**).
+	Outputs the error.log data to the Windows debugger. This can be used at	the same time as -log to output the log data to both targets as well. Default is OFF (*-nooslog*).
 
 **-watchdog** *<duration>* / **-wdog** *<duration>*
 
-	Enables an internal watchdog timer that will automatically kill the MAME process if more than *<duration>* seconds passes without a frame update.	Keep in mind that some games sit for a while during load time without updating the screen, so *<duration>* should be long enough to cover that. 10-30 seconds on a modern system should be plenty in general. By default there is no watchdog.
+	Enables an internal watchdog timer that will automatically kill the MAME process if more than *<duration>* seconds passes without a frame update. Keep in mind that some games sit for a while during load time without updating the screen, so *<duration>* should be long enough to cover that. 10-30 seconds on a modern system should be plenty in general. By default there is no watchdog.
 
 **-debugger_font** *<fontname>* / **-dfont** *<fontname>*
 
@@ -25,8 +26,8 @@ Windows debugging options
 
 
 
-Windows performance options
----------------------------
+Performance options
+-------------------
 
 **-priority** *<priority>*
 
@@ -52,8 +53,8 @@ Windows performance options
 
 
 
-Windows video options
----------------------
+Video options
+-------------
 
 **-video** *<gdi|ddraw|d3d|none>*
 
@@ -188,8 +189,8 @@ Full screen options
 
 
 
-Windows sound options
----------------------
+Sound options
+-------------
 
 **-sound** *<dsound|sdl|none>*
 
