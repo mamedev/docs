@@ -1,7 +1,7 @@
 SDL-Specific Commandline Options
 ================================
 
-This file describes SDL-specific usage information about MAME. It is intended to cover aspects of using and configuring the program that are specific to running MAME from the command line on any build supported by SDL (including Windows).
+This file describes SDL-specific usage information about MAME. It is intended to cover aspects of using and configuring the program that are specific to running MAME from the command line on any build supported by SDL (including Windows where compiled as SDL instead of native).
 
 In addition to the keys described in config.txt, the following additional keys are defined for SDL-specific versions of MAME:
 
@@ -50,7 +50,7 @@ Video options
 
 **-numscreens** *<count>*
 
-	Tells MAME how many output windows to create. For most games, a single output window is all you need, but some games originally used multiple screens. Each screen (up to 4) has its own independent settings for physical monitor, aspect ratio, resolution, and view, which can be set using the options below. The default is 1. SDL currently has a limit of 1 with the expectation of increasing this when SDL 2.0 is released. [todo: check on this...]
+	Tells MAME how many output windows to create. For most games, a single output window is all you need, but some games originally used multiple screens. Each screen (up to 4) has its own independent settings for physical monitor, aspect ratio, resolution, and view, which can be set using the options below. The default is 1. 
 
 **-[no]window** / **-[no]w**
 
@@ -141,7 +141,7 @@ Video OpenGL GLSL options
 
 **-glsl_shader_mame0**
 
-	Custom OpenGL GLSL shader set MAME bitmap 0  [todo: better details on usage..]
+	Custom OpenGL GLSL shader set MAME bitmap 0  [todo: better details on usage at some point..]
 
 **-glsl_shader_mame1**
 
@@ -229,7 +229,7 @@ Video OpenGL GLSL options
 Per-window options
 ------------------
 
-NOTE:  Multiple Screens are limited to 1 until SDL 2.0 is released. [todo: where do we stand right now?]
+NOTE:  **Multiple Screens may fail to work correctly on some Macintosh machines as of right now.**
 
 | **-screen** *<display>*
 | **-screen0** *<display>*
@@ -237,7 +237,7 @@ NOTE:  Multiple Screens are limited to 1 until SDL 2.0 is released. [todo: where
 | **-screen2** *<display>*
 | **-screen3** *<display>*
 |
-|	Specifies which physical monitor on your system you wish to have each window use by default. In order to use multiple windows, you must have increased the value of the **-numscreens** option. The name of each display in your system can be determined by running MAME with the -verbose option. The display names are typically in the format of: *\\\\.\\DISPLAYn*, where 'n' is a number from 1 to the number of connected monitors. The default value for these options is '*auto*', which means that the first window is placed on the first display, the second window on the second display, etc.
+|	Specifies which physical monitor on your system you wish to have each window use by default. In order to use multiple windows, you must have increased the value of the **-numscreens** option. The name of each display in your system can be determined by running MAME with the -verbose option. The display names are typically in the format of a number from 1 to the number of connected monitors. The default value for these options is '*auto*', which means that the first window is placed on the first display, the second window on the second display, etc.
 |
 |	The **-screen0**, **-screen1**, **-screen2**, **-screen3** parameters apply to the specific window. The **-screen** parameter applies to all windows. The window-specific options override values from the all window option. 
 |
@@ -264,7 +264,7 @@ NOTE:  Multiple Screens are limited to 1 until SDL 2.0 is released. [todo: where
 | **-resolution2** *<widthxheight[@refresh]>* / **-r2** *<widthxheight[@refresh]>*
 | **-resolution3** *<widthxheight[@refresh]>* / **-r3** *<widthxheight[@refresh]>*
 |
-|	Specifies an exact resolution to run in. In full screen mode, MAME will try to use the specific resolution you request. The width and height are required; the refresh rate is optional. If omitted or set to 0, MAME will determine the mode automatically. For example, **-resolution 640x480** will force 640x480 resolution, but MAME is free to choose the refresh rate. Similarly, **-resolution 0x0@60** will force a 60Hz refresh rate, but allows MAME to choose the resolution. The string "*auto*" is also supported, and is equivalent to *0x0@0*. In window mode, this resolution is used as a maximum size for the window. This option requires the **-switchres** option as well in order to actually enable resolution switching with **-video ddraw** or **-video d3d**. The default value for these options is '*auto*'.
+|	Specifies an exact resolution to run in. In full screen mode, MAME will try to use the specific resolution you request. The width and height are required; the refresh rate is optional. If omitted or set to 0, MAME will determine the mode automatically. For example, **-resolution 640x480** will force 640x480 resolution, but MAME is free to choose the refresh rate. Similarly, **-resolution 0x0@60** will force a 60Hz refresh rate, but allows MAME to choose the resolution. The string "*auto*" is also supported, and is equivalent to *0x0@0*. In window mode, this resolution is used as a maximum size for the window. This option requires the **-switchres** option. The default value for these options is '*auto*'.
 |
 |	The **-resolution0**, **-resolution1**, **-resolution2**, **-resolution3** parameters apply to the specific window. The -resolution parameter applies to all windows. The window-specific options override values from the all window option.
 |
@@ -290,7 +290,7 @@ Full screen options
 
 **-[no]switchres**
 
-	Enables resolution switching. This option is required for the **-resolution\*** options to switch resolutions in full screen mode. On modern video cards, there is little reason to switch resolutions unless you are trying to achieve the "exact" pixel resolutions of the original games, which requires significant tweaking. This option is also useful on LCD displays, since they run with a fixed resolution and switching resolutions on them is just silly. This option does not work with **-video gdi**. The default is OFF (*-noswitchres*).
+	Enables resolution switching. This option is required for the **-resolution\*** options to switch resolutions in full screen mode. On modern video cards, there is little reason to switch resolutions unless you are trying to achieve the "exact" pixel resolutions of the original games, which requires significant tweaking. This option is also useful on LCD displays, since they run with a fixed resolution and switching resolutions on them is just silly. The default is OFF (*-noswitchres*).
 
 
 Sound options
@@ -302,7 +302,7 @@ Sound options
 
 **-audio_latency** *<value>*
 
-	This controls the amount of latency built into the audio streaming. By default MAME tries to keep the DirectSound audio buffer between 1/5 and 2/5 full. On some systems, this is pushing it too close to the edge, and you get poor sound sometimes. The latency parameter controls the lower threshold. The default is *1* (meaning lower=1/5 and upper=2/5). Set it to 2 (**-audio_latency 2**) to keep the sound buffer between 2/5 and 3/5 full. If you crank it up to 4, you can *definitely* notice audio lag.
+	This controls the amount of latency built into the audio streaming. By default MAME tries to keep the audio buffer between 1/5 and 2/5 full. On some systems, this is pushing it too close to the edge, and you get poor sound sometimes. The latency parameter controls the lower threshold. The default is *1* (meaning lower=1/5 and upper=2/5). Set it to 2 (**-audio_latency 2**) to keep the sound buffer between 2/5 and 3/5 full. If you crank it up to 4, you can *definitely* notice audio lag.
 
 
 SDL Keyboard Mapping
