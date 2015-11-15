@@ -5,3 +5,4 @@ OS-Specific MAME Usage and Configuration
 	:titlesonly:
 
 	windowsconfig
+	sdlconfig
