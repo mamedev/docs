@@ -12,13 +12,16 @@ MAME Documentation
     :titlesonly:
     
     whatis
-    mess/index
 
     basicuse/index
     os-specific/index
     advanced/index
-    
-    migrate/index
+
+    mess/index
+    tools/index
+
+    techspecs/index
+
     license
 	
 Contribute
