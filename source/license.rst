@@ -6,6 +6,8 @@ The MAME project, as a whole, is currently released under the following license,
 
 Most code in MAME is under a more permissive license, or dual-licensed. This is noted in per-file headers which specify the alternate license.
 
+For questions regarding the MAME license, trademark, or other usage, go to http://www.mamedev.org/
+
 The text of the MAME License follows:
 
 
