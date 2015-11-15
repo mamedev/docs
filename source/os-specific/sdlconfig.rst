@@ -143,7 +143,7 @@ Video OpenGL GLSL options
 
 **-glsl_shader_mame0**
 
-	Custom OpenGL GLSL shader set MAME bitmap 0  [todo: better details on usage at some point..]
+	Custom OpenGL GLSL shader set MAME bitmap 0  [todo: better details on usage at some point. See http://forums.bannister.org/ubbthreads.php?ubb=showflat&Number=100988#Post100988 ]
 
 **-glsl_shader_mame1**
 
