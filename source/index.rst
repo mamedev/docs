@@ -19,6 +19,7 @@ MAME Documentation
     advanced/index
     
     migrate/index
+    license
 	
 Contribute
 ----------
