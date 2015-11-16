@@ -1,13 +1,7 @@
-Configuring and Using MAME
-==========================
-
 *Current as of November 4th, 2015, version 0.167*
 
-This section describes general usage information about MAME. It is intended to cover aspects of using and configuring MAME that are common across operating systems. For additional OS-specific options, please see the separate documentation for your platform of choice.
-
-
 Using the program
------------------
+=================
 
 The usual way to run MAME is by telling it to run a particular game:
 
@@ -17,10 +11,7 @@ For example:
 
 	**mame robby -sound none**
 
-...will run Robby Roto without sound. There are many, many options
-available. All commonly supported options are listed below. Options that
-are specific to one operating system or version of MAME will be listed
-in a separate document.
+...will run Robby Roto without sound. There are many, many options available. All commonly supported options are listed below. Options that are specific to one operating system or version of MAME will be listed in a separate document.
 
 An alternative way to run MAME is to give it a command:
 
@@ -30,20 +21,17 @@ For example:
 
 	**mame -listsource gridlee**
 
-...will print the name of the source file where the gridlee driver lives
-to the screen. There are just a handful of these commands in MAME. They
-are all listed below, just before the options list.
+...will print the name of the source file where the gridlee driver lives to the screen. There are just a handful of these commands in MAME. They are all listed below, just before the options list.
 
 Default Keys
-------------
+============
 
-All the keys below are fully configurable in the user interface. This list
-shows the standard keyboard configuration.
+All the keys below are fully configurable in the user interface. This list shows the standard keyboard configuration.
 
 
-================  ============================================================================
- Key              |Action
-----------------  ----------------------------------------------------------------------------
+================  ===============================================================================
+ Key              | Action
+----------------  -------------------------------------------------------------------------------
 **Tab**           | Toggles the configuration menu.
 **~**             | Toggles the On Screen Display. When the on-screen display is
                   | visible, you can use the following keys to control it:
@@ -137,7 +125,13 @@ shows the standard keyboard configuration.
                   | status of the emulated keyboard as presented upon start by using
                   | **-ui_active** as detailed below.
 **Escape**        | Exits emulator.
-================  ============================================================================
+================  ===============================================================================
+
+
+Universal Commandline Options
+=============================
+
+This section contains configuration options that are applicable to *all* MAME sub-builds (both SDL and Windows native).
 
 Core commands
 -------------
@@ -189,6 +183,7 @@ Note: By default, all the '**-list**' commands below write info to the screen. I
 
 ...where 'filename' is the textfile's path and name (e.g., c:\\mame\\list.txt).
 
+
 **-listxml** / **-lx** [*<gamename|wildcard>*]
 
 	List comprehensive details for all of the supported games. The output is quite long, so it is usually better to redirect this into a file. The output is in XML format. By default all games are listed; however, you can limit this list by specifying a driver name or wildcard after the -listxml command.
@@ -207,7 +202,7 @@ Note: By default, all the '**-list**' commands below write info to the screen. I
 
 **-listbrothers** / **-lb** [<*gamename|wildcard*>]
 
-        Displays a list of '*brothers*', or rather, other sets which are located in the same sourcefile as the gamename searched for.
+	Displays a list of '*brothers*', or rather, other sets which are located in the same sourcefile as the gamename searched for.
 
 **-listcrc** [<*gamename|wildcard*>]
 
@@ -272,11 +267,11 @@ OSD related options
 
 **-uimodekey** [*keystring*]
 
-	Key used to toggle emulated keyboard on and off.  Default setting is SCRLOCK.
+	Key used to toggle emulated keyboard on and off.  Default setting is *SCRLOCK*.
 
 **\-uifontprovider**
 
-	Chooses provider for UI font:  win, none or auto.  The Default setting is AUTO.
+	Chooses provider for UI font:  win, none or auto.  The Default setting is *AUTO*.
 
 
 OSD CLI options
@@ -316,7 +311,7 @@ Configuration options
         (See :ref:`advanced-multi-CFG` for further details)
 
 	The settings in the later INIs override those in the earlier INIs.
-	So, for example, if you wanted to disable overlay effects in the vector games, you can create a vector.ini with the "effect none" line in it, and it will override whatever effect value you have in your mame.ini. The default is ON (-readconfig).
+	So, for example, if you wanted to disable overlay effects in the vector games, you can create a vector.ini with the "effect none" line in it, and it will override whatever effect value you have in your mame.ini. The default is ON (*-readconfig*).
 
 
 
@@ -431,15 +426,15 @@ Core state/playback options
 
 **-snapsize** *<width>x<height>*
 
-	Hard-codes the size for snapshots and movie recording. By default, MAME will create snapshots at the game's current resolution in raw pixels, and will create movies at the game's starting resolution in raw pixels. If you specify this option, then MAME will create both snapshots and movies at the size specified, and will bilinear filter the result. Note that this size does not automatically rotate if the game is vertically oriented. The default is 'auto'.
+	Hard-codes the size for snapshots and movie recording. By default, MAME will create snapshots at the game's current resolution in raw pixels, and will create movies at the game's starting resolution in raw pixels. If you specify this option, then MAME will create both snapshots and movies at the size specified, and will bilinear filter the result. Note that this size does not automatically rotate if the game is vertically oriented. The default is '*auto*'.
 
 **-snapview** *<viewname>*
 
-	Specifies the view to use when rendering snapshots and movies. By default, both use a special 'internal' view, which renders a separate snapshot per screen or renders movies only of the first screen. By specifying this option, you can override this default behavior and select a single view that will apply to all snapshots and movies. Note that <viewname> does not need to be a perfect match; rather, it will select the first view whose name matches all the characters specified by <viewname>. For example, -snapview native will match the "Native (15:14)" view even though it is not a perfect match. <viewname> can also be 'auto', which selects the first view with all screens present. The default value is 'internal'.
+	Specifies the view to use when rendering snapshots and movies. By default, both use a special 'internal' view, which renders a separate snapshot per screen or renders movies only of the first screen. By specifying this option, you can override this default behavior and select a single view that will apply to all snapshots and movies. Note that <viewname> does not need to be a perfect match; rather, it will select the first view whose name matches all the characters specified by <viewname>. For example, -snapview native will match the "Native (15:14)" view even though it is not a perfect match. <viewname> can also be 'auto', which selects the first view with all screens present. The default value is '*internal*'.
 
 **-[no]snapbilinear**
 
-	Specify if the snapshot or movie should have bilinear filtering	applied.  Shutting this off can make a difference in some performance while recording video to a file.  The default is ON (-snapbilinear).
+	Specify if the snapshot or movie should have bilinear filtering	applied.  Shutting this off can make a difference in some performance while recording video to a file.  The default is ON (*-snapbilinear*).
 
 **-statename** *<name>*
 
@@ -449,7 +444,7 @@ Core state/playback options
 
 	Tracks brightness of the screen during play and at the end of emulation generates a PNG that can be used to simulate burn-in effects on other games. The resulting PNG is created such that the least used-areas of the screen are fully white (since burned-in areas are darker, all other areas of the screen must be lightened a touch). 
 
-	The intention is that this PNG can be loaded via an artwork file with a low alpha (e.g, 0.1-0.2 seems to work well) and blended over the entire screen. The PNG files are saved in the snap directory under the gamename/burnin-<screen.name>.png. The default is OFF (-noburnin).
+	The intention is that this PNG can be loaded via an artwork file with a low alpha (e.g, 0.1-0.2 seems to work well) and blended over the entire screen. The PNG files are saved in the snap directory under the gamename/burnin-<screen.name>.png. The default is OFF (*-noburnin*).
 
 
 
@@ -458,56 +453,69 @@ Core performance options
 
 **-[no]autoframeskip** / **-[no]afs**
 
-	Automatically determines the frameskip level while you're playing the game, adjusting it constantly in a frantic attempt to keep the game running at full speed. Turning this on overrides the value you have set for -frameskip below. The default is OFF (-noautoframeskip).
+	Automatically determines the frameskip level while you're playing the game, adjusting it constantly in a frantic attempt to keep the game running at full speed. Turning this on overrides the value you have set for -frameskip below. The default is OFF (*-noautoframeskip*).
 
 **-frameskip** / **-fs** *<level>*
 
-	Specifies the frameskip value. This is the number of frames out of every 12 to drop when running. For example, if you say -frameskip 2, then MAME will display 10 out of every 12 frames. By skipping those frames, you may be able to get full speed in a game that requires more horsepower than your computer has. The default value is -frameskip 0, which skips no frames.
+	Specifies the frameskip value. This is the number of frames out of every 12 to drop when running. For example, if you say -frameskip 2, then MAME will display 10 out of every 12 frames. By skipping those frames, you may be able to get full speed in a game that requires more horsepower than your computer has. The default value is **-frameskip 0**, which skips no frames.
 
 **-seconds_to_run** / **-str** *<seconds>*
 
-	This option can be used for benchmarking and automated testing. It tells MAME to stop execution after a fixed number of seconds. By combining this with a fixed set of other command line options, you can set up a consistent environment for benchmarking MAME performance. In addition, upon exit, the -str option will write a screenshot called final.png to the game's snapshot directory.
+	This option can be used for benchmarking and automated testing. It tells MAME to stop execution after a fixed number of seconds. By combining this with a fixed set of other command line options, you can set up a consistent environment for benchmarking MAME performance. In addition, upon exit, the **-str** option will write a screenshot called *final.png* to the game's snapshot directory.
 
 **-[no]throttle**
 
-	Configures the default thottling setting. When throttling is on, MAME attempts to keep the game running at the game's intended speed. When throttling is off, MAME runs the game as fast as it can. Note that the fastest speed is more often than not limited by your graphics card, especially for older games. The default is ON (-throttle).
+	Configures the default thottling setting. When throttling is on, MAME attempts to keep the game running at the game's intended speed. When throttling is off, MAME runs the game as fast as it can. Note that the fastest speed is more often than not limited by your graphics card, especially for older games. The default is ON (*-throttle*).
 
 **-[no]sleep**
 
-	Allows MAME to give time back to the system when running with -throttle. This allows other programs to have some CPU time, assuming that the game isn't taxing 100% of your CPU resources. This option can potentially cause hiccups in performance if other demanding programs are running. The default is ON (-sleep).
+	Allows MAME to give time back to the system when running with -throttle. This allows other programs to have some CPU time, assuming that the game isn't taxing 100% of your CPU resources. This option can potentially cause hiccups in performance if other demanding programs are running. The default is ON (*-sleep*).
 
 **-speed** *<factor>*
 
-	Changes the way MAME throttles gameplay such that the game runs at some multiplier of the original speed. A <factor> of 1.0 means to run the game at its normal speed. A <factor> of 0.5 means run at half speed, and a <factor> of 2.0 means run at 2x speed. Note that changing this value affects sound playback as well, which will scale in pitch accordingly. The internal resolution of the fraction is two decimal	places, so a value of 1.002 is the same as 1.0. The default is 1.0.
+	Changes the way MAME throttles gameplay such that the game runs at some multiplier of the original speed. A <factor> of 1.0 means to run the game at its normal speed. A <factor> of 0.5 means run at half speed, and a <factor> of 2.0 means run at 2x speed. Note that changing this value affects sound playback as well, which will scale in pitch accordingly. The internal resolution of the fraction is two decimalplaces, so a value of 1.002 is the same as 1.0. The default is 1.0.
 
 **-[no]refreshspeed** / **-[no]rs**
 
-	Allows MAME to dynamically adjust the gameplay speed such that it does not exceed the slowest refresh rate for any targeted monitors in your system. Thus, if you have a 60Hz monitor and run a game that is actually designed to run at 60.6Hz, MAME will dynamically change the speed down to 99% in order to prevent sound hiccups or other undesirable side effects of running at a slower refresh rate. The default is OFF (-norefreshspeed).
+	Allows MAME to dynamically adjust the gameplay speed such that it does not exceed the slowest refresh rate for any targeted monitors in your system. Thus, if you have a 60Hz monitor and run a game that is actually designed to run at 60.6Hz, MAME will dynamically change the speed down to 99% in order to prevent sound hiccups or other undesirable side effects of running at a slower refresh rate. The default is OFF (*-norefreshspeed*).
 
 
 
 Core rotation options
 ---------------------
 
-**-[no]rotate**
+| **-[no]rotate**
+|
+|	Rotate the game to match its normal state (horizontal/vertical). This ensures that both vertically and horizontally oriented games show up correctly without the need to rotate your monitor. If you want to keep the game displaying 'raw' on the screen the way it would have in the arcade, turn this option OFF. The default is ON (*-rotate*).
+|
+|
 
-	Rotate the game to match its normal state (horizontal/vertical). This ensures that both vertically and horizontally oriented games show up correctly without the need to rotate your monitor. If you want to keep the game displaying 'raw' on the screen the way it would have in the arcade, turn this option OFF. The default is ON (-rotate).
 
-**-[no]ror**
-**-[no]rol**
+| **-[no]ror**
+| **-[no]rol**
+| 
+|
+|	Rotate the game screen to the right (clockwise) or left (counter-clockwise) relative to either its normal state (if **-rotate** is specified) or its native state (if **-norotate** is specified). The default for both of these options is OFF (*-noror -norol*).
+|
+|
 
-	Rotate the game screen to the right (clockwise) or left (counter-clockwise) relative to either its normal state (if -rotate is specified) or its native state (if -norotate is specified). The default for both of these options is OFF (-noror -norol).
 
-**-[no]autoror**
-**-[no]autorol**
+| **-[no]autoror**
+| **-[no]autorol**
+| 
+|
+|	These options are designed for use with pivoting screens that only pivot in a single direction. If your screen only pivots clockwise, use -autorol to ensure that the game will fill the screen either horizontally or vertically in one of the directions you can handle. If your screen only pivots counter-clockwise, use **-autoror**.
+|
+|
 
-	These options are designed for use with pivoting screens that only pivot in a single direction. If your screen only pivots clockwise, use -autorol to ensure that the game will fill the screen either horizontally or vertically in one of the directions you can handle. If your screen only pivots counter-clockwise, use -autoror.
 
-**-[no]flipx**
-**-[no]flipy**
-
-	Flip (mirror) the game screen either horizontally (-flipx) or vertically (-flipy). The flips are applied after the -rotate and -ror/-rol options are applied. The default for both of these options is OFF (-noflipx -noflipy).
-
+| **-[no]flipx**
+| **-[no]flipy**
+| 
+|
+|	Flip (mirror) the game screen either horizontally (-flipx) or vertically (-flipy). The flips are applied after the -rotate and -ror/-rol options are applied. The default for both of these options is OFF (*-noflipx -noflipy*).
+|
+|
 
 
 Core artwork options
@@ -515,27 +523,27 @@ Core artwork options
 
 **-[no]artwork_crop** / **-[no]artcrop**
 
-	Enable cropping of artwork to the game screen area only. This works best with -video gdi or -video d3d, and means that vertically oriented games running full screen can display their artwork to the left and 	right sides of the screen. This does not work with -video ddraw because of the way the game screens are rendered and scaled after the fact. This option can also be controlled via the Video Options menu in the user interface. The default is OFF (-noartwork_crop).
+	Enable cropping of artwork to the game screen area only. This works best with -video gdi or -video d3d, and means that vertically oriented games running full screen can display their artwork to the left and 	right sides of the screen. This does not work with -video ddraw because of the way the game screens are rendered and scaled after the fact. This option can also be controlled via the Video Options menu in the user interface. The default is OFF (*-noartwork_crop*).
 
 **-[no]use_backdrops** / **-[no]backdrop**
 
-	Enables/disables the display of backdrops. The default is ON (-use_backdrops).
+	Enables/disables the display of backdrops. The default is ON (*-use_backdrops*).
 
 **-[no]use_overlays** / **-[no]overlay**
 
-	Enables/disables the display of overlays. The default is ON (-use_overlays).
+	Enables/disables the display of overlays. The default is ON (*-use_overlays*).
 
 **-[no]use_bezels** / **-[no]bezels**
 
-	Enables/disables the display of bezels. The default is ON (-use_bezels).
+	Enables/disables the display of bezels. The default is ON (*-use_bezels*).
 
 **-[no]use_cpanels** / **-[no]cpanels**
 
-	Enables/disables the display of control panels. The default is ON (-use_cpanels).
+	Enables/disables the display of control panels. The default is ON (*-use_cpanels*).
 
 **-[no]use_marquees** / **-[no]marquees**
 
-	Enables/disables the display of marquees. The default is ON (-use_marquees).
+	Enables/disables the display of marquees. The default is ON (*-use_marquees*).
 
 
 
@@ -544,23 +552,23 @@ Core screen options
 
 **-brightness** *<value>*
 
-	Controls the default brightness, or black level, of the game screens. This option does not affect the artwork or other parts of the display. Using the MAME UI, you can individually set the brightness for each game screen; this option controls the initial value for all visible game screens. The standard value is 1.0. Selecting lower values (down to 0.1) will produce a darkened display, while selecting higher values (up to 2.0) will give a brighter display. The default is 1.0.
+	Controls the default brightness, or black level, of the game screens. This option does not affect the artwork or other parts of the display. Using the MAME UI, you can individually set the brightness for each game screen; this option controls the initial value for all visible game screens. The standard value is 1.0. Selecting lower values (down to 0.1) will produce a darkened display, while selecting higher values (up to 2.0) will give a brighter display. The default is *1.0*.
 
 **-contrast** *<value>*
 
-	Controls the contrast, or white level, of the game screens. This option does not affect the artwork or other parts of the display. Using the MAME UI, you can individually set the contrast for each game screen; this option controls the initial value for all visible game screens. The standard value is 1.0. Selecting lower values (down to 0.1) will produce a dimmer display, while selecting higher values (up to 2.0) will give a more saturated display. The default is 1.0.
+	Controls the contrast, or white level, of the game screens. This option does not affect the artwork or other parts of the display. Using the MAME UI, you can individually set the contrast for each game screen; this option controls the initial value for all visible game screens. The standard value is 1.0. Selecting lower values (down to 0.1) will produce a dimmer display, while selecting higher values (up to 2.0) will give a more saturated display. The default is *1.0*.
 
 **-gamma** *<value>*
 
-	Controls the gamma, which produces a potentially nonlinear black to white ramp, for the game screens. This option does not affect the artwork or other parts of the display. Using the MAME UI, you can individually set the gamma for each game screen; this option controls the initial value for all visible game screens. The standard value is 1.0, which gives a linear ramp from black to white. Selecting lower 	values (down to 0.1) will increase the nonlinearity toward black, while selecting higher values (up to 3.0) will push the nonlinearity toward white. The default is 1.0.
+	Controls the gamma, which produces a potentially nonlinear black to white ramp, for the game screens. This option does not affect the artwork or other parts of the display. Using the MAME UI, you can individually set the gamma for each game screen; this option controls the initial value for all visible game screens. The standard value is 1.0, which gives a linear ramp from black to white. Selecting lower 	values (down to 0.1) will increase the nonlinearity toward black, while selecting higher values (up to 3.0) will push the nonlinearity toward white. The default is *1.0*.
 
 **-pause_brightness** *<value>*
 
-	This controls the brightness level when MAME is paused. The default value is 0.65.
+	This controls the brightness level when MAME is paused. The default value is *0.65*.
 
 **-effect** *<filename>*
 
-	Specifies a single PNG file that is used as an overlay over any game screens in the video display. This PNG file is assumed to live in the root of one of the artpath directories. The pattern in the PNG file is repeated both horizontally and vertically to cover the entire game screen areas (but not any external artwork), and is rendered at the target resolution of the game image. For -video gdi and -video d3d modes, this means that one pixel in the PNG will map to one pixel on your output display. For -video ddraw, this means that one pixel in the PNG will map to one pixel in the prescaled game screen. If you wish to use an effect that requires mapping n PNG pixels to each game screen pixel with -video ddraw, you need to specify a -prescale factor of n as well. The RGB values of each pixel in the PNG are multiplied against the RGB values of the target screen. The default is 'none', meaning no effect.
+	Specifies a single PNG file that is used as an overlay over any game screens in the video display. This PNG file is assumed to live in the root of one of the artpath directories. The pattern in the PNG file is repeated both horizontally and vertically to cover the entire game screen areas (but not any external artwork), and is rendered at the target resolution of the game image. For -video gdi and -video d3d modes, this means that one pixel in the PNG will map to one pixel on your output display. For -video ddraw, this means that one pixel in the PNG will map to one pixel in the prescaled game screen. If you wish to use an effect that requires mapping n PNG pixels to each game screen pixel with **-video ddraw**, you need to specify a **-prescale** factor of n as well. The RGB values of each pixel in the PNG are multiplied against the RGB values of the target screen. The default is '*none*', meaning no effect.
 
 
 
@@ -569,15 +577,15 @@ Core vector options
 
 **-[no]antialias** / **-[no]aa**
 
-	Enables antialiased line rendering for vector games. The default is ON (-antialias).
+	Enables antialiased line rendering for vector games. The default is ON (*-antialias*).
 
 **-beam** *<width>*
 
-	Sets the width of the vectors. This is a scaling factor against the standard vector width. A value of 1.0 will keep the default vector line width. Smaller values will reduce the width, and larger values will increase the width. The default is 1.0.
+	Sets the width of the vectors. This is a scaling factor against the standard vector width. A value of 1.0 will keep the default vector line width. Smaller values will reduce the width, and larger values will increase the width. The default is *1.0*.
 
 **-flicker** *<value>*
 
-	Simulates a vector "flicker" effect, similar to a vector monitor that needs adjustment. This option requires a float argument in the range of 0.00 - 100.00 (0=none, 100=maximum). The default is 0.
+	Simulates a vector "flicker" effect, similar to a vector monitor that needs adjustment. This option requires a float argument in the range of 0.00 - 100.00 (0=none, 100=maximum). The default is *0*.
 
 
 
@@ -586,15 +594,15 @@ Core sound options
 
 **-samplerate** *<value>* / **-sr** *<value>*
 
-	Sets the audio sample rate. Smaller values (e.g. 11025) cause lower audio quality but faster emulation speed. Higher values (e.g. 48000) cause higher audio quality but slower emulation speed. The default is 48000.
+	Sets the audio sample rate. Smaller values (e.g. 11025) cause lower audio quality but faster emulation speed. Higher values (e.g. 48000) cause higher audio quality but slower emulation speed. The default is *48000*.
 
 **-[no]samples**
 
-	Use samples if available. The default is ON (-samples).
+	Use samples if available. The default is ON (*-samples*).
 
 **-volume** / **-vol** *<value>*
 
-	Sets the startup volume. It can later be changed with the user interface (see Keys section). The volume is an attenuation in dB: e.g., "-volume -12" will start with -12dB attenuation. The default is 0.
+	Sets the startup volume. It can later be changed with the user interface (see Keys section). The volume is an attenuation in dB: e.g., "**-volume -12**" will start with -12dB attenuation. The default is *0*.
 
 
 
@@ -603,7 +611,7 @@ Core input options
 
 **-[no]coin_lockout** / **-[no]coinlock**
 
-	Enables simulation of the "coin lockout" feature that is implemented on a number of game PCBs. It was up to the operator whether or not the coin lockout outputs were actually connected to the coin mechanisms. If this feature is enabled, then attempts to enter a coin while the lockout is active will fail and will display a popup message in the user interface (In debug mode). If this feature is disabled, the coin lockout signal will be ignored. The default is ON (-coin_lockout).
+	Enables simulation of the "coin lockout" feature that is implemented on a number of game PCBs. It was up to the operator whether or not the coin lockout outputs were actually connected to the coin mechanisms. If this feature is enabled, then attempts to enter a coin while the lockout is active will fail and will display a popup message in the user interface (In debug mode). If this feature is disabled, the coin lockout signal will be ignored. The default is ON (*-coin_lockout*).
 
 **-ctrlr** *<controller>*
 
@@ -611,61 +619,60 @@ Core input options
 
 **-[no]mouse**
 
-	Controls whether or not MAME makes use of mouse controllers. When this is enabled, you will likely be unable to use your mouse for other purposes until you exit or pause the game. The default is OFF (-nomouse).
+	Controls whether or not MAME makes use of mouse controllers. When this is enabled, you will likely be unable to use your mouse for other purposes until you exit or pause the game. The default is OFF (*-nomouse*).
 
 **-[no]joystick** / **-[no]joy**
 
-	Controls whether or not MAME makes use of joystick/gamepad controllers. When this is enabled, MAME will ask DirectInput about which controllers are connected. The default is OFF (-nojoystick).
+	Controls whether or not MAME makes use of joystick/gamepad controllers. When this is enabled, MAME will ask DirectInput about which controllers are connected. The default is OFF (*-nojoystick*).
 
 **-[no]lightgun** / **-[no]gun**
 
-	Controls whether or not MAME makes use of lightgun controllers. Note that most lightguns map to the mouse, so using -lightgun and -mouse together may produce strange results. The default is OFF (-nolightgun).
+	Controls whether or not MAME makes use of lightgun controllers. Note that most lightguns map to the mouse, so using -lightgun and -mouse together may produce strange results. The default is OFF (*-nolightgun*).
 
 **-[no]multikeyboard** / **-[no]multikey**
 
-	Determines whether MAME differentiates between multiple keyboards. Some systems may report more than one keyboard; by default, the data from all of these keyboards is combined so that it looks like a single 	keyboard. Turning this option on will enable MAME to report keypresses	on different keyboards independently. The default is OFF (-nomultikeyboard).
+	Determines whether MAME differentiates between multiple keyboards. Some systems may report more than one keyboard; by default, the data from all of these keyboards is combined so that it looks like a single keyboard. Turning this option on will enable MAME to report keypresses	on different keyboards independently. The default is OFF (*-nomultikeyboard*).
 
 **-[no]multimouse**
 
-	Determines whether MAME differentiates between multiple mice. Some systems may report more than one mouse device; by default, the data from all of these mice is combined so that it looks like a single mouse. Turning this option on will enable MAME to report mouse movement and button presses on different mice independently. The default is OFF (-nomultimouse).
+	Determines whether MAME differentiates between multiple mice. Some systems may report more than one mouse device; by default, the data from all of these mice is combined so that it looks like a single mouse. Turning this option on will enable MAME to report mouse movement and button presses on different mice independently. The default is OFF (*-nomultimouse*).
 
 **-[no]steadykey** / **-[no]steady**
 
-	Some games require two or more buttons to be pressed at exactly the same time to make special moves. Due to limitations in the keyboard hardware, it can be difficult or even impossible to accomplish that using the standard keyboard handling. This option selects a different handling that makes it easier to register simultaneous button presses, but has the disadvantage of making controls less responsive. The default is OFF (-nosteadykey)
+	Some games require two or more buttons to be pressed at exactly the same time to make special moves. Due to limitations in the keyboard hardware, it can be difficult or even impossible to accomplish that using the standard keyboard handling. This option selects a different handling that makes it easier to register simultaneous button presses, but has the disadvantage of making controls less responsive. The default is OFF (*-nosteadykey*)
 
 **-[no]ui_active**
 
-        Enable user interface on top of emulated keyboard (if present).  The default if OFF (-noui_active)
+        Enable user interface on top of emulated keyboard (if present).  The default is OFF (*-noui_active*)
 
 **-[no]offscreen_reload** / **-[no]reload**
 
-	Controls whether or not MAME treats a second button input from a lightgun as a reload signal. In this case, MAME will report the gun's position as (0,MAX) with the trigger held, which is equivalent to an
-	offscreen reload. This is only needed for games that required you to shoot offscreen to reload, and then only if your gun does not support off screen reloads. The default is OFF (-nooffscreen_reload).
+	Controls whether or not MAME treats a second button input from a lightgun as a reload signal. In this case, MAME will report the gun's position as (0,MAX) with the trigger held, which is equivalent to an	offscreen reload. This is only needed for games that required you to shoot offscreen to reload, and then only if your gun does not support off screen reloads. The default is OFF (*-nooffscreen_reload*).
 
 **-joystick_map** *<map>* / **-joymap** *<map>*
 
 	Controls how joystick values map to digital joystick controls. MAME accepts all joystick input from the system as analog data. For true analog joysticks, this needs to be mapped down to the usual 4-way or 8-way digital joystick values. To do this, MAME divides the analog range into a 9x9 grid. It then takes the joystick axis position (for X and Y axes only), maps it to this grid, and then looks up a translation from a joystick map. This parameter allows you to specify the map. The default is 'auto', which means that a standard 8-way, 4-way, or 4-way diagonal map is selected automatically based on the input port configuration of the current game.
 
-	Maps are defined as a string of numbers and characters. Since the grid
-	is 9x9, there are a total of 81 characters necessary to define a
-	complete map. Below is an example map for an 8-way joystick:
+	Maps are defined as a string of numbers and characters. Since the grid is 9x9, there are a total of 81 characters necessary to define a	complete map. Below is an example map for an 8-way joystick:
 
-+------------+---------------------------------------------------------+
-| 777888999  |                                                         |
-| 777888999  |Note that the numeric digits correspond to the keys      |
-| 777888999  |on a numeric keypad. So '7' maps to up+left, '4' maps    |
-| 444555666  |to left, '5' maps to neutral, etc. In addition to the    |
-| 444555666  |numeric values, you can specify the character 's',       |
-| 444555666  |which means "sticky". In this case, the value of the     |
-| 111222333  |map is the same as it was the last time a non-sticky     |
-| 111222333  |value was read.                                          |
-| 111222333  |                                                         |
-+------------+---------------------------------------------------------+
+		+-------------+---------------------------------------------------------+
+		| | 777888999 |                                                         |
+		| | 777888999 | | Note that the numeric digits correspond to the keys   |
+		| | 777888999 | | on a numeric keypad. So '7' maps to up+left, '4' maps |
+		| | 444555666 | | to left, '5' maps to neutral, etc. In addition to the |
+		| | 444555666 | | numeric values, you can specify the character 's',    |
+		| | 444555666 | | which means "sticky". In this case, the value of the  |
+		| | 111222333 | | map is the same as it was the last time a non-sticky  |
+		| | 111222333 | | value was read.                                       |
+		| | 111222333 |                                                         |
+		+-------------+---------------------------------------------------------+
 
 	To specify the map for this parameter, you can specify a string of rows separated by a '.' (which indicates the end of a row), like so:
 
-	    777888999.777888999.777888999.444555666.444555666.444555666.111222333.111222333.111222333
-
+ +-------------------------------------------------------------------------------------------+
+ | 777888999.777888999.777888999.444555666.444555666.444555666.111222333.111222333.111222333 |
+ +-------------------------------------------------------------------------------------------+
+ 
 	However, this can be reduced using several shorthands supported by the <map> parameter. If information about a row is missing, then it is assumed that any missing data in columns 5-9 are left/right symmetric with data in columns 0-4; and any missing data in colums 0-4 is assumed to be copies of the previous data. The same logic applies to missing rows, except that up/down symmetry is assumed.
 
 	By using these shorthands, the 81 character map can be simply specified by this 11 character string: 7778...4445
@@ -678,23 +685,23 @@ Core input options
 
 **-joystick_deadzone** *<value>* / **-joy_deadzone** *<value>* / **-jdz** *<value>*
 
-	If you play with an analog joystick, the center can drift a little. joystick_deadzone tells how far along an axis you must move before the axis starts to change. This option expects a float in the range of 0.0 to 1.0. Where 0 is the center of the joystick and 1 is the outer limit. The default is 0.3.
+	If you play with an analog joystick, the center can drift a little. joystick_deadzone tells how far along an axis you must move before the axis starts to change. This option expects a float in the range of 0.0 to 1.0. Where 0 is the center of the joystick and 1 is the outer limit. The default is *0.3*.
 
 **-joystick_saturation** *<value>* / **joy_saturation** *<value>* / **-jsat** *<value>*
 
-	If you play with an analog joystick, the ends can drift a little, and may not match in the +/- directions. joystick_saturation tells how far along an axis movement change will be accepted before it reaches the maximum range. This option expects a float in the range of 0.0 to 1.0, where 0 is the center of the joystick and 1 is the outer limit. The default is 0.85.
+	If you play with an analog joystick, the ends can drift a little, and may not match in the +/- directions. joystick_saturation tells how far along an axis movement change will be accepted before it reaches the maximum range. This option expects a float in the range of 0.0 to 1.0, where 0 is the center of the joystick and 1 is the outer limit. The default is *0.85*.
 
 **\-natural**
 
-        Allows user to specify whether or not to use a natural keyboard or not. This allows you to start your game or system in a 'native' mode, depending on your region,  allowing compatability for non-"QWERTY" style keyboards. The default is OFF (-nonatrual)
+        Allows user to specify whether or not to use a natural keyboard or not. This allows you to start your game or system in a 'native' mode, depending on your region, allowing compatability for non-"QWERTY" style keyboards. The default is OFF (*-nonatural*)
 
 **-joystick_contradictory**
 
-        Enable contradictory direction digital joystick input at the same time such as Left and Right or Up and Down at the same time.  The default is OFF (-nojoystick_contradictory)
+        Enable contradictory direction digital joystick input at the same time such as Left and Right or Up and Down at the same time.  The default is OFF (*-nojoystick_contradictory*)
 
 **-coin_impulse** *[n]*
 
-        Set coin impulse time based on n (n<0 disable impulse, n==0 obey driver, 0<n set time n).  Default is 0.
+        Set coin impulse time based on n (n<0 disable impulse, n==0 obey driver, 0<n set time n).  Default is *0*.
 
 
 
@@ -726,27 +733,27 @@ Debugging options
 
 **-[no]verbose** / **-[no]v**
 
-	Displays internal diagnostic information. This information is very useful for debugging problems with your configuration. IMPORTANT: when reporting bugs, please run with mame -verbose and include the resulting information. The default is OFF (-noverbose).
+	Displays internal diagnostic information. This information is very useful for debugging problems with your configuration. IMPORTANT: when reporting bugs, please run with **mame -verbose** and include the resulting information. The default is OFF (*-noverbose*).
 
 **-[no]oslog**
 
-	Output error.log data to the system debugger. The default is OFF (-nooslog).
+	Output error.log data to the system debugger. The default is OFF (*-nooslog*).
 
 **-[no]log**
 
-	Creates a file called error.log which contains all of the internal log messages generated by the MAME core and game drivers. The default is OFF (-nolog).
+	Creates a file called error.log which contains all of the internal log messages generated by the MAME core and game drivers. The default is OFF (*-nolog*).
 
 **-[no]debug**
 
-	Activates the integrated debugger. By default, the debugger is entered by pressing the tilde (~) key during emulation. It is also entered immediately at startup. The default is OFF (-nodebug).
+	Activates the integrated debugger. By default, the debugger is entered by pressing the tilde (~) key during emulation. It is also entered immediately at startup. The default is OFF (*-nodebug*).
 
 **-debugscript** *<filename>*
 
-	Specifies a file that contains a list of debugger commands to execute immediately upon startup. The default is NULL (no commands).
+	Specifies a file that contains a list of debugger commands to execute immediately upon startup. The default is NULL (*no commands*).
 
 **-[no]update_in_pause**
 
-	Enables updating of the main screen bitmap while the game is paused. This means that the VIDEO_UPDATE callback will be called repeatedly during pause, which can be useful for debugging. The default is OFF (-noupdate_in_pause).
+	Enables updating of the main screen bitmap while the game is paused. This means that the VIDEO_UPDATE callback will be called repeatedly during pause, which can be useful for debugging. The default is OFF (*-noupdate_in_pause*).
 
 
 Core communication options
@@ -754,19 +761,19 @@ Core communication options
 
 **-comm_localhost** *<string>*
 
-	Local address to bind to.  This can be a traditional xxx.xxx.xxx.xxx address or a string containing a resolvable hostname.  The default is value is "0.0.0.0"
+	Local address to bind to.  This can be a traditional xxx.xxx.xxx.xxx address or a string containing a resolvable hostname.  The default is value is "*0.0.0.0*"
 
 **-comm_localport** *<string>*
 
-	Local port to bind to.  This can be any traditional communications port as an unsigned 16-bit integer (0-65535).  The default value is "15122".
+	Local port to bind to.  This can be any traditional communications port as an unsigned 16-bit integer (0-65535).  The default value is "*15122*".
 
 **-comm_remotehost** *<string>*
 
-	Remote address to connect to.  This can be a traditional xxx.xxx.xxx.xxx address or a string containing a resolvable hostname.  The default is value is "0.0.0.0"
+	Remote address to connect to.  This can be a traditional xxx.xxx.xxx.xxx address or a string containing a resolvable hostname.  The default is value is "*0.0.0.0*"
 
 **-comm_remoteport** *<string>*
 
-	Remote port to connect to.  This can be any traditional communications port as an unsigned 16-bit integer (0-65535).  The default value is "15122".
+	Remote port to connect to.  This can be any traditional communications port as an unsigned 16-bit integer (0-65535).  The default value is "*15122*".
 
 
 
@@ -774,35 +781,35 @@ Core misc options
 -----------------
 
 **-[no]drc**
-	Enable DRC cpu core if available.  The default is ON (-drc).
+	Enable DRC cpu core if available.  The default is ON (*-drc*).
 
 **\-drc_use_c**
 
-	Force DRC use the C code backend.  The default is OFF (-nodrc_use_c).
+	Force DRC use the C code backend.  The default is OFF (*-nodrc_use_c*).
 
 **\-drc_log_uml**
 
-	Write DRC UML disassembly log.  The default is OFF (-nodrc_log_uml).
+	Write DRC UML disassembly log.  The default is OFF (*-nodrc_log_uml*).
 
 **\-drc_log_native**
 
-	write DRC native disassembly log.  The default is OFF (-nodrc_log_native).
+	write DRC native disassembly log.  The default is OFF (*-nodrc_log_native*).
 
 **-bios** *<biosname>*
 
-	Specifies the specific BIOS to use with the current game, for game systems that make use of a BIOS. The -listxml output will list all of the possible BIOS names for a game. The default is 'default'.
+	Specifies the specific BIOS to use with the current game, for game systems that make use of a BIOS. The **-listxml** output will list all of the possible BIOS names for a game. The default is '*default*'.
 
 **-[no]cheat** / **-[no]c**
 
-	Enables the reading of the cheat database, if present, and the Cheat menu in the user interface. The default is OFF (-nocheat).
+	Enables the reading of the cheat database, if present, and the Cheat menu in the user interface. The default is OFF (*-nocheat*).
 
 **-[no]skip_gameinfo**
 
-	Forces MAME to skip displaying the game info screen. The default is OFF (-noskip_gameinfo).
+	Forces MAME to skip displaying the game info screen. The default is OFF (*-noskip_gameinfo*).
 
 **-uifont <fontname>**
 
-	Specifies the name of a font file to use for the UI font.  If this font cannot be found or cannot be loaded, the system will fall back to its built-in UI font.  On some platforms 'fontname' can be a system font         name (TTF) instead of a (BDF) font file. The default is 'default' (use the OSD-determined default font).
+	Specifies the name of a font file to use for the UI font. If this font cannot be found or cannot be loaded, the system will fall back to its built-in UI font. On some platforms 'fontname' can be a system font name (TTF) instead of a (BDF) font file. The default is '*default*' (use the OSD-determined default font).
 
 **-ramsize** *[n]*
 
@@ -810,15 +817,17 @@ Core misc options
 
 **\-confirm_quit**
 
-        Display a Confirm Quit dialong to screen on exit, requiring one extra step to exit MAME.  The default is OFF (-noconfirm_quit).
+        Display a Confirm Quit dialong to screen on exit, requiring one extra step to exit MAME.  The default is OFF (*-noconfirm_quit*).
 
 **\-ui_mouse**
 
-        Displays a mouse cursor when using the built-in UI for MAME.  The default is (-noui_mouse).
+        Displays a mouse cursor when using the built-in UI for MAME.  The default is (*-noui_mouse*).
 
 **-autoboot_command** *"<command>"*
 
-        Command string to execute after machine boot (in quotes " ").  To issue a quote to the emulation, use """ in the string.  Using \\n will issue a create a new line, issuing what was typed prior as a command. Example:  -autoboot_command "load """$""",8,1\\n"
+        Command string to execute after machine boot (in quotes " ").  To issue a quote to the emulation, use """ in the string.  Using **\\n** will issue a create a new line, issuing what was typed prior as a command. 
+		
+		Example:  -autoboot_command "load """$""",8,1\\n"
 
 **-autoboot_delay** *[n]*
 
@@ -827,3 +836,6 @@ Core misc options
 **-autoboot_script** / **-script** *[filename.lua]*
 
         File containing scripting to execute after machine boot.
+
+		
+[todo: reformat -snapname and others nearby to make it less wall-o-text..]
