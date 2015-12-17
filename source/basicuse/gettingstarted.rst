@@ -1,5 +1,3 @@
-*Current as of November 4th, 2015, version 0.167*
-
 An Introduction to MAME
 =======================
 
@@ -40,7 +38,7 @@ Installing MAME
 Microsoft Windows
 -----------------
 
-You simply have to download the latest binary archive available from www.mamedev.org and to extract its content to a folder. You will end up with many files (below you find explanations about some of these), and in particular with MAME.EXE. This is a command line program. The installation procedure ends here. Easy, isn't it?
+You simply have to download the latest binary archive available from http://www.mamedev.org and to extract its content to a folder. You will end up with many files (below you will find explanations about some of these), and in particular **MAME.EXE**. This is a command line program. The installation procedure ends here. Easy, isn't it?
 
 
 Other Operating Systems
@@ -63,13 +61,13 @@ The official MAME binaries are compiled and designed to run on a standard Window
 * A DirectDraw, Direct3D, or OpenGL capable graphics card
 * Any DirectSound capable sound card/onboard audio
 
-Of course, the minimum requirements are just that: minimal. You may not get optimal performance from such a system, but MAME should run. Modern versions of MAME require more power than older versions, so if you have a less-capable PC, you may find that using an older version of MAME may get you better performance, at the cost of lowered accuracy and fewer supported systems.
+Of course, the minimum requirements are just that: minimal. You may not get optimal performance from such a system, but MAME should run. Modern versions of MAME require more power than older versions, so if you have a less-capable PC, you may find that using an older version of MAME may get you better performance, at the cost of greatly lowered accuracy and fewer supported systems.
 
 MAME will take advantage of 3D hardware for compositing artwork and scaling the games to full screen. To make use of this, you should have a modern Direct3D 8-capable video card with at least 16MB of video RAM.
 
-HLSL or GLSL special effects such as CRT simulation will put a very heavy load on your video card, especially at higher resolutions. You will need a fairly powerful modern video card.
+HLSL or GLSL special effects such as CRT simulation will put a very heavy load on your video card, especially at higher resolutions. You will need a fairly powerful modern video card, and the load on your video card goes up exponentially as your resolution increases. If HLSL or GLSL are too intensive, try dropping your output resolution.
 
-MAME also has minimal multi-processor support, if you use the -mt flag. This means that some of the video processing can be done on a second CPU core if it is available. To take advantage of this, you should run MAME on a dual-core (or greater) system.
+MAME also has minimal multi-processor support, if you use the **-mt** flag. This means that some of the video processing can be done on a second CPU core if it is available. To take advantage of this, you should run MAME on a dual-core (or greater) system.
 
 Keep in mind that even on the fastest computers available, MAME is still incapable of playing some systems at full speed. The goal of the project isn't to make all system run speedy on your system; the goal is to document the hardware and reproduce the behavior of the hardware as faithfully as possible.
 
@@ -88,18 +86,18 @@ Using MAME
 
 If you are a new MAME user, you could find this emulator a bit complex at first. Let's take a moment to talk about softlists, as they can simplify matters quite a bit. If the content you are trying to play is a documented entry on one of the MAME softlists, starting the content is as easy as
 
-    mame.exe <system> <software>
+    **mame.exe** *<system>* *<software>*
 
 For instance:
 
-    mame.exe nes metroidu
+    **mame.exe nes metroidu**
 
 will load the USA version of Metroid for the Nintendo Entertainment System.
 
 
 Alternatively, you could start MAME with
 
-	mame.exe nes
+	**mame.exe nes**
 	
 and choose the *software list* from the cartridge slot. From there, you could pick any softlist-compatible software you have in your roms folders. Please note that many older dumps of cartridges and discs may either be bad or require renaming to match up to the softlist in order to work in this way.
 
@@ -109,43 +107,43 @@ If you are loading an arcade board or other non-softlist content, things are onl
 
 The basic usage, from command line, is
 
-	mame.exe <system> <media> <software> <options>
+	**mame.exe** *<system>* *<media>* *<software>* *<options>*
 
 where
 
-* <system> is the shortname of the system you want to emulate (e.g. nes, c64, etc.)
-* <media> is the switch for the media you want to load (if it's a cartridge, try -cart or -cart1; if it's a floppy disk, try -flop or -flop1; if it's a CD-ROM, try -cdrom)
-* <software> is the program / game you want to load (and it can be given either as the fullpath to the file to load, or as the shortname of the file in our software lists)
-* <options> is any additional command line option for controllers, video, sound, etc.
+* *<system>* is the shortname of the system you want to emulate (e.g. nes, c64, etc.)
+* *<media>* is the switch for the media you want to load (if it's a cartridge, try **-cart** or **-cart1**; if it's a floppy disk, try **-flop** or **-flop1**; if it's a CD-ROM, try **-cdrom**)
+* *<software>* is the program / game you want to load (and it can be given either as the fullpath to the file to load, or as the shortname of the file in our software lists)
+* *<options>* is any additional command line option for controllers, video, sound, etc.
 
 Remember that if you type a <system> name which does not correspond to any emulated system, MAME will suggest you some possible choices which are close to what you typed; and if you don't know which <media> switch are available, you can always launch
 
-	mame.exe <system> -listmedia
+	**mame.exe** *<system>* **-listmedia**
 
-If you don't know what <options> are available, there are a few things you can do. First of all, you can check the command line options section of this manual. You can also try one of the many :ref:`frontends` available for MAME.
+If you don't know what *<options>* are available, there are a few things you can do. First of all, you can check the command line options section of this manual. You can also try one of the many :ref:`frontends` available for MAME.
 
 
 Alternatively, you should keep in mind the following command line options, which might be very useful on occasion:
 
 
-	mame.exe -help
+	**mame.exe -help**
 
 tells what MAME is the basic structure of MAME launching options, i.e. as explained above.
 
 
-	mame.exe -showusage
+	**mame.exe -showusage**
 
 gives you the (quite long) list of available command line options for MAME. The main options are described, in the :ref:`universal-command-line` section of this manual.
 
 
-	mame.exe -showconfig
+	**mame.exe -showconfig**
 
 gives you a (quite long) list of available configuration options for MAME. These configuration can always be modified at command line, or by editing them in mame.ini which is the main configuration file for MAME. You can find a description of some configuration options in the :ref:`universal-command-line` section of the manual (in most cases, each configuration option has a corresponding command line option to configure and modify it).
 
 
-	mame.exe -createconfig
+	**mame.exe -createconfig**
 
-creates a brand new mame.ini file, with default configuration settings. Notice that mame.ini is basically a plain text file, hence you can open it with any text editor (e.g. Notepad, Emacs or TextEdit) and configure every option you need. However, no particular tweaks are needed to start, so you can basically leave most of the options unaltered.
+creates a brand new **mame.ini** file, with default configuration settings. Notice that mame.ini is basically a plain text file, hence you can open it with any text editor (e.g. Notepad, Emacs or TextEdit) and configure every option you need. However, no particular tweaks are needed to start, so you can basically leave most of the options unaltered.
 
 
 Once you are more confident with MAME options, you may want to configure a bit more your setup. In this case, keep in mind the order in which options are read; see :ref:`advanced-multi-CFG` for details.

@@ -7,3 +7,4 @@ This section covers various extra tools that come with your MAME distribution (e
 	:titlesonly:
 
 	imgtool
+	castool

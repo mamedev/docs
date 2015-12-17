@@ -1,7 +1,6 @@
 Imgtool - *A generic image manipulation tool for MAME*
 ======================================================
 
-*Current as of November 4th, 2015, version 0.167*
 
 
 Imgtool is a tool for the maintenance and manipulation of disk and other types of images that MAME users need to deal with.  Functions include retrieving and storing files and CRC checking/validation.

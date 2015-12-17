@@ -1,5 +1,3 @@
-*Current as of November 4th, 2015, version 0.167*
-
 Using the program
 =================
 
