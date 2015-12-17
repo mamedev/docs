@@ -1,5 +1,3 @@
-*Current as of November 4th, 2015, version 0.167*
-
 Using the program
 =================
 
@@ -128,8 +126,11 @@ All the keys below are fully configurable in the user interface. This list shows
 ================  ===============================================================================
 
 
+.. _universal-command-line:
+
 Universal Commandline Options
 =============================
+
 
 This section contains configuration options that are applicable to *all* MAME sub-builds (both SDL and Windows native).
 

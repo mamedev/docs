@@ -1,8 +1,6 @@
 Multiple Configuration Files
 ============================
 
-*Current as of November 4th, 2015, version 0.167*
-
 MAME has a very powerful configuration file system that can allow you to tweak settings on a per-game, per-system, or even per-monitor type basis, but requires careful thought about how you arrange your configs.
 
 .. _advanced-multi-CFG:

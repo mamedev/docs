@@ -6,7 +6,7 @@ Introduction
 
 The new 6502 family implementation has been created to reach sub-instruction accuracy in observable behaviour. It is designed with 3 goals in mind:
 
-- every bus cycle must happen at the exact time it would happen in a real cpu, and every access the real CPU does is done
+- every bus cycle must happen at the exact time it would happen in a real CPU, and every access the real CPU does is done
 
 - instructions can be interrupted at any time in the middle then restarted at that point transparently
 
@@ -18,7 +18,7 @@ Point 1 has been ensured through bisimulation with the gate-level simulation per
 The 6502 family
 ---------------
 
-The MOS 6502 family has been large and productive. A large number of variants exist, varying on bus sizes, i/o, and even opcodes. Some offshots (g65c816, hu6280) even exist that live elsewhere in the mame tree. The final class hierarchy is this:
+The MOS 6502 family has been large and productive. A large number of variants exist, varying on bus sizes, I/O, and even opcodes. Some offshots (g65c816, hu6280) even exist that live elsewhere in the mame tree. The final class hierarchy is this:
 
 ::
  
@@ -38,7 +38,7 @@ The MOS 6502 family has been large and productive. A large number of variants ex
  
  
 
-The 6510 adds an up to 8 bits i/o port, with the 6510t, 7501 and 8502 being software-identical variants with different pin count (hence I/O count), die process (nmos, hnmos, etc) and clock support.
+The 6510 adds an up to 8 bits I/O port, with the 6510t, 7501 and 8502 being software-identical variants with different pin count (hence I/O count), die process (NMOS, HNMOS, etc) and clock support.
 
 The deco16 is a Deco variant with a small number of not really understood additional instructions and some I/O.
 
@@ -46,9 +46,9 @@ The 6504 is a pin and address-bus reduced version.
 
 The 6509 adds internal support for paging.
 
-The n2a03 is the nes variant with the D flag disabled and sound functionality integrated.
+The n2a03 is the NES variant with the D flag disabled and sound functionality integrated.
 
-The 65c02 is the very first cmos variant with some additional instructions, some fixes, and most of the undocumented instructions turned into nops. The R (rockwell, but eventually produced by WDC too among others) variant adds a number of bitwise instructions and also stp and wai. The SC variant, used by the Lynx portable console, looks identical to the R variant. The 'S' probably indicates a static-ram-cell process allowing full dc-to-max clock control.
+The 65c02 is the very first cmos variant with some additional instructions, some fixes, and most of the undocumented instructions turned into nops. The R (Rockwell, but eventually produced by WDC too among others) variant adds a number of bitwise instructions and also stp and wai. The SC variant, used by the Lynx portable console, looks identical to the R variant. The 'S' probably indicates a static-ram-cell process allowing full DC-to-max clock control.
 
 The 65ce02 is the final evolution of the ISA in this hierarchy, with additional instructions, registers, and removals of a lot of dummy accesses that slowed the original 6502 down by at least 25%. The 4510 is a 65ce02 with integrated MMU and GPIO support.
 
@@ -56,9 +56,9 @@ The 65ce02 is the final evolution of the ISA in this hierarchy, with additional 
 Usage of the classes
 --------------------
 
-All the CPUs are standard modern CPU devices, with all the normal interaction with the device infrastructure. To include one of these CPUs in your driver you need to include "**cpu/m6502/<cpu>.h**" and then do a **MCFG_CPU_ADD("tag", <CPU>, clock)**.
+All the CPUs are standard modern CPU devices, with all the normal interaction with the device infrastructure. To include one of these CPUs in your driver you need to include "**CPU/m6502/<CPU>.h**" and then do a **MCFG_CPU_ADD("tag", <CPU>, clock)**.
 
-6510 variants port i/o callbacks are setup through:
+6510 variants port I/O callbacks are setup through:
   **MCFG_<CPU>_PORT_CALLBACKS(READ8(type, read_method), WRITE8(type, write_method))**
 
 And the pullup and floating lines mask is given through:
@@ -69,7 +69,7 @@ In order to see all bus accesses on the memory handlers it is possible to disabl
 
 In that case, transparent decryption support is also disabled, everything goes through normal memory-map read/write calls. The state of the sync line is given by the CPU method **get_sync()**, making implementing the decryption in the handler possible.
 
-Also, as for every executable device, the CPU method **total_cycles()** gives the current time in cycles since the start of the machine from the point of view of the cpu. Or, in other words, what is usually called the cycle number for the CPU when somebody talks about bus contention or wait states. The call is designed to be fast (no system-wide sync, no call to **machine.time()**) and is precise. Cycle number for every access is exact at the sub-instruction level.
+Also, as for every executable device, the CPU method **total_cycles()** gives the current time in cycles since the start of the machine from the point of view of the CPU. Or, in other words, what is usually called the cycle number for the CPU when somebody talks about bus contention or wait states. The call is designed to be fast (no system-wide sync, no call to **machine.time()**) and is precise. Cycle number for every access is exact at the sub-instruction level.
 
 The 4510 special nomap line is accessible through **get_nomap()**.
 
@@ -81,16 +81,16 @@ General structure of the emulations
 
 Each variant is emulated through up to 4 files:
 
-- <cpu>.h    = header for the CPU class
-- <cpu>.c    = implementation of most of the CPU class
-- d<cpu>.lst = dispatch table for the cpu
-- o<cpu>.lst = opcode implementation code for the cpu
+- <CPU>.h    = header for the CPU class
+- <CPU>.c    = implementation of most of the CPU class
+- d<CPU>.lst = dispatch table for the CPU
+- o<CPU>.lst = opcode implementation code for the CPU
 
-The last two are optional. They're used to generate a **<cpu>.inc** file in the object directory which is included by the .c file.
+The last two are optional. They're used to generate a **<CPU>.inc** file in the object directory which is included by the .c file.
 
 At a minimum, the class must include a constructor and an enum picking up the correct input line ids. See m65sc02 for a minimalist example. The header can also include specific configuration macros (see m8502) and also the class can include specific memory accessors (more on these later, simple example in m6504).
 
-If the CPU has its own dispatch table, the class must also include the declaration (but not definition) of **disasm_entries**, **do_exec_full** and **do_exec_partial**, the declaration and definition of **disasm_disassemble** (identical for all classes but refers to the class-specific **disasm_entries** array) and include the .inc file (which provides the missing definitions). Support for the generation must also be added to cpu.mak.
+If the CPU has its own dispatch table, the class must also include the declaration (but not definition) of **disasm_entries**, **do_exec_full** and **do_exec_partial**, the declaration and definition of **disasm_disassemble** (identical for all classes but refers to the class-specific **disasm_entries** array) and include the .inc file (which provides the missing definitions). Support for the generation must also be added to CPU.mak.
 
 If the CPU has in addition its own opcodes, their declaration must be done through a macro, see f.i. m65c02. The .inc file will provide the definitions.
 
@@ -98,14 +98,14 @@ If the CPU has in addition its own opcodes, their declaration must be done throu
 Dispatch tables
 ---------------
 
-Each d<cpu>.lst is the dispatch table for the cpu. Lines starting with '#' are comments. The file must include 257 entries, the first 256 being opcodes and the 257th what the CPU should do on reset. In the 6502 irq and nmi actually magically call the "brk" opcode, hence the lack of specific description for them.
+Each d<CPU>.lst is the dispatch table for the CPU. Lines starting with '#' are comments. The file must include 257 entries, the first 256 being opcodes and the 257th what the CPU should do on reset. In the 6502 irq and nmi actually magically call the "brk" opcode, hence the lack of specific description for them.
 
 Entries 0 to 255, i.e. the opcodes, must have one of these two structures:
 
 - opcode_addressing-mode
 - opcode_middle_addressing-mode
 
-Opcode is traditionally a three-character value. Addressing mode must be a 3-letter value corresponding to one of the DASM_* macros in m6502.h. Opcode and addressing mode are used to generate the disassembly table. The full entry text is used in the opcode description file and the dispatching methods, allowing for per-cpu variants for identical-looking opcodes.
+Opcode is traditionally a three-character value. Addressing mode must be a 3-letter value corresponding to one of the DASM_* macros in m6502.h. Opcode and addressing mode are used to generate the disassembly table. The full entry text is used in the opcode description file and the dispatching methods, allowing for per-CPU variants for identical-looking opcodes.
 
 An entry of "." was usable for unimplemented/unknown opcodes, generating "???" in the disassembly, but is not a good idea at this point since it will infloop in execute() if encountered.
 
@@ -113,7 +113,7 @@ An entry of "." was usable for unimplemented/unknown opcodes, generating "???" i
 Opcode descriptions
 -------------------
 
-Each **o<cpu>.lst** file includes the cpu-specific opcodes descriptions. An opcode description is a series of lines starting by an opcode entry by itself and followed by a series of indented lines with code executing the opcode.
+Each **o<CPU>.lst** file includes the CPU-specific opcodes descriptions. An opcode description is a series of lines starting by an opcode entry by itself and followed by a series of indented lines with code executing the opcode.
 
 For instance the asl <absolute address> opcode looks like this:
 
@@ -126,7 +126,7 @@ For instance the asl <absolute address> opcode looks like this:
 |     write(TMP, TMP2);
 |     prefetch();
 
-First the low part of the address is read, then the high part (**read_pc** is auto-incrementing). Then, now that the address is available the value to shift is read, then re-written (yes, the 6502 does that), shifted then the final result is written (do_asl takes care of the flags). The instruction finishes with a prefetch of the next instruction, as all non-cpu-crashing instructions do.
+First the low part of the address is read, then the high part (**read_pc** is auto-incrementing). Then, now that the address is available the value to shift is read, then re-written (yes, the 6502 does that), shifted then the final result is written (do_asl takes care of the flags). The instruction finishes with a prefetch of the next instruction, as all non-CPU-crashing instructions do.
 
 Available bus-accessing functions are:
 
@@ -277,8 +277,7 @@ The execute main call ends up very simple:
 |     }
 | }
 
-If an instruction was partially executed finish it (icount will then be zero if it still doesn't finish). Then try to run complete instructions. The NPC/IR dance is due to the fact that the 6502 does instruction prefetching, so the instruction PC and opcode come from
-the prefetch results.
+If an instruction was partially executed finish it (icount will then be zero if it still doesn't finish). Then try to run complete instructions. The NPC/IR dance is due to the fact that the 6502 does instruction prefetching, so the instruction PC and opcode come from the prefetch results.
 
 
 Future bus contention/delay slot support
@@ -361,21 +360,19 @@ A modern try/catch costs nothing if an exception is not thrown. Using this the c
 |     icount = 0;
 | }
 
-A negative icount means that the CPU won't be able to do anything for some time in the future, because it's either waiting for the bus to be free or for a peripheral to answer. These cycles will be counted until elapsed and then normal processing will go on. It's important to note that the exception path only happens when the contention/wait state goes further than the scheduling slice of the cpu. That should not usually be the case, so the cost should be minimal.
+A negative icount means that the CPU won't be able to do anything for some time in the future, because it's either waiting for the bus to be free or for a peripheral to answer. These cycles will be counted until elapsed and then normal processing will go on. It's important to note that the exception path only happens when the contention/wait state goes further than the scheduling slice of the CPU. That should not usually be the case, so the cost should be minimal.
 
 Multi-dispatch variants
 -----------------------
 
-Some variants currently in the process of being supported change instruction set depending on an internal flag, either switching to a 
-16-bits mode or changing some register accesses to memory accesses. This is handled by having multiple dispatch tables for the cpu, the 
-d<cpu>.lst not being 257 entries anymore but 256*n+1. The variable inst_state_base must select which instruction table to use at a given time. It must be a multiple of 256, and is in fact simply or-ed to the first instruction byte to get the dispatch table index (aka inst_state).
+Some variants currently in the process of being supported change instruction set depending on an internal flag, either switching to a 16-bits mode or changing some register accesses to memory accesses. This is handled by having multiple dispatch tables for the CPU, the d<CPU>.lst not being 257 entries anymore but 256*n+1. The variable **inst_state_base** must select which instruction table to use at a given time. It must be a multiple of 256, and is in fact simply OR-ed to the first instruction byte to get the dispatch table index (aka inst_state).
 
 Current TO-DO:
 --------------
 
 - Implement the bus contention/wait states stuff, but that requires support on the memory map side first.
 
-- Integrate the i/o subsystems in the 4510
+- Integrate the I/O subsystems in the 4510
 
 - Possibly integrate the sound subsytem in the n2a03
 
