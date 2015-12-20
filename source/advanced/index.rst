@@ -5,3 +5,4 @@ Advanced configuration
 	:titlesonly:
 
 	multiconfig
+	hlsl
