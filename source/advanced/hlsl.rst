@@ -248,9 +248,53 @@ Configuration Settings
 | | bloom_lvl10_weight    0.01  | | Bloom level 10 | | (1x1 target) weight.  (0.00-1.00)       |
 +-------------------------------+------------------+-------------------------------------------+
 
-Random Notes
-------------
-Delete this section when you finish this chapter.
 
-[23:56] <@Tafoid> Firehawke:  Windows can use GLSL shaders when using -video opengl
-[23:57] <@Tafoid> but none are distributed by default, I believe
+Vector Games
+------------
+
+HLSL effects can also be used with vector games. Due to a wide variance of vector settings to optimize for each individual game, it is heavily suggested you add these to per-game INI files (e.g. tempest.ini)
+
+Shadowmasks were only present on color vector games, and should not be used on monochrome vector games. Additionally, vector games did not use scanlines, so that should also be turned off.
+
+Open your INI file in your text editor of choice (e.g. Notepad), and make sure the following options are set correctly:
+
+* **video d3d**
+* **filter 0**
+* **hlsl_enable 1**
+
+In the Core Vector Options section:
+
+* **antialias 1**
+* **beam_width_min 1.0**
+* **beam_width_max 1.0**
+* **beam_intensity_weight 0**
+* **flicker 0**
+
+In the Vector Post-Processing Options section:
+
+* **vector_length_scale 0.5**
+* **vector_length_ratio 500.0**
+
+Suggested settings for vector games:
+
+* **bloom_scale** should typically be set higher for vector games than raster games. Try between 0.4 and 1.0 for best effect.
+* **bloom_overdrive** should only be used with color vector games. 
+
+* **bloom_lvl_weights** should be set as follows:
+
++-------------------------------+------------------+-------------------------------------------+
+| | bloom_lvl0_weight     1.00  | | Bloom level 0  | | (full-size target) weight. (0.00-1.00)  |
+| | bloom_lvl1_weight     0.16  | | Bloom level 1  | | (half-size target) weight.(0.00-1.00)   |
+| | bloom_lvl2_weight     0.24  | | Bloom level 2  | | (1/4-size target) weight. (0.00-1.00)   |
+| | bloom_lvl3_weight     0.32  | | Bloom level 3  | | (.) weight.  (0.00-1.00)                |
+| | bloom_lvl4_weight     0.48  | | Bloom level 4  | | (.) weight.  (0.00-1.00)                |
+| | bloom_lvl5_weight     0.00  | | Bloom level 5  | | (.) weight.  (0.00-1.00)                |
+| | bloom_lvl6_weight     0.96  | | Bloom level 6  | | (.) weight.  (0.00-1.00)                |
+| | bloom_lvl7_weight     0.72  | | Bloom level 7  | | (.) weight.  (0.00-1.00)                |
+| | bloom_lvl8_weight     0.48  | | Bloom level 8  | | (.) weight.  (0.00-1.00)                |
+| | bloom_lvl9_weight     0.24  | | Bloom level 9  | | (.) weight.  (0.00-1.00)                |
+| | bloom_lvl10_weight    0.12  | | Bloom level 10 | | (1x1 target) weight.  (0.00-1.00)       |
++-------------------------------+------------------+-------------------------------------------+
+
+
+Todo: Go over all of this again with a fine-tooth comb, find any missed errors and correct.
