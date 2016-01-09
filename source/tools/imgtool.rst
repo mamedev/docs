@@ -30,8 +30,6 @@ Example usage:
 
 Further details vary with each subcommand.  Also note that not all subcommands are applicable or supported for different image formats.
 
-*Certain Imgtool subcommands (info, crc, good) make use of the CRC files, so if you use these commands, make sure that your CRC directory is set up.*
-
 
 Imgtool Subcommands
 ===================

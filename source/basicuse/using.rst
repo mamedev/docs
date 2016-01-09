@@ -423,7 +423,15 @@ Core state/playback options
 
 **-snapname** *<name>*
 
-	Describes how MAME should name files for snapshots. <name> is a string that provides a template that is used to generate a filename. Three simple substitutions are provided: the / character represents the path separator on any target platform (even Windows); the string %g represents the driver name of the current game; and the string %i represents an incrementing index. If %i is omitted, then each snapshot taken will overwrite the previous one; otherwise, MAME will find the next empty value for %i and use that for a filename. The default is %g/%i, which creates a separate folder for each game, and names the snapshots under it starting with 0000 and increasing from there.  In addition to the above, for drivers using different  media, like carts or floppy disks, you can also use the %d_[media] indicator.  Replace [media] with the media switch you want to use. A few examples: if you use 'mame robby -snapname foo/%g%i' snapshots will be saved as 'snaps\\foo\\robby0000.png' , 'snaps\\foo\\robby0001.png' and so on ; if you use 'mess nes -cart robby -snapname %g/%d_cart' snapshots will be saved as 'snaps\\nes\\robby.png' ; if you use 'mess c64 -flop1 robby -snapname %g/%d_flop1/%i' snapshots will be saved as 'snaps\\c64\\robby\\0000.png'.
+	Describes how MAME should name files for snapshots. <name> is a string that provides a template that is used to generate a filename. 
+	
+	Three simple substitutions are provided: the / character represents the path separator on any target platform (even Windows); the string %g represents the driver name of the current game; and the string %i represents an incrementing index. If %i is omitted, then each snapshot taken will overwrite the previous one; otherwise, MAME will find the next empty value for %i and use that for a filename.
+	
+	The default is %g/%i, which creates a separate folder for each game, and names the snapshots under it starting with 0000 and increasing from there.  
+	
+	In addition to the above, for drivers using different media, like carts or floppy disks, you can also use the %d_[media] indicator.  Replace [media] with the media switch you want to use. 
+	
+	A few examples: if you use 'mame robby -snapname foo/%g%i' snapshots will be saved as 'snaps\\foo\\robby0000.png' , 'snaps\\foo\\robby0001.png' and so on; if you use 'mess nes -cart robby -snapname %g/%d_cart' snapshots will be saved as 'snaps\\nes\\robby.png' ; if you use 'mess c64 -flop1 robby -snapname %g/%d_flop1/%i' snapshots will be saved as 'snaps\\c64\\robby\\0000.png'.
 
 **-snapsize** *<width>x<height>*
 
@@ -431,7 +439,9 @@ Core state/playback options
 
 **-snapview** *<viewname>*
 
-	Specifies the view to use when rendering snapshots and movies. By default, both use a special 'internal' view, which renders a separate snapshot per screen or renders movies only of the first screen. By specifying this option, you can override this default behavior and select a single view that will apply to all snapshots and movies. Note that <viewname> does not need to be a perfect match; rather, it will select the first view whose name matches all the characters specified by <viewname>. For example, -snapview native will match the "Native (15:14)" view even though it is not a perfect match. <viewname> can also be 'auto', which selects the first view with all screens present. The default value is '*internal*'.
+	Specifies the view to use when rendering snapshots and movies. By default, both use a special 'internal' view, which renders a separate snapshot per screen or renders movies only of the first screen. By specifying this option, you can override this default behavior and select a single view that will apply to all snapshots and movies. Note that <viewname> does not need to be a perfect match; rather, it will select the first view whose name matches all the characters specified by <viewname>.
+	
+	For example, **-snapview native** will match the "Native (15:14)" view even though it is not a perfect match. <viewname> can also be 'auto', which selects the first view with all screens present. The default value is '*internal*'.
 
 **-[no]snapbilinear**
 
@@ -439,7 +449,15 @@ Core state/playback options
 
 **-statename** *<name>*
 
-	Describes how MAME should store save state files, relative to the state_directory path. <name> is a string that provides a template that is used to generate a relative path. Two simple substitutions are provided: the / character represents the path separator on any target platform (even Windows); the string %g represents the driver name of the current game. The default is %g, which creates a separate folder for each game.  In addition to the above, for drivers using different media, like carts or floppy disks, you can also use the %d_[media] indicator.  Replace [media] with the media switch you want to use. A few examples: if you use 'mame robby -statename foo/%g' save states will be stored inside 'sta\\foo\\robby\\' ; if you use 'mess nes -cart robby -statename %g/%d_cart' save states will be stored inside 'sta\\nes\\robby\\' ; if you use 'mess c64 -flop1 robby -statename %g/%d_flop1' save states will be stored inside 'sta\\c64\\robby\\'.
+	Describes how MAME should store save state files, relative to the state_directory path. <name> is a string that provides a template that is used to generate a relative path.
+	
+	Two simple substitutions are provided: the / character represents the path separator on any target platform (even Windows); the string %g represents the driver name of the current game.
+	
+	The default is %g, which creates a separate folder for each game.  
+	
+	In addition to the above, for drivers using different media, like carts or floppy disks, you can also use the %d_[media] indicator.  Replace [media] with the media switch you want to use. 
+	
+	A few examples: if you use 'mame robby -statename foo/%g' save states will be stored inside 'sta\\foo\\robby\\' ; if you use 'mess nes -cart robby -statename %g/%d_cart' save states will be stored inside 'sta\\nes\\robby\\' ; if you use 'mess c64 -flop1 robby -statename %g/%d_flop1' save states will be stored inside 'sta\\c64\\robby\\'.
 
 **-[no]burnin**
 
@@ -837,6 +855,3 @@ Core misc options
 **-autoboot_script** / **-script** *[filename.lua]*
 
         File containing scripting to execute after machine boot.
-
-		
-[todo: reformat -snapname and others nearby to make it less wall-o-text..]
