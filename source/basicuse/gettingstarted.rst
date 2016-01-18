@@ -5,7 +5,7 @@ MAME is an acronym which stands for Multi Arcade Machine Emulator. MAME document
 
 At one point there were actually two separate projects, MAME and MAME. MAME covered arcade machines, while MAME covered everything else. They are now merged into the one MAME.
 
-MAME is mostly programmed in C with some core components in C++. MAME can currently emulate over 550 individual systems from the last 5 decades. [todo: get a better number, with the MAME merger, it's gotta be over 3000 by now..]
+MAME is mostly programmed in C with some core components in C++. MAME can currently emulate over 32000 individual systems from the last 5 decades.
 
 
 Purpose of MAME

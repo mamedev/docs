@@ -6,3 +6,4 @@ Advanced configuration
 
 	multiconfig
 	hlsl
+	glsl
