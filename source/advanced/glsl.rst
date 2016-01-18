@@ -23,7 +23,7 @@ Some older LCD displays used a native resolution of 1280x1024, which is a 5:4 as
 Getting Started with GLSL
 -------------------------
 
-You will need to have followed the initial MAME setup instructions elsewhere in this manual before beginning. Official MAME distributions include GLSL support by default, but do NOT include the GLSL shader files. You will need to obtain the shader files 
+You will need to have followed the initial MAME setup instructions elsewhere in this manual before beginning. Official MAME distributions include GLSL support by default, but do NOT include the GLSL shader files. You will need to obtain the shader files from third party online sources.
 
 Open your MAME.INI in your text editor of choice (e.g. Notepad), and make sure the following options are set correctly:
 
@@ -62,239 +62,24 @@ For instance, once you've found GLSL settings you think are appropriate for Neo 
 Configuration Settings
 ----------------------
 
-| **hlslpath**
+| **gl_glsl**
 | 
-| 	This is where your GLSL files are stored. By default, this will be the GLSL folder in your MAME installation.
+| 	Enables GLSL when set to 1, disabled if set to 0. Defaults to *0*.
 | 
-| **hlsl_prescale_x**
-| **hlsl_prescale_y**
+| **gl_glsl_filter**
 | 
-| 	The factor at which the initial pre-GLSL picture will be prescaled before the effects are applied. The higher the prescale, the better the results (within reason) but the more video card power is used. If GLSL is giving you severe slowdown, you can try decreasing these. A value of 0 will cause GLSL to automatically calculate based on display resolution, but you may want to set it higher for better effect if your hardware can handle it.
+| 	Enables filtering to GLSL output. Reduces jagginess at the cost of blurriness.
 | 
-| **hlsl_snap_width**
-| **hlsl_snap_height**
+| **glsl_shader_mame0**
+|         ...
+| **glsl_shader_mame9**
 | 
-| 	Sets the resolution that Alt+F12 GLSL screenshots are output at.
-| 	
-| **shadow_mask_alpha**
+| 	Specifies the shaders to run, in the order from 0 to 9. See your shader pack author for details on which to run in which order for best effect.
 | 
-| 	This defines how strong the effect of the shadowmask is. Acceptable range is from 0 to 1, where 0 will show no shadowmask effect, 1 will be a completely opaque shadowmask, and 0.5 will be 50% transparent.
-| 	
-| **shadow_mask_texture**
-| **shadow_mask_x_count**
-| **shadow_mask_y_count**
-| **shadow_mask_usize**
-| **shadow_mask_vsize**
+| **glsl_shader_screen0**
+|         ...
+| **glsl_shader_screen9**
 | 
-| 	These settings need to be set in unison with one another. In particular, **shadow_mask_texture** sets rules for how you need to set the other options.
-| 	
-| 	**shadow_mask_texture** sets the texture of the shadowmask effect. Three shadowmasks are included with MAME: *adapture-grill.png*, *shadow-mask.png*, and *slot-mask.png*
-| 	
-| **shadow_mask.png settings:**
-| 
-| 	shadow_mask_texture shadow-mask.png
-| 	shadow_mask_x_count 6
-| 	shadow_mask_y_count 4
-| 	shadow_mask_usize 0.1875
-| 	shadow_mask_vsize 0.25
-| 
-| 	The use of shadow_mask.png requires special care. While shadow_mask_x_count and shadow_mask_y_count can be increased, the shadow_mask_x_count to shadow_mask_y_count ratio must remain 3:2 to avoid graphical glitching.
-| 
-| 	The settings shadow_mask_uoffset and shadow_mask_voffset can be used to tweak the alignment of the final shadowmask, as the results can differ on different combinations of video card and monitor.
-| 
-| **slot-mask.png settings:**
-| 
-| 	shadow_mask_texture slot-mask.png
-| 	shadow_mask_x_count 6
-| 	shadow_mask_y_count 6
-| 	shadow_mask_usize 0.1875
-| 	shadow_mask_vsize 0.1875
+| 	Specifies screen to apply the shaders on.
 |
-| 	You can increase the shadow_mask_x_count and shadow_mask_y_count, but keep the shadow_mask_x_count and shadow_mask_y_count identical to one another to avoid graphical glitching.
-| 
-| 	The settings shadow_mask_uoffset and shadow_mask_voffset can be used to tweak the alignment of the final shadowmask, as the results can differ on different combinations of video card and monitor.
-| 
-| **adapture-grill settings:**
-| 
-| 	shadow_mask_texture adapture-grill.png
-| 	shadow_mask_x_count 6
-| 	shadow_mask_y_count 6
-| 	shadow_mask_usize 0.1875
-| 	shadow_mask_vsize 0.1875
-| 	
-| 	You can increase the shadow_mask_x_count and shadow_mask_y_count, but keep the shadow_mask_x_count and shadow_mask_y_count identical to one another to avoid graphical glitching.
-| 
-| 	The settings shadow_mask_uoffset and shadow_mask_voffset can be used to tweak the alignment of the final shadowmask, as the results can differ on different combinations of video card and monitor.
-| 
-| **curvature**
-| 
-| 	This setting determines how strong of a fisheye effect the curvature should be.
-|
-| **round_corner**
-| 
-| 	The corners of the display can be rounded off through the use of this setting.
-| 
-| **smooth_border**
-| 
-| 	Sets a smoothened/blurred border around the edges of the screen.
-| 
-| **reflection**
-| 
-| 	If set above 0, this creates a white reflective blotch on the display. By default, this is put in the upper right corner of the display. By editing the POST.FX file's GetSpotAddend section, you can change the location. [todo: What's the max?]
-| 
-| **vignetting**
-| 
-| 	When set above 0, will increasingly darken the outer edges of the display in a pseudo-3D effect. [todo: What's the max?]
-| 
-| **scanline_alpha**
-| 
-| 	This defines how strong the effect of the scanlines are. Acceptable range is from 0 to 1, where 0 will show no scanline effect, 1 will be a completely black line, and 0.5 will be 50% transparent. Note that arcade monitors did not have completely black scanlines.
-| 
-| **scanline_size**
-| 
-| 	The overall spacing of the scanlines is set with this option. Setting it at 1 represents consistent alternating spacing between display lines and scanlines.
-| 
-| **scanline_height**
-| 
-| 	This determines the overall size of each scanline. Setting lower than 1 makes them thinner, larger than 1 makes them thicker.
-| 
-| **scanline_bright_scale**
-| 
-| 	Specifies how bright the scanlines are. Larger than 1 will make them brighter, lower will make them dimmer. Setting to 0 will make scanlines disappear entirely.
-| 
-| **scanline_bright_effect**
-| 
-| 	This will give scanlines a glow/overdrive effect, softening and smoothing the top and bottom of each scanline.
-| 
-| **scanline_jitter**
-| 
-| 	Specifies the wobble or jitter of the scanlines, causing them to jitter on the monitor. Warning: Higher settings may hurt your eyes.
-| 
-| **defocus**
-| 
-| 	This option will defocus the display, blurring individual pixels like an extremely badly maintained monitor. Specify as X,Y values (e.g. **defocus 1,1**)
-| 
-| **converge_x**
-| **coverge_y**
-| 
-| 	Adjust the convergence of the red, green, and blue channels in a given direction. Many badly maintained monitors with bad convergence would bleed colored ghosting off-center of a sprite, and this simulates that.
-| 
-| **red_ratio**
-| **grn_ratio**
-| **blu_ratio**
-| 
-| 	Defines a 3x3 matrix that is multiplied with the RGB signals to simulate color channel interference. For instance, a green channel of (0.100, 1.000, 0.250) is weakened 10% by the red channel and strengthened 25% through the blue channel.
-| 
-| **offset**
-| 
-| 	Strengthen or weakens the current color value of a given channel. For instance, a red signal of 0.5 with an offset of 0.2 will be raised to 0.7
-| 
-| **scale**
-| 
-| 	Applies scaling to the current color value of the channel. For instance, a red signal of 0.5 with a scale of 1.1 will result in a red signal of 0.55
-| 
-| **power** (*RGB Gamma*)
-| 
-| 	Exponentiate the current color value of the channel. This is called RGB-Gamma in the slider menu. For instance, a red signal of 0.5 with red power of 2 will result in a red signal of 0.25
-| 	
-| 	This setting also can be used to adjust line thickness in vector games.
-| 
-| **floor**
-| 
-| 	Sets the absolute minimum color value of a channel. For instance, a red signal of 0.0 (total absense of red) with a red floor of 0.2 will result in a red signal of 0.2
-|
-| 	Typically used in conjunction with artwork turned on to make the screen have a dim raster glow.
-| 
-| **phosphor_life**
-| 
-| 	How long the color channel stays on the screen (phosphor ghosting)-- 0 gives absolutely no ghost effect, and 1 will leave a contrail behind that is only overwritten by a higher color value.
-| 
-| 	This also affects vector games quite a bit.
-| 
-| **saturation**
-| 
-| 	Color saturation can be adjusted here.
-| 
-| **bloom_scale**
-| 
-| 	Determines the intensity of bloom effect. Arcade CRT displays had a tendency towards bloom, where bright colors could bleed out into neighboring pixels. This effect is extremely graphics card intensive, and can be turned completely off to save GPU power by setting it to 0
-| 
-| **bloom_overdrive**
-| 
-| 	Sets a RGB color, separated by commas, that has reached the brightest possible color and will be overdriven to white. This is only useful on color raster games.
-| 
-| **bloom_lvl0_weight**
-| **bloom_lvl1_weight**
-|      .  .  .  .
-| **bloom_lvl9_weight**
-| **bloom_lvl10_weight**
-| 
-| 	These define the bloom effect. If used carefully in conjuction with phosphor_life, glowing/ghosting for moving objects can be achieved.
-|
-| Suggested defaults for raster-based games:
-| 
 
-+-------------------------------+------------------+-------------------------------------------+
-| | bloom_lvl0_weight     1.00  | | Bloom level 0  | | (full-size target) weight. (0.00-1.00)  |
-| | bloom_lvl1_weight     0.64  | | Bloom level 1  | | (half-size target) weight.(0.00-1.00)   |
-| | bloom_lvl2_weight     0.32  | | Bloom level 2  | | (1/4-size target) weight. (0.00-1.00)   |
-| | bloom_lvl3_weight     0.16  | | Bloom level 3  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl4_weight     0.08  | | Bloom level 4  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl5_weight     0.04  | | Bloom level 5  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl6_weight     0.04  | | Bloom level 6  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl7_weight     0.02  | | Bloom level 7  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl8_weight     0.02  | | Bloom level 8  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl9_weight     0.01  | | Bloom level 9  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl10_weight    0.01  | | Bloom level 10 | | (1x1 target) weight.  (0.00-1.00)       |
-+-------------------------------+------------------+-------------------------------------------+
-
-
-Vector Games
-------------
-
-GLSL effects can also be used with vector games. Due to a wide variance of vector settings to optimize for each individual game, it is heavily suggested you add these to per-game INI files (e.g. tempest.ini)
-
-Shadowmasks were only present on color vector games, and should not be used on monochrome vector games. Additionally, vector games did not use scanlines, so that should also be turned off.
-
-Open your INI file in your text editor of choice (e.g. Notepad), and make sure the following options are set correctly:
-
-* **video d3d**
-* **filter 0**
-* **hlsl_enable 1**
-
-In the Core Vector Options section:
-
-* **antialias 1**
-* **beam_width_min 1.0**
-* **beam_width_max 1.0**
-* **beam_intensity_weight 0**
-* **flicker 0**
-
-In the Vector Post-Processing Options section:
-
-* **vector_length_scale 0.5**
-* **vector_length_ratio 500.0**
-
-Suggested settings for vector games:
-
-* **bloom_scale** should typically be set higher for vector games than raster games. Try between 0.4 and 1.0 for best effect.
-* **bloom_overdrive** should only be used with color vector games. 
-
-* **bloom_lvl_weights** should be set as follows:
-
-+-------------------------------+------------------+-------------------------------------------+
-| | bloom_lvl0_weight     1.00  | | Bloom level 0  | | (full-size target) weight. (0.00-1.00)  |
-| | bloom_lvl1_weight     0.16  | | Bloom level 1  | | (half-size target) weight.(0.00-1.00)   |
-| | bloom_lvl2_weight     0.24  | | Bloom level 2  | | (1/4-size target) weight. (0.00-1.00)   |
-| | bloom_lvl3_weight     0.32  | | Bloom level 3  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl4_weight     0.48  | | Bloom level 4  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl5_weight     0.00  | | Bloom level 5  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl6_weight     0.96  | | Bloom level 6  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl7_weight     0.72  | | Bloom level 7  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl8_weight     0.48  | | Bloom level 8  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl9_weight     0.24  | | Bloom level 9  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl10_weight    0.12  | | Bloom level 10 | | (1x1 target) weight.  (0.00-1.00)       |
-+-------------------------------+------------------+-------------------------------------------+
-
-
-Todo: Go over all of this again with a fine-tooth comb, find any missed errors and correct.
