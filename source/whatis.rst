@@ -7,7 +7,7 @@ MAME's purpose is to preserve decades of video-game history. As gaming technolog
 
 | 
 | **MAME(R), the Multiple Arcade Machine Emulator**
-| **Copyright (c) 1997-2013 by Nicola Salmoria and the MAME team**
+| **Copyright (c) 1997-2016 by Nicola Salmoria and the MAME team**
 | **MAME is a trademark owned by Nicola Salmoria**
 |
 

@@ -3,3 +3,87 @@ Common Issues
 
 
 
+**Disclaimer: The following information is not legal advice and was not written by a lawyer.**
+
+Why does MAME report "missing files" even if I have the ROMs?
+-------------------------------------------------------------
+
+There can be several reasons for this:
+
+* It is not unusual for the ROMs to change for a game between releases of MAME. Why would this happen? Oftentimes, better or more complete ROM dumps are made, or errors are found in the way the ROMs were previously defined. Early versions of MAME were not as meticulous about this issue, but more recent MAME builds are. Additionally, there can be more features of a game emulated in a later release of MAME than an earlier release, requiring more ROM code to run.
+* You may find that some games require CHD files. A CHD file is a compressed representation of a game's hard disk, CD-ROM, or laserdisc, and is generally not included as part of a game's ROMs. However, in most cases, these files are required to run the game, and MAME will complain if they cannot be found.
+* Some games such as Neo-Geo, Playchoice-10, Convertible Video System, Deco Cassette, MegaTech, MegaPlay, ST-V Titan, and others need their BIOS ROMs in addition to the game ROMs. The BIOS ROMs often contain ROM code that is used for booting the machine, menu processor code on multi-game systems, and code common to all games on a system. BIOS ROMS must be named correctly and left zipped inside your ROMs folder.
+* Older versions of MAME needed decryption tables in order for MAME to emulate Capcom Play System 2 (a.k.a. CPS2) games. These are created by team CPS2Shock.
+* Some games in MAME are considered "Clones" of another game. This is often the case when the game in question is simply an alternate version of the same game. Common alternate versions of games include versions with text in other languages, versions with different copyright dates, later versions or updates, bootlegs, etc. "Cloned" games often overlap some of the ROM code as the original or "parent" version of the game. To see if you have any "clones" type "**MAME -listclones**". To run a "cloned game" you simply need to place its parent ROM file in your ROMs folder (leave it zipped).
+
+
+How can I be sure I have the right ROMs?
+----------------------------------------
+
+MAME checks to be sure you have the right ROMs before emulation begins. If you see any error messages, your ROMs are not those tested to work properly with MAME. You will need to obtain a correct set of ROMs through legal methods.
+
+If you have several games and you wish to verify that they are compatible with the current version of MAME, you can use the *-verifyroms* parameter. For example:
+
+**mame -verifyroms robby**
+...checks your ROMs for the game *Robby Roto* and displays the results on the screen.
+
+**mame -verifyroms \* >verify.txt**
+...checks the validity of ALL the ROMs in your ROMS directory, and writes the results to a textfile called *verify.txt*.
+
+How do I legally obtain ROMs or disk images to run on MAME?
+-----------------------------------------------------------
+
+You have several options:
+
+* You can obtain a license to them by purchasing one via a distributor or vendor who has proper authority to do so.
+* You can download one of the ROM sets that have been released for free to the public for non-commerical use.
+* You can purchase an actual arcade PCB, read the ROMs or disks yourself, and let MAME use that data.
+
+Beyond these options, you are on your own.
+
+Isn't copying ROMs a legal gray area?
+-------------------------------------
+
+No, it's not. You are not permitted to make copies of software without the copyright owner's permission. This is a black & white issue.
+
+Can't game ROMs be considered abandonware?
+------------------------------------------
+
+No. Even the companies that went under had their assets purchased by somebody, and that person is the copyright owner.
+
+I had ROMs that worked with an old version of MAME and now they don't. What happened?
+-------------------------------------------------------------------------------------
+
+As time passes, MAME is perfecting the emulation of older games, even when the results aren't immediately obvious to the user. Often times the better emulation requires more data from the original game to operate. Sometimes the data was overlooked, sometimes it simply wasn't feasible to get at it (for instance, chip "decapping" is a technique that only became affordable very recently for people not working in high-end laboratories). In other cases it's much simpler: more sets of a game were dumped and it was decided to change which sets were which version.
+
+What about those arcade cabinets on eBay that come with all the ROMs?
+---------------------------------------------------------------------
+
+If the seller does not have a proper license to include the ROMs with his system, he is not allowed to legally include any ROMs with his system. If he has purchased a license to the ROMs in your name from a distributor or vendor with legitimate licenses, then he is okay to include them with the cabinet. After signing an agreement, cabinet owners that include legitimate licensed ROMs may be permitted to include a version of MAME that runs those ROMs and nothing more.
+
+What about those guys who burn DVDs of ROMs for the price of the media?
+-----------------------------------------------------------------------
+
+What they are doing is just as illegal as selling the ROMs outright. As long as somebody owns the copyright, making illegal copies is illegal, period. If someone went on the internet and started a business of selling cheap copies of the latest U2 album for the price of media, do you think they would get away with it?
+
+Even worse, a lot of these folks like to claim that they are helping the project. In fact, they only create more problems for the MAME team. We are not associated with these people in any way regardless of how "official" they may attempt to appear. You are only helping criminals make a profit through selling software they have no right to sell. **Anybody using the MAME name and/or logo to sell such products is also in violation of the MAME trademark.**
+
+But isn't there a special DMCA exemption that makes ROM copying legal?
+----------------------------------------------------------------------
+
+No, you have misread the exemptions. The exemption allows people to reverse engineer the copy protection or encryption in computer programs that are obsolete. The exemption simply means that figuring out how these obsolete programs worked is not illegal according to the DMCA. It does not have any effect on the legality of violating the copyright on computer programs, which is what you are doing if you make copies of ROMs.
+
+But isn't it OK to download and "try" ROMs for 24 hours?
+--------------------------------------------------------
+
+This is an urban legend that was made up by people who put ROMs up for download on their sites, in order to justify the fact that they were breaking the law. There is nothing like this in any copyright law.
+
+If I buy a cabinet with legitimate ROMs, can I set it up in a public place to make money?
+-----------------------------------------------------------------------------------------
+
+Absolutely not. Not only is it against the MAME license to use MAME for commercial purposes, but ROMs are typically only licensed for personal, non-commercial purposes.
+
+But I've seen Ultracade and Global VR Classics cabinets out in public places? Why can they do it?
+-------------------------------------------------------------------------------------------------
+
+Ultracade had two separate products. The Ultracade product is a commercial machine with commercial licenses to the games. These machines were designed to be put on location and make money, like traditional arcade machines. Their other product is the Arcade Legends series. These are home machines with non- commercial licenses for the games, and can only be legally operated in a private environment. Since their buyout by Global VR they only offer the Global VR Classics cabinet, which is equivalent to the earlier Ultracade product.
