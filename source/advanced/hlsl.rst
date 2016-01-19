@@ -100,7 +100,7 @@ Configuration Settings
 | 
 | 	The use of shadow_mask.png requires special care. While shadow_mask_x_count and shadow_mask_y_count can be increased, the shadow_mask_x_count to shadow_mask_y_count ratio must remain 3:2 to avoid graphical glitching.
 | 
-| 	The settings shadow_mask_uoffset and shadow_mask_voffset can be used to tweak the alignment of the final shadowmask, as the results can differ on different combinations of video card and monitor.
+| 	The settings shadow_mask_uoffset and shadow_mask_voffset can be used to tweak the alignment of the final shadowmask in subpixel range, as the results can differ on different combinations of video card and monitor. Only needed for debugging or if the shadowmask is out of alignment.
 | 
 | **slot-mask.png settings:**
 | 
@@ -112,7 +112,7 @@ Configuration Settings
 |
 | 	You can increase the shadow_mask_x_count and shadow_mask_y_count, but keep the shadow_mask_x_count and shadow_mask_y_count identical to one another to avoid graphical glitching.
 | 
-| 	The settings shadow_mask_uoffset and shadow_mask_voffset can be used to tweak the alignment of the final shadowmask, as the results can differ on different combinations of video card and monitor.
+| 	The settings shadow_mask_uoffset and shadow_mask_voffset can be used to tweak the alignment of the final shadowmask in subpixel range, as the results can differ on different combinations of video card and monitor. Only needed for debugging or if the shadowmask is out of alignment.
 | 
 | **adapture-grill settings:**
 | 
@@ -124,7 +124,7 @@ Configuration Settings
 | 	
 | 	You can increase the shadow_mask_x_count and shadow_mask_y_count, but keep the shadow_mask_x_count and shadow_mask_y_count identical to one another to avoid graphical glitching.
 | 
-| 	The settings shadow_mask_uoffset and shadow_mask_voffset can be used to tweak the alignment of the final shadowmask, as the results can differ on different combinations of video card and monitor.
+| 	The settings shadow_mask_uoffset and shadow_mask_voffset can be used to tweak the alignment of the final shadowmask in subpixel range, as the results can differ on different combinations of video card and monitor. Only needed for debugging or if the shadowmask is out of alignment.
 | 
 | **curvature**
 | 
@@ -140,11 +140,11 @@ Configuration Settings
 | 
 | **reflection**
 | 
-| 	If set above 0, this creates a white reflective blotch on the display. By default, this is put in the upper right corner of the display. By editing the POST.FX file's GetSpotAddend section, you can change the location. [todo: What's the max?]
+| 	If set above 0, this creates a white reflective blotch on the display. By default, this is put in the upper right corner of the display. By editing the POST.FX file's GetSpotAddend section, you can change the location. Range is from 0.00 to 1.00.
 | 
 | **vignetting**
 | 
-| 	When set above 0, will increasingly darken the outer edges of the display in a pseudo-3D effect. [todo: What's the max?]
+| 	When set above 0, will increasingly darken the outer edges of the display in a pseudo-3D effect. Range is from 0.00 to 1.00.
 | 
 | **scanline_alpha**
 | 
@@ -221,7 +221,7 @@ Configuration Settings
 | 
 | **bloom_overdrive**
 | 
-| 	Sets a RGB color, separated by commas, that has reached the brightest possible color and will be overdriven to white. This is only useful on color raster games.
+| 	Sets a RGB color, separated by commas, that has reached the brightest possible color and will be overdriven to white. This is only useful on color rasted, color LCD, or color vector games.
 | 
 | **bloom_lvl0_weight**
 | **bloom_lvl1_weight**
@@ -231,6 +231,11 @@ Configuration Settings
 | 
 | 	These define the bloom effect. If used carefully in conjuction with phosphor_life, glowing/ghosting for moving objects can be achieved.
 |
+| **hlsl_write**
+| 
+| 	Enables writing of an uncompressed AVI video with the HLSL effects included with set to *1*. This uses a massive amount of disk space very quickly, so a large HD with fast write speeds is highly recommended. Default is *0*, which is off.
+|
+
 | Suggested defaults for raster-based games:
 | 
 
@@ -272,8 +277,8 @@ In the Core Vector Options section:
 
 In the Vector Post-Processing Options section:
 
-* **vector_length_scale 0.5**
-* **vector_length_ratio 500.0**
+* **vector_length_scale 0.8**
+* **vector_length_ratio 12.0**
 
 Suggested settings for vector games:
 
@@ -288,13 +293,10 @@ Suggested settings for vector games:
 | | bloom_lvl2_weight     0.24  | | Bloom level 2  | | (1/4-size target) weight. (0.00-1.00)   |
 | | bloom_lvl3_weight     0.32  | | Bloom level 3  | | (.) weight.  (0.00-1.00)                |
 | | bloom_lvl4_weight     0.48  | | Bloom level 4  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl5_weight     0.00  | | Bloom level 5  | | (.) weight.  (0.00-1.00)                |
+| | bloom_lvl5_weight     0.32  | | Bloom level 5  | | (.) weight.  (0.00-1.00)                |
 | | bloom_lvl6_weight     0.96  | | Bloom level 6  | | (.) weight.  (0.00-1.00)                |
 | | bloom_lvl7_weight     0.72  | | Bloom level 7  | | (.) weight.  (0.00-1.00)                |
 | | bloom_lvl8_weight     0.48  | | Bloom level 8  | | (.) weight.  (0.00-1.00)                |
 | | bloom_lvl9_weight     0.24  | | Bloom level 9  | | (.) weight.  (0.00-1.00)                |
 | | bloom_lvl10_weight    0.12  | | Bloom level 10 | | (1x1 target) weight.  (0.00-1.00)       |
 +-------------------------------+------------------+-------------------------------------------+
-
-
-Todo: Go over all of this again with a fine-tooth comb, find any missed errors and correct.
