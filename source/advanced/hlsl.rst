@@ -221,7 +221,7 @@ Configuration Settings
 | 
 | **bloom_overdrive**
 | 
-| 	Sets a RGB color, separated by commas, that has reached the brightest possible color and will be overdriven to white. This is only useful on color rasted, color LCD, or color vector games.
+| 	Sets a RGB color, separated by commas, that has reached the brightest possible color and will be overdriven to white. This is only useful on color raster, color LCD, or color vector games.
 | 
 | **bloom_lvl0_weight**
 | **bloom_lvl1_weight**
