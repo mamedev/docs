@@ -289,14 +289,14 @@ Suggested settings for vector games:
 
 +-------------------------------+------------------+-------------------------------------------+
 | | bloom_lvl0_weight     1.00  | | Bloom level 0  | | (full-size target) weight. (0.00-1.00)  |
-| | bloom_lvl1_weight     0.16  | | Bloom level 1  | | (half-size target) weight.(0.00-1.00)   |
-| | bloom_lvl2_weight     0.24  | | Bloom level 2  | | (1/4-size target) weight. (0.00-1.00)   |
-| | bloom_lvl3_weight     0.32  | | Bloom level 3  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl4_weight     0.48  | | Bloom level 4  | | (.) weight.  (0.00-1.00)                |
+| | bloom_lvl1_weight     0.64  | | Bloom level 1  | | (half-size target) weight.(0.00-1.00)   |
+| | bloom_lvl2_weight     0.32  | | Bloom level 2  | | (1/4-size target) weight. (0.00-1.00)   |
+| | bloom_lvl3_weight     0.16  | | Bloom level 3  | | (.) weight.  (0.00-1.00)                |
+| | bloom_lvl4_weight     0.24  | | Bloom level 4  | | (.) weight.  (0.00-1.00)                |
 | | bloom_lvl5_weight     0.32  | | Bloom level 5  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl6_weight     0.96  | | Bloom level 6  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl7_weight     0.72  | | Bloom level 7  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl8_weight     0.48  | | Bloom level 8  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl9_weight     0.24  | | Bloom level 9  | | (.) weight.  (0.00-1.00)                |
-| | bloom_lvl10_weight    0.12  | | Bloom level 10 | | (1x1 target) weight.  (0.00-1.00)       |
+| | bloom_lvl6_weight     0.48  | | Bloom level 6  | | (.) weight.  (0.00-1.00)                |
+| | bloom_lvl7_weight     0.32  | | Bloom level 7  | | (.) weight.  (0.00-1.00)                |
+| | bloom_lvl8_weight     0.24  | | Bloom level 8  | | (.) weight.  (0.00-1.00)                |
+| | bloom_lvl9_weight     0.16  | | Bloom level 9  | | (.) weight.  (0.00-1.00)                |
+| | bloom_lvl10_weight    0.08  | | Bloom level 10 | | (1x1 target) weight.  (0.00-1.00)       |
 +-------------------------------+------------------+-------------------------------------------+

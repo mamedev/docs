@@ -19,8 +19,8 @@ Order of Config Loading
     Pac-Man, for one example, is a vertical monitor setup, so it would load **VERTICAL.INI**. Street Fighter Alpha is a horizontal game, so it loads **HORIZONT.INI**.
 6. System-type INI files (**ARCADE.INI**, **CONSOLE.INI**, **COMPUTER.INI**, or **OTHERSYS.INI**)
     Both Pac-Man and Street Fighter Alpha are arcade games, so **ARCADE.INI** would be loaded here. Atari 2600 would load **CONSOLE.INI**.
-7. Vector INI file if a vector-based machine (**VECTOR.INI**)
-    Pac-Man and Street Fighter Alpha are not vector machines, so nothing happens here. However, Tempest is a vector monitor game, and **VECTOR.INI** would be loaded here.
+7. Screen-type INI file  (**VECTOR.INI** for vector games, **RASTER.INI** for raster games, **LCD.INI** for LCD games)
+    Pac-Man and Street Fighter Alpha are raster, so **RASTER.INI** gets loaded here. Tempest is a vector monitor game, and **VECTOR.INI** would be loaded here.
 8. Source INI files. 
     This is an advanced config file, most people won't need to use it and it can be safely ignored.
     MAME will attempt to load **SOURCE/SOURCEFILE.INI** and **SOURCEFILE.INI**, where sourcefile is the actual filename of the source code file.
@@ -37,10 +37,10 @@ Examples of Config Loading Order
 --------------------------------
 
 1. Alcon, which is the US clone of Slap Fight. (*mame alcon*)
-    Command line, MAME.INI, VERTICAL.INI, ARCADE.INI, SLAPFGHT.INI, and lastly ALCON.INI
+    Command line, MAME.INI, VERTICAL.INI, ARCADE.INI, RASTER.INI, SLAPFGHT.INI, and lastly ALCON.INI (*remember command line parameters take precedence over all else!*)
 
 2. Super Street Fighter 2 Turbo (*mame ssf2t*)
-    Command line, MAME.INI, HORIZONT.INI, ARCADE.INI, CPS2.INI, and lastly SSF2T.INI
+    Command line, MAME.INI, HORIZONT.INI, ARCADE.INI, RASTER.INI, CPS2.INI, and lastly SSF2T.INI (*remember command line parameters take precedence over all else!*)
 
 
 Tricks to Make Life Easier
