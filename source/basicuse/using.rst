@@ -349,7 +349,7 @@ Core search path options
 
 **-cheatpath** *<path>*
 
-        Specifies a list of paths within which to find .XML cheat files. Multiple paths can be specified by separating them with semicolons. The default is 'cheat' (that is, a folder called 'cheat' located in the same         directory as the as the MAME executable).
+        Specifies a list of paths within which to find .XML cheat files. Multiple paths can be specified by separating them with semicolons. The default is 'cheat' (that is, a folder called 'cheat' located in the same directory as the as the MAME executable).
 
 **-crosshairpath** *<path>*
 
@@ -408,6 +408,10 @@ Core state/playback options
 **-record** / **-rec** *<filename>*
 
 	Specifies a file to record all input from a game session. This can be used to record a game session for later playback. This feature does not work reliably for all games, but can be used to watch a previously recorded game session from start to finish. In order to make things consistent, you should only record and playback with all configuration (.cfg), NVRAM (.nv), and memory card files deleted. The default is NULL (no recording).
+
+**-[no]record_timecode**
+
+	Specify whether to create a timecode file. It contains a line with elapsed times on each press of timecode shortcut key (*default is F12*). This option works only when recording mode is enabled (**-record** option). The file is saved in the *inp* folder.
 
 **-mngwrite** *<filename>*
 
@@ -820,7 +824,7 @@ Core misc options
 
 **-[no]cheat** / **-[no]c**
 
-	Enables the reading of the cheat database, if present, and the Cheat menu in the user interface. The default is OFF (*-nocheat*).
+	Activates the cheat menu with autofire options and other tricks from the cheat database, if present. The default is OFF (*-nocheat*).
 
 **-[no]skip_gameinfo**
 
