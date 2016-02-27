@@ -35,7 +35,7 @@ Performance options
 
 **-[no]multithreading** / **-[no]mt**
 
-	Enables multithreading within MAME. At the moment, this causes the window and all DirectDraw/Direct3D code to execute on a second thread, which can improve performance on hyperthreaded and multicore systems. The default is OFF (*-nomultithreading*).
+	Enables multithreading within MAME. At the moment, this causes the window and all Direct3D code to execute on a second thread, which can improve performance on hyperthreaded and multicore systems. The default is OFF (*-nomultithreading*).
 
 **-numprocessors** *<auto|value>* / **-np** *<auto|value>*
 
@@ -56,9 +56,9 @@ Performance options
 Video options
 -------------
 
-**-video** *<gdi|ddraw|d3d|none>*
+**-video** *<bgfx|gdi|d3d|none>*
 
-	Specifies which video subsystem to use for drawing. By specifying '*gdi*' here, you tell MAME to render video using older standard Windows graphics drawing calls. This is the slowest but most compatible option on older versions of Windows. Specifying '*ddraw*' instructs MAME to use DirectDraw for rendering. This causes MAME to render everything at a lower resolution and then upscale the results at the end. This produces high performance, especially on older or low-power video cards, but has a noticeably lower output quality. Specifying '*d3d*' tells MAME to use Direct3D for rendering. This produces the highest quality output and enables all rendering options. It is recommended if you have a semi-recent (2002+) video card or onboard Intel video of the HD3000 line or better. The final option 'none' displays no windows and does no drawing. This is primarily present for doing CPU benchmarks without the overhead of the video system. The default is *d3d*.
+	Specifies which video subsystem to use for drawing. Using '*bgfx*' specifies the new hardware accelerated renderer. By specifying '*gdi*' here, you tell MAME to render video using older standard Windows graphics drawing calls. This is the slowest but most compatible option on older versions of Windows. Specifying '*d3d*' tells MAME to use Direct3D for rendering. This produces the highest quality output and enables all rendering options. It is recommended if you have a semi-recent (2002+) video card or onboard Intel video of the HD3000 line or better. The final option 'none' displays no windows and does no drawing. This is primarily present for doing CPU benchmarks without the overhead of the video system. The default is *d3d*.
 
 **-numscreens** *<count>*
 
@@ -80,7 +80,7 @@ Video options
 
 **-prescale** *<amount>*
 
-	Controls the size of the screen images when they are passed off to the graphics system for scaling. At the minimum setting of 1, the screen is rendered at its original resolution before being scaled. At higher settings, the screen is expanded by a factor of *<amount>* before being scaled. With **-video ddraw** or **-video d3d**, this produces a less blurry image at the expense of some speed. In **-video ddraw** mode, this also increases the effective resolution of non-screen elements such as artwork and fonts. The default is *1*. 
+	Controls the size of the screen images when they are passed off to the graphics system for scaling. At the minimum setting of 1, the screen is rendered at its original resolution before being scaled. At higher settings, the screen is expanded by a factor of *<amount>* before being scaled. With **-video d3d**, this produces a less blurry image at the expense of some speed. The default is *1*. 
 
 **-[no]waitvsync**
 
@@ -89,15 +89,6 @@ Video options
 **-[no]syncrefresh**
 
 	Enables speed throttling only to the refresh of your monitor. This means that the game's actual refresh rate is ignored; however, the sound code still attempts to keep up with the game's original refresh rate, so you may encounter sound problems. This option is intended mainly for those who have tweaked their video card's settings to provide carefully matched refresh rate options. Note that this option does not work with -video gdi mode. The default is OFF (*-nosyncrefresh*).
-
-
-DirectDraw-specific options
----------------------------
-
-**-[no]hwstretch** / **-[no]hws**
-
-	When enabled, MAME uses the hardware stretching abilities of your video card to scale the game image and associated artwork to the target resolution. Depending on the quality of your graphic card and its drivers, this may be a fractional, antialiased scaling (nice) or an integer, blocky scaling (not so nice), in which case you might want to disable this option. In addition, if you have configured specific arcade-like video modes for MAME and don't want MAME to perform any non-integral scaling of the image, you should also disable this option. The default is ON (*-hwstretch*).
-
 
 
 Direct3D-specific options
@@ -145,7 +136,7 @@ Per-window options
 | **-resolution2** *<widthxheight[@refresh]>* / **-r2** *<widthxheight[@refresh]>*
 | **-resolution3** *<widthxheight[@refresh]>* / **-r3** *<widthxheight[@refresh]>*
 |
-|	Specifies an exact resolution to run in. In full screen mode, MAME will try to use the specific resolution you request. The width and height are required; the refresh rate is optional. If omitted or set to 0, MAME will determine the mode automatically. For example, **-resolution 640x480** will force 640x480 resolution, but MAME is free to choose the refresh rate. Similarly, **-resolution 0x0@60** will force a 60Hz refresh rate, but allows MAME to choose the resolution. The string "*auto*" is also supported, and is equivalent to *0x0@0*. In window mode, this resolution is used as a maximum size for the window. This option requires the **-switchres** option as well in order to actually enable resolution switching with **-video ddraw** or **-video d3d**. The default value for these options is '*auto*'.
+|	Specifies an exact resolution to run in. In full screen mode, MAME will try to use the specific resolution you request. The width and height are required; the refresh rate is optional. If omitted or set to 0, MAME will determine the mode automatically. For example, **-resolution 640x480** will force 640x480 resolution, but MAME is free to choose the refresh rate. Similarly, **-resolution 0x0@60** will force a 60Hz refresh rate, but allows MAME to choose the resolution. The string "*auto*" is also supported, and is equivalent to *0x0@0*. In window mode, this resolution is used as a maximum size for the window. This option requires the **-switchres** option as well in order to actually enable resolution switching with **-video d3d**. The default value for these options is '*auto*'.
 |
 |	The **-resolution0**, **-resolution1**, **-resolution2**, **-resolution3** parameters apply to the specific window. The -resolution parameter applies to all windows. The window-specific options override values from the all window option.
 |

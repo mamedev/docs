@@ -58,7 +58,7 @@ The official MAME binaries are compiled and designed to run on a standard Window
 * 32-bit OS (Vista SP1 or later on Windows, 10.9 or later on Mac)
 * 4 GB RAM
 * DirectX 9.0c for Windows
-* A DirectDraw, Direct3D, or OpenGL capable graphics card
+* A Direct3D, or OpenGL capable graphics card
 * Any DirectSound capable sound card/onboard audio
 
 Of course, the minimum requirements are just that: minimal. You may not get optimal performance from such a system, but MAME should run. Modern versions of MAME require more power than older versions, so if you have a less-capable PC, you may find that using an older version of MAME may get you better performance, at the cost of greatly lowered accuracy and fewer supported systems.
