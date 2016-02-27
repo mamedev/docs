@@ -349,12 +349,19 @@ Core search path options
 
 **-cheatpath** *<path>*
 
-        Specifies a list of paths within which to find .XML cheat files. Multiple paths can be specified by separating them with semicolons. The default is 'cheat' (that is, a folder called 'cheat' located in the same directory as the as the MAME executable).
+    Specifies a list of paths within which to find .XML cheat files. Multiple paths can be specified by separating them with semicolons. The default is 'cheat' (that is, a folder called 'cheat' located in the same directory as the as the MAME executable).
 
 **-crosshairpath** *<path>*
 
 	Specifies a list of paths within which to find crosshair files. Multiple paths can be specified by separating them with semicolons. The default is 'crsshair' (that is, a directory "crsshair" in the same directory as the MAME executable).  If the Crosshair is set to default in the menu, MAME will look for gamename\\cross#.png and then cross#.png in the specified crsshairpath, where # is the player number.  Failing that, MAME will use built-in default crosshairs.
 
+**-languagepath** *<path>*
+
+	Specifies a list of paths within which to find language files for localized UI text.
+
+**-pluginspath** *<path>*
+
+	Specifies a list of paths within which to find Lua plugins for MAME.
 
 
 Core Output Directory Options
@@ -399,19 +406,23 @@ Core state/playback options
 
 **-[no]autosave**
 
-	When enabled, automatically creates a save state file when exiting MAME and automatically attempts to reload it when later starting MAME with the same game. This only works for games that have explicitly 	enabled save state support in their driver. The default is OFF (-noautosave).
+	When enabled, automatically creates a save state file when exiting MAME and automatically attempts to reload it when later starting MAME with the same game. This only works for games that have explicitly enabled save state support in their driver. The default is OFF (-noautosave).
 
 **-playback** / **-pb** *<filename>*
 
-	Specifies a file from which to play back a series of game inputs. This	feature does not work reliably for all games, but can be used to watch a previously recorded game session from start to finish. In order to make things consistent, you should only record and playback with all configuration (.cfg), NVRAM (.nv), and memory card files deleted. The default is NULL (no playback).
+	Specifies a file from which to play back a series of game inputs. Thisfeature does not work reliably for all games, but can be used to watch a previously recorded game session from start to finish. In order to make things consistent, you should only record and playback with all configuration (.cfg), NVRAM (.nv), and memory card files deleted. The default is NULL (no playback).
+
+**-exit_after_playback**
+
+	Tells MAME to exit after finishing playback of the input file.
 
 **-record** / **-rec** *<filename>*
 
 	Specifies a file to record all input from a game session. This can be used to record a game session for later playback. This feature does not work reliably for all games, but can be used to watch a previously recorded game session from start to finish. In order to make things consistent, you should only record and playback with all configuration (.cfg), NVRAM (.nv), and memory card files deleted. The default is NULL (no recording).
 
-**-[no]record_timecode**
+**-record_timecode**
 
-	Specify whether to create a timecode file. It contains a line with elapsed times on each press of timecode shortcut key (*default is F12*). This option works only when recording mode is enabled (**-record** option). The file is saved in the *inp* folder.
+	Tells MAME to create a timecode file. It contains a line with elapsed times on each press of timecode shortcut key (*default is F12*). This option works only when recording mode is enabled (**-record** option). The file is saved in the *inp* folder. By default, no timecode file is saved.
 
 **-mngwrite** *<filename>*
 
@@ -546,7 +557,7 @@ Core artwork options
 
 **-[no]artwork_crop** / **-[no]artcrop**
 
-	Enable cropping of artwork to the game screen area only. This works best with -video gdi or -video d3d, and means that vertically oriented games running full screen can display their artwork to the left and 	right sides of the screen. This does not work with -video ddraw because of the way the game screens are rendered and scaled after the fact. This option can also be controlled via the Video Options menu in the user interface. The default is OFF (*-noartwork_crop*).
+	Enable cropping of artwork to the game screen area only. This works best with -video gdi or -video d3d, and means that vertically oriented games running full screen can display their artwork to the left and right sides of the screen. This option can also be controlled via the Video Options menu in the user interface. The default is OFF (*-noartwork_crop*).
 
 **-[no]use_backdrops** / **-[no]backdrop**
 
@@ -591,7 +602,7 @@ Core screen options
 
 **-effect** *<filename>*
 
-	Specifies a single PNG file that is used as an overlay over any game screens in the video display. This PNG file is assumed to live in the root of one of the artpath directories. The pattern in the PNG file is repeated both horizontally and vertically to cover the entire game screen areas (but not any external artwork), and is rendered at the target resolution of the game image. For -video gdi and -video d3d modes, this means that one pixel in the PNG will map to one pixel on your output display. For -video ddraw, this means that one pixel in the PNG will map to one pixel in the prescaled game screen. If you wish to use an effect that requires mapping n PNG pixels to each game screen pixel with **-video ddraw**, you need to specify a **-prescale** factor of n as well. The RGB values of each pixel in the PNG are multiplied against the RGB values of the target screen. The default is '*none*', meaning no effect.
+	Specifies a single PNG file that is used as an overlay over any game screens in the video display. This PNG file is assumed to live in the root of one of the artpath directories. The pattern in the PNG file is repeated both horizontally and vertically to cover the entire game screen areas (but not any external artwork), and is rendered at the target resolution of the game image. For -video gdi and -video d3d modes, this means that one pixel in the PNG will map to one pixel on your output display. The RGB values of each pixel in the PNG are multiplied against the RGB values of the target screen. The default is '*none*', meaning no effect.
 
 
 
@@ -830,32 +841,36 @@ Core misc options
 
 	Forces MAME to skip displaying the game info screen. The default is OFF (*-noskip_gameinfo*).
 
-**-uifont <fontname>**
+**-uifont** *<fontname>*
 
 	Specifies the name of a font file to use for the UI font. If this font cannot be found or cannot be loaded, the system will fall back to its built-in UI font. On some platforms 'fontname' can be a system font name (TTF) instead of a (BDF) font file. The default is '*default*' (use the OSD-determined default font).
 
 **-ramsize** *[n]*
 
-        Allows you to change the default RAM size (if supported by driver).
+	Allows you to change the default RAM size (if supported by driver).
 
 **\-confirm_quit**
 
-        Display a Confirm Quit dialong to screen on exit, requiring one extra step to exit MAME.  The default is OFF (*-noconfirm_quit*).
+	Display a Confirm Quit dialong to screen on exit, requiring one extra step to exit MAME.  The default is OFF (*-noconfirm_quit*).
 
 **\-ui_mouse**
 
-        Displays a mouse cursor when using the built-in UI for MAME.  The default is (*-noui_mouse*).
+	Displays a mouse cursor when using the built-in UI for MAME.  The default is (*-noui_mouse*).
 
 **-autoboot_command** *"<command>"*
 
-        Command string to execute after machine boot (in quotes " ").  To issue a quote to the emulation, use """ in the string.  Using **\\n** will issue a create a new line, issuing what was typed prior as a command. 
-		
-		Example:  -autoboot_command "load """$""",8,1\\n"
+	Command string to execute after machine boot (in quotes " ").  To issue a quote to the emulation, use """ in the string.  Using **\\n** will issue a create a new line, issuing what was typed prior as a command. 
+
+	Example:  -autoboot_command "load """$""",8,1\\n"
 
 **-autoboot_delay** *[n]*
 
-        Timer delay (in seconds) to trigger command execution on autoboot.
+    Timer delay (in seconds) to trigger command execution on autoboot.
 
 **-autoboot_script** / **-script** *[filename.lua]*
 
-        File containing scripting to execute after machine boot.
+    File containing scripting to execute after machine boot.
+
+**-language** *<language>*
+
+	Specify a localization language found in the *languagepath* tree.
