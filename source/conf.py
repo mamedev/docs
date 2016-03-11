@@ -256,6 +256,3 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
-
-# --- Added by Firehawke on 03/09/2016
-locale_dirs = ['locale/']   # Let's put the localization structure into locale.
