@@ -34,8 +34,57 @@ Microsoft Windows
 
 Here are specific notes about compiling MAME for Microsoft Windows.
 
-* *Refer to http://mamedev.org/tools/ for the latest toolkit for getting MAME compiled on Windows.*
+* Refer to `the MAME tools site <http://mamedev.org/tools/>`_ for the latest toolkit for getting MAME compiled on Windows.
 
 * You will need to download the toolset from that link to begin. Periodically, these tools are updated and newer versions of MAME from that point on will **require** updated tools to compile. 
 
 * You can do compilation on Visual Studio 2015 (if installed on your PC) by using **make vs2015**. This will always regenerate the settings, so **REGENIE=1** is *not* needed.
+
+
+Fedora Linux
+------------
+
+You'll need a few prerequisites from your distro.
+
+**sudo yum install gcc gcc-c++ SDL-devel libXinerama-devel qt-devel expat-devel fontconfig-devel SDL_ttf SDL_ttf-devel**
+
+Compilation is exactly as described above in All Platforms.
+
+
+Debian and Ubuntu (including Raspberry Pi and ODROID devices)
+-------------------------------------------------------------
+
+You'll need a few prerequisites from your distro.
+
+**sudo apt-get install git build-essentials libsdl2-dev libsdl2-ttf-dev libfontconfig-dev qt5-default**
+
+Compilation is exactly as described above in All Platforms.
+
+
+Arch Linux
+----------
+
+You'll need a few prerequisites from your distro.
+
+sudo pacman -S base-devel git sdl2 gconf sdl2_ttf gcc qt5
+
+Compilation is exactly as described above in All Platforms.
+
+
+Apple Macintosh OS X
+--------------------
+
+You'll need a few prerequisites from your distro.
+
+* Install **Xcode** from the Mac App Store
+* Launch **Xcode**. It will download a few additional prerequisites. Let this run through before proceeding.
+* Once that's done, quit **Xcode** and open a **Terminal** window
+* Type **xcode-select --install** to install additional tools necessary for MAME
+
+Next you'll need to get SDL2 installed.
+
+* Go to `this site <http://libsdl.org/download-2.0.php>`_ and download the *Mac OS X* .dmg file
+* If the .dmg doesn't auto-open, open it
+* Click 'Macintosh HD' (or whatever your Mac's hard disk is named) in the left pane of a **Finder** window, then open the **Library** folder and drag the **SDL2.framework** folder from the SDL disk image into the **Frameworks** folder
+
+Lastly to begin compiling, use Terminal to navigate to where you have the MAME source tree (*cd* command) and follow the normal compilation instructions from above in All Platforms.
