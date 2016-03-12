@@ -44,7 +44,7 @@ You simply have to download the latest binary archive available from http://www.
 Other Operating Systems
 -----------------------
 
-In this case, you can either look for pre-compiled (SDL)MAME binaries (e.g. in the repositories of your favorite Linux distro) which should simply extract all the needed files in a folder you choose, or compile the source code by yourself. In the latter case, see our section on compiling MAME.
+In this case, you can either look for pre-compiled (SDL)MAME binaries (e.g. in the repositories of your favorite Linux distro) which should simply extract all the needed files in a folder you choose, or compile the source code by yourself. In the latter case, see our section on :ref:`compiling-mame`.
 
 
 System Requirements
