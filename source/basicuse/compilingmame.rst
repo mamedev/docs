@@ -66,7 +66,7 @@ Arch Linux
 
 You'll need a few prerequisites from your distro.
 
-sudo pacman -S base-devel git sdl2 gconf sdl2_ttf gcc qt5
+**sudo pacman -S base-devel git sdl2 gconf sdl2_ttf gcc qt5**
 
 Compilation is exactly as described above in All Platforms.
 
