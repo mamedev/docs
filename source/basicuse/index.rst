@@ -7,7 +7,7 @@ This section describes general usage information about MAME. It is intended to c
 	:titlesonly:
 
 	gettingstarted
+	compilingmame
 	using
 	frontends
 	commonissues
-	compilingmame
