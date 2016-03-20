@@ -22,6 +22,7 @@ MAME Documentation
 
     techspecs/index
 
+    security
     license
 	
 Contribute
