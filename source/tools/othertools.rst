@@ -49,3 +49,8 @@ ldverify
 --------
 
 This tool is used for comparing laserdisc or VHS CHD images with the source AVI. Most users will not need to work with this.
+
+unidasm
+-------
+
+Universal disassembler for many of the architectures supported in MAME. Most users will not need to work with this.

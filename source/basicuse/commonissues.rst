@@ -1,5 +1,5 @@
-Common Issues
-=============
+Common Issues and Questions
+===========================
 
 
 
@@ -29,6 +29,18 @@ If you have several games and you wish to verify that they are compatible with t
 
 **mame -verifyroms \* >verify.txt**
 ...checks the validity of ALL the ROMs in your ROMS directory, and writes the results to a textfile called *verify.txt*.
+
+
+Why is it that some games have the US version as the main set, some have Japanese, and some are the World?
+-----------------------------------------------------------------------------------------------------------
+
+While this rule isn't always true, there is typically a method to how sets are arranged. The usual priority is to go with the **World** set if it's available, **US** if no World English set exists, and **Japanese** or other origin region if no World or US English set.
+
+Exceptions arise where the US or World sets have significant censorship/changes from the original version. For instance, Gals Panic (set **galsnew**) uses the US version as parent because it has additional features compared to the world export version (set **galsnewa**). These features are optional censorship, an additional control layout option (stick with no button use), and English-language voice clips.
+
+Another exception comes for games where it was licensed to a third party for export release. Pac-Man, for instance, was published by Midway in the US though it was created by Namco. As a result, the parent set is the Japanese **puckman** set, which retains the Namco copyright.
+
+Lastly, a developer adding a new set can choose to use whatever naming and parent scheme they wish and are not restricted to the above rules. Most follow these guidelines, however.
 
 
 How do I legally obtain ROMs or disk images to run on MAME?
