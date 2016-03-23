@@ -220,6 +220,7 @@ Note: By default, all the '**-list**' commands below write info to the screen. I
 
 	Displays a list of ROM images referenced by the specified game.
 
+
 **-listsamples** [<*gamename|wildcard*>]
 
 	Displays a list of samples referenced by the specified game.
@@ -270,6 +271,7 @@ Note: By default, all the '**-list**' commands below write info to the screen. I
 	Checks a specified software list for missing ROM images if files exist for issued softwarelistname. By default, all drivers that have valid ZIP files or directories in the rompath are verified; however, you can limit this list by specifying a specific softwarelistname (without .XML) after the -verifysoftlist command.
 
 
+
 OSD related options
 -------------------
 
@@ -279,7 +281,50 @@ OSD related options
 
 **\-uifontprovider**
 
-	Chooses provider for UI font:  win, none or auto.  The Default setting is *AUTO*.
+	Chooses provider for UI font:  win, none or auto.  Default setting is *AUTO*.
+
+**\-menu**
+
+	Enables menu bar at the top of the MAME window, if available by UI implementation.  Default is *OFF*
+
+**\-keyboardprovider**
+
+	Chooses how MAME will get keyboard input.
+	
+	On Windows, you can choose from: auto, rawinput, dinput, win32, or none
+	On SDL, you can choose from: auto, sdl, none
+	
+	The default is *auto*. On Windows, auto will try rawinput with fallback to dinput. On SDL, auto will default to sdl.
+	
+**\-mouseprovider**
+
+	Chooses how MAME will get mouse input.
+
+	On Windows, you can choose from: auto, rawinput, dinput, win32, or none
+	On SDL, you can choose from: auto, sdl, none
+	
+	The default is *auto*. On Windows, auto will try rawinput with fallback to dinput. On SDL, auto will default to sdl.
+
+**\-lightgunprovider**
+
+	Chooses how MAME will get light gun input.
+
+	On Windows, you can choose from: auto, win32, or none
+	On SDL, you can choose from: none
+	
+	The default is *auto*. On Windows, auto will try win32. On SDL, auto will default to none.
+
+**\-joystickprovider**
+
+	Chooses how MAME will get joystick input.
+
+	On Windows, you can choose from: auto, dinput, xinput, or none
+	On SDL, you can choose from: auto, sdl, none
+	
+	The default is *auto*. On Windows, auto will default to dinput.
+	
+	Note that Microsoft X-Box 360 and X-Box One controllers will be happiest with *xinput*. On SDL, auto will default to sdl.
+
 
 
 OSD CLI options
@@ -287,7 +332,7 @@ OSD CLI options
 
 **\-listmidi**
 
-        Create a list of available MIDI I/O devices for use with emulation.
+    Create a list of available MIDI I/O devices for use with emulation.
 
 **\-listnetwork**
 
@@ -362,13 +407,14 @@ Core search path options
 
 	Specifies a list of paths within which to find crosshair files. Multiple paths can be specified by separating them with semicolons. The default is 'crsshair' (that is, a directory "crsshair" in the same directory as the MAME executable).  If the Crosshair is set to default in the menu, MAME will look for gamename\\cross#.png and then cross#.png in the specified crsshairpath, where # is the player number.  Failing that, MAME will use built-in default crosshairs.
 
+**-pluginspath** *<path>*
+
+	Specifies a list of paths within which to find Lua plugins for MAME.
+
 **-languagepath** *<path>*
 
 	Specifies a list of paths within which to find language files for localized UI text.
 
-**-pluginspath** *<path>*
-
-	Specifies a list of paths within which to find Lua plugins for MAME.
 
 
 Core Output Directory Options
@@ -738,7 +784,7 @@ Core input options
 
 **-joystick_contradictory**
 
-        Enable contradictory direction digital joystick input at the same time such as Left and Right or Up and Down at the same time.  The default is OFF (*-nojoystick_contradictory*)
+        Enable contradictory direction digital joystick input at the same time such as **Left and Right** or **Up and Down** at the same time.  The default is OFF (*-nojoystick_contradictory*)
 
 **-coin_impulse** *[n]*
 
