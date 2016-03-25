@@ -65,33 +65,41 @@ Configuration Settings
 |	**unfiltered** -- nearest neighbor unfiltered output
 |	**hlsl** -- HLSL display simulation through shaders
 |
-|	We make a distinction between emulated device screens (which we'll call a **window**) and physical displays (which we'll call a **screen**) here. We use colons (:) to seperate screens, and commas (,) to seperate windows.
+|	We make a distinction between emulated device screens (which we'll call a **screen**) and physical displays (which we'll call a **window**) here. We use colons (:) to seperate windows, and commas (,) to seperate screens. Commas always go on the outside of the chain (see House Mannequin example)
 |
-|	On a combination of a single screen, single window case, such as Pac-Man on one physical PC monitor, you can specify one entry like:
+|	On a combination of a single window, single screen case, such as Pac-Man on one physical PC monitor, you can specify one entry like:
 |
 |		**bgfx_screen_chains hlsl**
 |
-|	Things get only slightly more complicated when we get to multiple screens and multiple windows.
+|	Things get only slightly more complicated when we get to multiple windows and multiple screens.
 |
-|	On a single PC screen, multiple window game, such as Darius on one physical PC monitor, specify multiple entries (one per window) like:
+|	On a single window, multiple screen game, such as Darius on one physical PC monitor, specify multiple entries (one per window) like:
 |
 |		**bgfx_screen_chains hlsl,hlsl,hlsl**
 |
-|	This also works with single window games where you are mirroring the output to more than one physical display. For instance, you could set up Pac-Man to have one unfiltered output for use with video broadcasting while a second display is set up HLSL for playing on.
+|	This also works with single screen games where you are mirroring the output to more than one physical display. For instance, you could set up Pac-Man to have one unfiltered output for use with video broadcasting while a second display is set up HLSL for playing on.
 |
-|	On a mulitple PC screen, multiple window game, such as Darius on three physical PC monitors, specify multiple entries (one per screen) like:
+|	On a mulitple window, multiple screen game, such as Darius on three physical PC monitors, specify multiple entries (one per window) like:
 |
 |		**bgfx_screen_chains hlsl:hlsl:hlsl**
 |
-|	Another example game would be Taisen Hot Gimmick, which used a main CRT and two smaller LCDs to show individual player hands. If using three screens:
+|	Another example game would be Taisen Hot Gimmick, which used a main CRT and two smaller LCDs to show individual player hands. If using three windows (three physical displays):
 |
 |		**bgfx_screen_chains hlsl:unfiltered:unfiltered**
 |
 |	This would cause the two smaller LCDs to be unfiltered (accurately!), while the CRT gets the HLSL treatment for maximum accuracy.
 |
-|	If using only one screen, keep in mind the game still has three windows, so we would use:
+|	If using only one window (one display), keep in mind the game still has three screens, so we would use:
 |
 |		**bgfx_screen_chains hlsl,unfiltered,unfiltered**
+|
+|	A final example is House Mannequin, which used two displays, one of which is CRT and the other is an LCD display to show your hand.
+|
+|	For this example, we're using two physical displays and we'd want to filter the CRT, but not the LCD, so we would use:
+|
+|		**bgfx_screen_chains hlsl,unfiltered:hlsl,unfiltered**
+|
+|	Note that the commas are on the outside edges, and any colons are in the middle.
 |
 | **bgfx_shadow_mask**
 |
