@@ -17,7 +17,7 @@ Resolution is a very important subject for HLSL settings. You will want MAME to 
 
 While most arcade machines used a 4:3 ratio display (or 3:4 for vertically oriented monitors like Pac-Man), it's difficult to find a consumer display that is 4:3 at this point. The good news is that that extra space on the sides isn't wasted. Many arcade cabinets used bezel artwork around the main display, and should you have the necessary artwork files, MAME will display that artwork. Turn the artwork view to Cropped for best results.
 
-Some older LCD displays used a native resolution of 1280x1024, which is a 5:4 aspect ratio. There's not enough extra space to display artwork, and you'll end up with some very slight pillarboxing, but the results will be on-par with a 4:3 monitor.
+Some older LCD displays used a native resolution of 1280x1024 and were a 5:4 aspect ratio. There's not enough extra space to display artwork, and you'll end up with some very slight pillarboxing, but the results will be still be good and on-par with a 4:3 monitor.
 
 
 Getting Started with HLSL
@@ -37,6 +37,8 @@ Lastly, one more edit will turn HLSL on:
 * **hlsl_enable 1**
 
 Save the .INI file and you're ready to begin.
+
+Several presets have been included in the INI folder with MAME, allowing for good quick starting points for Nintendo Game Boy, Nintendo Game Boy Advance, Raster, and Vector monitor settings.
 
 
 Tweaking HLSL Settings inside MAME
@@ -65,11 +67,6 @@ Configuration Settings
 | **hlslpath**
 | 
 | 	This is where your HLSL files are stored. By default, this will be the HLSL folder in your MAME installation.
-| 
-| **hlsl_prescale_x**
-| **hlsl_prescale_y**
-| 
-| 	The factor at which the initial pre-HLSL picture will be prescaled before the effects are applied. The higher the prescale, the better the results (within reason) but the more video card power is used. If HLSL is giving you severe slowdown, you can try decreasing these. A value of 0 will cause HLSL to automatically calculate based on display resolution, but you may want to set it higher for better effect if your hardware can handle it.
 | 
 | **hlsl_snap_width**
 | **hlsl_snap_height**
@@ -114,9 +111,9 @@ Configuration Settings
 | 
 | 	The settings shadow_mask_uoffset and shadow_mask_voffset can be used to tweak the alignment of the final shadowmask in subpixel range, as the results can differ on different combinations of video card and monitor. Only needed for debugging or if the shadowmask is out of alignment.
 | 
-| **adapture-grill settings:**
+| **aperture-grill settings:**
 | 
-| 	shadow_mask_texture adapture-grill.png
+| 	shadow_mask_texture aperture-grill.png
 | 	shadow_mask_x_count 6
 | 	shadow_mask_y_count 6
 | 	shadow_mask_usize 0.1875
@@ -153,6 +150,10 @@ Configuration Settings
 | **scanline_size**
 | 
 | 	The overall spacing of the scanlines is set with this option. Setting it at 1 represents consistent alternating spacing between display lines and scanlines.
+|
+| **sanline_variance**
+|
+|	This affects the spacing on the dark scanlines. Larger values make the scanline smaller. Acceptable range is from 0 to 2.0, with the default being 1.0
 | 
 | **scanline_height**
 | 
