@@ -93,9 +93,9 @@ Configuration Settings
 |
 |		**bgfx_screen_chains hlsl,unfiltered,unfiltered**
 |
-|	A final example is House Mannequin, which used two displays, one of which is CRT and the other is an LCD display to show your hand.
+|	A final example is House Mannequin, which used three displays, one of which is CRT and the other two are LCD displays to show your hand.
 |
-|	For this example, we're using two physical displays and we'd want to filter the CRT, but not the LCD, so we would use:
+|	For this example, we're using two physical displays and we'd want to filter the CRT, but not the LCDs, so we would use the following setting (while setting the secondary screen to either the **Player 1** or **Player 2** layout):
 |
 |		**bgfx_screen_chains hlsl,unfiltered:hlsl,unfiltered**
 |
