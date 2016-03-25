@@ -5,5 +5,6 @@ Advanced configuration
 	:titlesonly:
 
 	multiconfig
+	bgfx
 	hlsl
 	glsl
