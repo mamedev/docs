@@ -29,7 +29,7 @@ Alternatively, you can simply see the status by yourself, launching the system e
 Supported OS
 ============
 
-The current source code can be directly compiled under all the main OSes: Microsoft Windows (both with DirectX native support and with SDL support), Linux, FreeBSD, Mac OSX, and OS/2. Also, both 32-bit and 64-bit executable can be built with no difficulties. [todo: with 32-bit compiles on Windows becoming problematic, we may want to note that Win32 may be EOL soon..]
+The current source code can be directly compiled under all the main OSes: Microsoft Windows (both with DirectX native support and with SDL support), Linux, FreeBSD, and Mac OS X. Also, both 32-bit and 64-bit executable can be built with no difficulties.
 
 
 Installing MAME
