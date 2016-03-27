@@ -67,8 +67,6 @@ MAME will take advantage of 3D hardware for compositing artwork and scaling the 
 
 HLSL or GLSL special effects such as CRT simulation will put a very heavy load on your video card, especially at higher resolutions. You will need a fairly powerful modern video card, and the load on your video card goes up exponentially as your resolution increases. If HLSL or GLSL are too intensive, try dropping your output resolution.
 
-MAME also has minimal multi-processor support, if you use the **-mt** flag. This means that some of the video processing can be done on a second CPU core if it is available. To take advantage of this, you should run MAME on a dual-core (or greater) system.
-
 Keep in mind that even on the fastest computers available, MAME is still incapable of playing some systems at full speed. The goal of the project isn't to make all system run speedy on your system; the goal is to document the hardware and reproduce the behavior of the hardware as faithfully as possible.
 
 

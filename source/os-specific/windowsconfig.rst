@@ -33,10 +33,6 @@ Performance options
 
 	Sets the thread priority for the MAME threads. By default the priority is left alone to guarantee proper cooperation with other applications. The valid range is -15 to 1, with 1 being the highest priority. The default is *0* (*NORMAL priority*).
 
-**-[no]multithreading** / **-[no]mt**
-
-	Enables multithreading within MAME. At the moment, this causes the window and all Direct3D code to execute on a second thread, which can improve performance on hyperthreaded and multicore systems. The default is OFF (*-nomultithreading*).
-
 **-numprocessors** *<auto|value>* / **-np** *<auto|value>*
 
 	Specify the number of processors to use for work queues. Specifying "*auto*" will use the value reported by the system or environment variable **OSDPROCESSORS**. To avoid abuse, this value is internally limited to 4 times the number of processors reported by the system. The default is "*auto*".

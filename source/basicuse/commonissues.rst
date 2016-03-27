@@ -102,7 +102,7 @@ This is an urban legend that was made up by people who put ROMs up for download 
 If I buy a cabinet with legitimate ROMs, can I set it up in a public place to make money?
 -----------------------------------------------------------------------------------------
 
-Absolutely not. Not only is it against the MAME license to use MAME for commercial purposes, but ROMs are typically only licensed for personal, non-commercial purposes.
+Probably not. ROMs are typically only licensed for personal, non-commercial purposes.
 
 But I've seen Ultracade and Global VR Classics cabinets out in public places? Why can they do it?
 -------------------------------------------------------------------------------------------------
