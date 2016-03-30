@@ -5,6 +5,7 @@ Advanced configuration
 	:titlesonly:
 
 	multiconfig
+	paths
 	bgfx
 	hlsl
 	glsl
