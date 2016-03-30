@@ -40,13 +40,15 @@ Here are specific notes about compiling MAME for Microsoft Windows.
 
 * You can do compilation on Visual Studio 2015 (if installed on your PC) by using **make vs2015**. This will always regenerate the settings, so **REGENIE=1** is *not* needed.
 
+* Make sure you get SDL 2 2.0.3 or 2.0.4 as earlier versions are buggy.
+
 
 Fedora Linux
 ------------
 
-You'll need a few prerequisites from your distro.
+You'll need a few prerequisites from your distro. Make sure you get SDL2 2.0.3 or 2.0.4 as earlier versions are buggy.
 
-**sudo yum install gcc gcc-c++ SDL-devel libXinerama-devel qt-devel expat-devel fontconfig-devel SDL_ttf SDL_ttf-devel**
+**sudo yum install gcc gcc-c++ SDL2-devel SDL2_ttf-devel libXinerama-devel qt5-qtbase-devel qt5-qttools expat-devel fontconfig-devel**
 
 Compilation is exactly as described above in All Platforms.
 
@@ -54,7 +56,7 @@ Compilation is exactly as described above in All Platforms.
 Debian and Ubuntu (including Raspberry Pi and ODROID devices)
 -------------------------------------------------------------
 
-You'll need a few prerequisites from your distro.
+You'll need a few prerequisites from your distro. Make sure you get SDL2 2.0.3 or 2.0.4 as earlier versions are buggy.
 
 **sudo apt-get install git build-essentials libsdl2-dev libsdl2-ttf-dev libfontconfig-dev qt5-default**
 
@@ -71,10 +73,10 @@ You'll need a few prerequisites from your distro.
 Compilation is exactly as described above in All Platforms.
 
 
-Apple Macintosh OS X
---------------------
+Apple Mac OS X
+--------------
 
-You'll need a few prerequisites from your distro.
+You'll need a few prerequisites to get started. Make sure you're on OS X 10.9 or later, though it's possible to get builds working as far back as 10.6 via the use of MacPorts. You will NEED SDL2 2.0.4 for OS X.
 
 * Install **Xcode** from the Mac App Store
 * Launch **Xcode**. It will download a few additional prerequisites. Let this run through before proceeding.
