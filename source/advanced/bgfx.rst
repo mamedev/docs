@@ -103,7 +103,7 @@ Configuration Settings
 |
 | **bgfx_shadow_mask**
 |
-|	This specifies the shadow mask effect PNG file. By default this is **shadow-mask.png**.
+|	This specifies the shadow mask effect PNG file. By default this is **slot-mask.png**.
 |
 |
 
