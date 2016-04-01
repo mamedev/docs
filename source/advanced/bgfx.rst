@@ -65,7 +65,7 @@ Configuration Settings
 |	**unfiltered** -- nearest neighbor unfiltered output
 |	**hlsl** -- HLSL display simulation through shaders
 |
-|	We make a distinction between emulated device screens (which we'll call a **screen**) and physical displays (which we'll call a **window**) here. We use colons (:) to seperate windows, and commas (,) to seperate screens. Commas always go on the outside of the chain (see House Mannequin example)
+|	We make a distinction between emulated device screens (which we'll call a **screen**) and physical displays (which we'll call a **window**, set by **-numscreens**) here. We use colons (:) to seperate windows, and commas (,) to seperate screens. Commas always go on the outside of the chain (see House Mannequin example)
 |
 |	On a combination of a single window, single screen case, such as Pac-Man on one physical PC monitor, you can specify one entry like:
 |
@@ -83,21 +83,20 @@ Configuration Settings
 |
 |		**bgfx_screen_chains hlsl:hlsl:hlsl**
 |
-|	Another example game would be Taisen Hot Gimmick, which used a main CRT and two smaller LCDs to show individual player hands. If using three windows (three physical displays):
+|	Another example game would be Taisen Hot Gimmick, which used two CRTs to show individual player hands to just that player. If using two windows (two physical displays):
 |
-|		**bgfx_screen_chains hlsl:unfiltered:unfiltered**
+|		**bgfx_screen_chains hlsl:hlsl**
 |
-|	This would cause the two smaller LCDs to be unfiltered (accurately!), while the CRT gets the HLSL treatment for maximum accuracy.
+|	One more special case is that Nichibutsu had a special cocktail mahjongg cabinet that used a CRT in the middle along with two LCD displays to show each player their hand. We would want the LCDs to be unfiltered and untouched as they were, while the CRT would be improved through HLSL. Since we want to give each player their own full screen display (two physical monitors) along with the LCD, we'll go with:
+|
+|		**-numscreens 2 -view0 "Player 1" -view1 "Player 2" -video bgfx -bgfx_screen_chains hlsl,unfiltered,unfiltered:hlsl,unfiltered,unfiltered**
+|
+|	This sets up the view for each display respectively, keeping HLSL effect on the CRT for each window (physical display) while going unfiltered for the LCD screens.
 |
 |	If using only one window (one display), keep in mind the game still has three screens, so we would use:
 |
 |		**bgfx_screen_chains hlsl,unfiltered,unfiltered**
 |
-|	A final example is House Mannequin, which used three displays, one of which is CRT and the other two are LCD displays to show your hand.
-|
-|	For this example, we're using two physical displays and we'd want to filter the CRT, but not the LCDs, so we would use the following setting (while setting the secondary screen to either the **Player 1** or **Player 2** layout):
-|
-|		**bgfx_screen_chains hlsl,unfiltered:hlsl,unfiltered**
 |
 |	Note that the commas are on the outside edges, and any colons are in the middle.
 |
