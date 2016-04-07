@@ -6,8 +6,10 @@ This section describes general usage information about MAME. It is intended to c
 .. toctree::
 	:titlesonly:
 
-	gettingstarted
-	compilingmame
-	using
+	usingmame
+	defaultkeys
+	mamemenus
 	frontends
 	commonissues
+
+	

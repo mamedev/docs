@@ -25,10 +25,6 @@ Debugging options
 Performance options
 -------------------
 
-**-[no]multithreading** / **-[no]mt**
-
-	Enables multithreading for the *final drawing operation*.  This can help performance on multicore/hyperthreaded systems with slow video cards, but may cause undesired behavior in some games. Note that some drivers in MAME and MESS will use multiple threads even when this is set to OFF, assuming **-numprocessors** allows it. The default is OFF (*-nomultithreading*).
-
 **-numprocessors** *<auto|value>* / **-np** *<auto|value>*
 
 	Specify the number of processors to use for work queues. Specifying	"*auto*" will use the value reported by the system or environment variable **OSDPROCESSORS**. To avoid abuse, this value is internally limited to 4 times the number of processors reported by the system. The default is "*auto*".

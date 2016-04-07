@@ -104,7 +104,16 @@ If I buy a cabinet with legitimate ROMs, can I set it up in a public place to ma
 
 Probably not. ROMs are typically only licensed for personal, non-commercial purposes.
 
+
 But I've seen Ultracade and Global VR Classics cabinets out in public places? Why can they do it?
 -------------------------------------------------------------------------------------------------
 
+
 Ultracade had two separate products. The Ultracade product is a commercial machine with commercial licenses to the games. These machines were designed to be put on location and make money, like traditional arcade machines. Their other product is the Arcade Legends series. These are home machines with non- commercial licenses for the games, and can only be legally operated in a private environment. Since their buyout by Global VR they only offer the Global VR Classics cabinet, which is equivalent to the earlier Ultracade product.
+
+HELP! I'm getting a black screen or an error message in regards to DirectX on Windows!
+--------------------------------------------------------------------------------------
+
+You probably have missing or damaged DirectX runtimes. You can download the latest DirectX setup tool from Microsoft at https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=35
+
+Additional troubleshooting information can be found on Microsoft's website at https://support.microsoft.com/en-us/kb/179113

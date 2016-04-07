@@ -12,9 +12,10 @@ MAME Documentation
     :titlesonly:
     
     whatis
+    initialsetup/index
 
-    basicuse/index
-    os-specific/index
+    usingmame/index
+    commandline/index
     advanced/index
 
     mess/index
