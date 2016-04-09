@@ -184,12 +184,12 @@ OSD related options
 
 	Chooses how MAME will get joystick input.
 
-	On Windows, you can choose from: auto, dinput, xinput, or none
+	On Windows, you can choose from: auto, winhybrid, dinput, xinput, or none
 	On SDL, you can choose from: auto, sdl, none
 	
 	The default is *auto*. On Windows, auto will default to dinput.
 	
-	Note that Microsoft X-Box 360 and X-Box One controllers will be happiest with *xinput*. On SDL, auto will default to sdl.
+	Note that Microsoft X-Box 360 and X-Box One controllers will be happiest with *winhybrid* or *xinput*. The *winhybrid* option supports a mix of DirectInput and XInput controllers at the same time. On SDL, auto will default to sdl.
 
 
 
