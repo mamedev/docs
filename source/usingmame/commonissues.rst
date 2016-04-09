@@ -108,8 +108,8 @@ Probably not. ROMs are typically only licensed for personal, non-commercial purp
 But I've seen Ultracade and Global VR Classics cabinets out in public places? Why can they do it?
 -------------------------------------------------------------------------------------------------
 
-
 Ultracade had two separate products. The Ultracade product is a commercial machine with commercial licenses to the games. These machines were designed to be put on location and make money, like traditional arcade machines. Their other product is the Arcade Legends series. These are home machines with non- commercial licenses for the games, and can only be legally operated in a private environment. Since their buyout by Global VR they only offer the Global VR Classics cabinet, which is equivalent to the earlier Ultracade product.
+
 
 HELP! I'm getting a black screen or an error message in regards to DirectX on Windows!
 --------------------------------------------------------------------------------------
@@ -117,3 +117,11 @@ HELP! I'm getting a black screen or an error message in regards to DirectX on Wi
 You probably have missing or damaged DirectX runtimes. You can download the latest DirectX setup tool from Microsoft at https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=35
 
 Additional troubleshooting information can be found on Microsoft's website at https://support.microsoft.com/en-us/kb/179113
+
+
+I have a controller that doesn't want to work with the standard Microsoft Windows version of MAME, what can I do?
+-----------------------------------------------------------------------------------------------------------------
+
+By default, MAME on Microsoft Windows tries to do raw reads of the joystick(s), mouse/mice, and keyboard(s). This works with most devices and provides the most stable results. However, some devices need special drivers to translate their output and these drivers may not work with raw input.
+
+One thing you can try is setting the keyboardprovider, mouseprovider, or joystickprovider setting (depending on which kind of device your input device acts as) from rawinput to one of the other options such as dinput or win32. See :ref:`osd-commandline-options` for details on supported providers.

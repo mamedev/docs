@@ -136,6 +136,7 @@ Note: By default, all the '**-list**' commands below write info to the screen. I
 	Checks a specified software list for missing ROM images if files exist for issued softwarelistname. By default, all drivers that have valid ZIP files or directories in the rompath are verified; however, you can limit this list by specifying a specific softwarelistname (without .XML) after the -verifysoftlist command.
 
 
+.. _osd-commandline-options:
 
 OSD related options
 -------------------
