@@ -33,7 +33,7 @@ Now, you may want to take a moment to look below at the Configuration Settings s
 
 As referenced in :ref:`advanced-multi-CFG`, MAME has a order in which it processes INI files. The BGFX settings can be edited in MAME.INI, but to take full advantage of the power of MAME's config files, you'll want to copy the BGFX settings from MAME.INI to one of the other config files and make changes there.)
 
-In particular, you will want the **bgfx_shader_chains** to be specific to each game.
+In particular, you will want the **bgfx_screen_chains** to be specific to each game.
 
 Save your .INI file(s) and you're ready to begin.
 
