@@ -6,6 +6,7 @@ Advanced configuration
 
 	multiconfig
 	paths
+	shiftertoggle
 	bgfx
 	hlsl
 	glsl
