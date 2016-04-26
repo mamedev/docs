@@ -1,5 +1,5 @@
-Common Issues and Questions
-===========================
+Common Issues and Questions (FAQ)
+=================================
 
 
 
@@ -125,3 +125,11 @@ I have a controller that doesn't want to work with the standard Microsoft Window
 By default, MAME on Microsoft Windows tries to do raw reads of the joystick(s), mouse/mice, and keyboard(s). This works with most devices and provides the most stable results. However, some devices need special drivers to translate their output and these drivers may not work with raw input.
 
 One thing you can try is setting the keyboardprovider, mouseprovider, or joystickprovider setting (depending on which kind of device your input device acts as) from rawinput to one of the other options such as dinput or win32. See :ref:`osd-commandline-options` for details on supported providers.
+
+
+Recently there was a fairly large Neo Geo set sold by the Humble Bundle. How do I get those working with MAME?
+--------------------------------------------------------------------------------------------------------------
+
+Well, there's good news and bad news here. The good news is that the games themselves are correct and up to date as of MAME 0.173 (and may yet remain so in the future) though you'll have to pull the ROM set .ZIP files out of the package somehow yourself. However, the bad news is that the Neo Geo BIOS set (**neogeo.zip**) has been updated since the Humble Bundle package was released and shows up as incomplete in MAME.
+
+We suggest you contact the provider of your sets (Humble Bundle and DotEmu) and ask them to update their content to the newest revision. If enough people ask nicely, maybe they'll update the package.
