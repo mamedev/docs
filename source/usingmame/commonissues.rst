@@ -5,6 +5,17 @@ Common Issues and Questions (FAQ)
 
 **Disclaimer: The following information is not legal advice and was not written by a lawyer.**
 
+
+New for 0.172/0.173: Why do my Neo Geo ROMs no longer work? How do I get the Humble Bundle Neo Geo sets working?
+----------------------------------------------------------------------------------------------------------------
+
+Recently the Neo Geo BIOS was updated to add a new version of the Universal BIOS. This was done between 0.171/0.172, and results in an error trying to load Neo Geo games with an un-updated **neogeo.zip** set.
+
+This also affects the Humble Bundle set: the games themselves are correct and up to date as of MAME 0.173 (and most likely will remain so) though you'll have to pull the ROM set .ZIP files out of the package somehow yourself. However, the Neo Geo BIOS set (**neogeo.zip**) included in the Humble Bundle set is incomplete as of the 0.172 release of MAME.
+
+We suggest you contact the provider of your sets (Humble Bundle and DotEmu) and ask them to update their content to the newest revision. If enough people ask nicely, maybe they'll update the package.
+
+
 Why does MAME report "missing files" even if I have the ROMs?
 -------------------------------------------------------------
 
@@ -127,9 +138,3 @@ By default, MAME on Microsoft Windows tries to do raw reads of the joystick(s), 
 One thing you can try is setting the keyboardprovider, mouseprovider, or joystickprovider setting (depending on which kind of device your input device acts as) from rawinput to one of the other options such as dinput or win32. See :ref:`osd-commandline-options` for details on supported providers.
 
 
-Recently there was a fairly large Neo Geo set sold by the Humble Bundle. How do I get those working with MAME?
---------------------------------------------------------------------------------------------------------------
-
-Well, there's good news and bad news here. The good news is that the games themselves are correct and up to date as of MAME 0.173 (and may yet remain so in the future) though you'll have to pull the ROM set .ZIP files out of the package somehow yourself. However, the bad news is that the Neo Geo BIOS set (**neogeo.zip**) has been updated since the Humble Bundle package was released and shows up as incomplete in MAME.
-
-We suggest you contact the provider of your sets (Humble Bundle and DotEmu) and ask them to update their content to the newest revision. If enough people ask nicely, maybe they'll update the package.

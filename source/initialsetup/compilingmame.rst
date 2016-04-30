@@ -13,6 +13,8 @@ All Platforms
 * You can do driver specific builds by using *SOURCES=<driver>* in your make statement. For instance, building Pac-Man by itself would be **make SOURCES=src/mame/drivers/pacman.cpp REGENIE=1** including the necessary *REGENIE* for rebuilding the settings.
  
 * Speeding up the compilation can be done by using more cores from your CPU. This is done with the **-j** parameter. *Note: the maximum number you should use is the number of cores your CPU has, plus one. No higher than that will speed up the compilation, and may in fact slow it down.* For instance, **make -j5** on a quad-core CPU will provide optimal speed.
+
+* Debugging information can be added to a compile using *SYMBOLS=1* though most users will not want or need to use this.
  
 * Lastly, tiny builds of MAME are good for debugging a single driver during development. This can be done by **make tiny** and as always remember that REGENIE is needed any time you're making changes to what you want to compile.
  
@@ -20,10 +22,10 @@ Putting all of these together, we get a couple of examples:
 
 Rebuilding MAME for just the Pac-Man driver, with tools, on a quad-core (e.g. i5 or i7) machine:
 
-| **make SOURCES=src/mame/drivers/pacman.cpp REGENIE=1 -j5**
+| **make SOURCES=src/mame/drivers/pacman.cpp TOOLS=1 REGENIE=1 -j5**
 | 
 
-Rebuilding MAME on a dual-core (e.g. i3) machine:
+Rebuilding MAME on a dual-core (e.g. i3 or laptop i5) machine:
 
 | **make -j3**
 | 
