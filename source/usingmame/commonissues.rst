@@ -15,6 +15,10 @@ This also affects the Humble Bundle set: the games themselves are correct and up
 
 We suggest you contact the provider of your sets (Humble Bundle and DotEmu) and ask them to update their content to the newest revision. If enough people ask nicely, maybe they'll update the package.
 
+How can I use the Sega Genesis & Mega Drive Classics collection from Steam with MAME?
+-------------------------------------------------------------------------------------
+
+As of the April 2016 update to the program, the ROM images included in the set are now 100% compatible with MAME and other Genesis/Mega Drive emulators. The ROMs are contained in the **steamapps\Sega Classics\uncompressed ROMs** folder as a series of *.68K* and *.SGD* images that can be loaded directly into MAME. PDF manuals for the games can be found in **steamapps\Sega Classics\manuals** as well.
 
 Why does MAME report "missing files" even if I have the ROMs?
 -------------------------------------------------------------
