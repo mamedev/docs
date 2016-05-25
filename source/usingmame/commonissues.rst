@@ -6,8 +6,16 @@ Common Issues and Questions (FAQ)
 **Disclaimer: The following information is not legal advice and was not written by a lawyer.**
 
 
-New for 0.172/0.173: Why do my Neo Geo ROMs no longer work? How do I get the Humble Bundle Neo Geo sets working?
-----------------------------------------------------------------------------------------------------------------
+
+New for 0.174: Why does my game show an error screen if I insert coins rapidly?
+-------------------------------------------------------------------------------
+
+This is not a bug in MAME. On original arcade hardware, you simply could not insert coins as fast as you can mashing the button. The only ways you could get credit feeding at that kind of pace was if the coin mech hardware was defective or if you were physically trying to cheat the coin mech.
+
+In either case, the game would display an error for the operator to look into the situation to prevent cheating them out of their hard-earned cash. Keep a slow, coin-insert-ish pace and you'll not trigger this. 
+
+Why do my Neo Geo ROMs no longer work? How do I get the Humble Bundle Neo Geo sets working?
+-------------------------------------------------------------------------------------------
 
 Recently the Neo Geo BIOS was updated to add a new version of the Universal BIOS. This was done between 0.171/0.172, and results in an error trying to load Neo Geo games with an un-updated **neogeo.zip** set.
 
