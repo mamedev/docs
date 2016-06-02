@@ -18,7 +18,6 @@ MAME Documentation
     commandline/index
     advanced/index
 
-    mess/index
     tools/index
 
     techspecs/index
