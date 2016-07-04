@@ -7,7 +7,7 @@ There are a number of third party tools for MAME to make system and software sel
 
 This following list is not an endorsement of any of these frontends by the MAME team, but simply showing a number of commonly used free frontends as a good starting point to begin from.
 
-| QMC2 (multipla platforms)
+| QMC2 (multiple platforms)
 | Download: http://qmc2.batcom-it.net/
 | 
 | IV/Play (Microsoft Windows)
