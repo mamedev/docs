@@ -175,10 +175,10 @@ OSD related options
 
 	Chooses how MAME will get light gun input.
 
-	On Windows, you can choose from: auto, win32, or none
-	On SDL, you can choose from: none
-	
-	The default is *auto*. On Windows, auto will try win32. On SDL, auto will default to none.
+	On Windows, you can choose from: auto, rawinput, win32, or none
+	On SDL, you can choose from: auto, x11 or none
+
+	The default is *auto*. On Windows, auto will try rawinput with fallback to win32, or none if it doesn't find any. On SDL/Linux, auto will default to x11, or none if it doesn't find any. On other SDL, auto will default to none.
 
 **\-joystickprovider**
 
